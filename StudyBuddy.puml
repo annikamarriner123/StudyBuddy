@@ -23,7 +23,7 @@ skinparam {
 }
 
 
-class "User" as user {
+class "Student" as student {
 * StudentId
 --
 * Username
