@@ -26,13 +26,23 @@ skinparam {
 class "User" as user {
 * StudentId
 --
+* Username
+* Password
+* Email
+* Subjects
+* 
 
 
 }
 
-class "Staff" as staff{
+class "Tutor" as tutor{
 * StaffId
 --
+* Email
+* Subjects
+* Username
+* Password
+* 
 
 }
 
