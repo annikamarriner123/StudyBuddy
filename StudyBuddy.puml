@@ -1,4 +1,27 @@
 @startuml
 
 
+
+
+class "User" as user {
+* StudentId
+--
+
+
+}
+
+class "Staff" as staff{
+* StaffId
+--
+
+}
+
+
+
+
+
+
+
+
+
 @enduml
