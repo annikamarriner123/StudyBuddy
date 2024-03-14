@@ -1,6 +1,26 @@
 @startuml
 
+skinparam {
+  Style StrictUML
 
+  ' make the stereotypes less ugly
+  ClassStereotypeFont {
+    Size 10
+    Style plain
+  }
+
+  ' make boxes slightly less pointy
+  RoundCorner 5
+
+  ' make everything slightly less cramped
+  Padding 2
+
+  ' vertical spacing (make room for labels)
+  RankSep 100
+
+  ' horizontal spacing (make room for labels)
+  NodeSep 120
+}
 
 
 class "User" as user {
