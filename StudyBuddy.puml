@@ -22,7 +22,7 @@ skinparam {
   NodeSep 120
 }
 
-
+'The students who will use the app
 class "Student" as student {
 * StudentId
 --
@@ -30,11 +30,11 @@ class "Student" as student {
 * Password
 * Email
 * Subjects
-* 
-
-
+* Major
+* Intrests
 }
 
+'Represents the tutors present on the app
 class "Tutor" as tutor{
 * StaffId
 --
@@ -42,9 +42,43 @@ class "Tutor" as tutor{
 * Subjects
 * Username
 * Password
-* 
-
+* Avalability
 }
+
+'Stores results when a match is made 
+'Should staffId be there as an optional thing?
+class "Match" as match{
+  *StudentId
+  --
+  StaffId 
+}
+
+'This represents messages between one user and another a DM
+class "Message" as msg {
+  * MessageId
+  --
+  * SenderId
+  * RecipientId
+  * Content
+  * Timestamp
+}
+
+
+'This is the group chat aspect where multiple tutors and students can be present
+entity "ChatRoom" as room {
+  * RoomId
+  --
+  * StudentId
+  * Messages
+  TutorId
+}
+
+
+student }o--o{ room
+tutor }o--o{ room
+student ||--o{ msg
+tutor ||--o{ msg
+student }o--o{ match
 
 
 
