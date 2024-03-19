@@ -65,7 +65,7 @@ class "Message" as msg {
 
 
 'This is the group chat aspect where multiple tutors and students can be present
-entity "ChatRoom" as room {
+class "ChatRoom" as room {
   * RoomId
   --
   * StudentId
@@ -73,19 +73,23 @@ entity "ChatRoom" as room {
   TutorId
 }
 
+'For when the student needs to upload/ share their study docs
+class "Documents" as docs {
+  * StudentId
+  --
+  * Content
+  * Subject
+}
+
+
+
 
 student }o--o{ room
+student }o--o{ docs
 tutor }o--o{ room
 student ||--o{ msg
 tutor ||--o{ msg
 student }o--o{ match
-
-
-
-
-
-
-
 
 
 @enduml
