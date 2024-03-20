@@ -38,7 +38,6 @@ class "User" as user {
 }
 
 
-
 'Represents the tutors present on the app
 class "Tutor" as tutor{
 * StaffId
@@ -53,7 +52,7 @@ Profile Picture
 
 'Stores results when a match is made 
 class "Match" as match{
-  *StudentId
+  *UserId
   --
   * TimeStamp
 }
@@ -73,7 +72,7 @@ class "Message" as msg {
 class "ChatRoom" as room {
   * RoomId
   --
-  * StudentId
+  * UserId
   * Messages
   TutorId
 }
@@ -81,7 +80,7 @@ class "ChatRoom" as room {
 
 'For when the student needs to upload/ share their study docs
 class "Documents" as docs {
-  * StudentId
+  * UserId
   --
   * Content
   * Subject
@@ -94,7 +93,7 @@ user }|--o{ docs
 tutor }o--o{ room
 user ||--o{ msg
 tutor ||--o{ msg
-user }|--o{ match
+user }o--o{ match
 
 
 @enduml
