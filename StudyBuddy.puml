@@ -78,6 +78,7 @@ class "ChatRoom" as room {
   TutorId
 }
 
+
 'For when the student needs to upload/ share their study docs
 class "Documents" as docs {
   * StudentId
@@ -85,7 +86,6 @@ class "Documents" as docs {
   * Content
   * Subject
 }
-
 
 
 
