@@ -22,6 +22,7 @@ skinparam {
   NodeSep 120
 }
 
+
 'The students who will use the app
 class "User" as user {
 * UserId
@@ -31,7 +32,9 @@ class "User" as user {
 * Email
 * Papers
 * Major
- Intrests
+  Favourites
+  Profile Pircutre
+  Intrests
 }
 
 
@@ -45,10 +48,10 @@ class "Tutor" as tutor{
 * Username
 * Password
 * Avalability
+Profile Picture
 }
 
 'Stores results when a match is made 
-'Should staffId be there as an optional thing?
 class "Match" as match{
   *StudentId
   --
