@@ -23,16 +23,18 @@ skinparam {
 }
 
 'The students who will use the app
-class "Student" as student {
-* StudentId
+class "User" as user {
+* UserId
 --
 * Username
 * Password
 * Email
-* Subjects
+* Papers
 * Major
-* Intrests
+ Intrests
 }
+
+
 
 'Represents the tutors present on the app
 class "Tutor" as tutor{
@@ -50,7 +52,7 @@ class "Tutor" as tutor{
 class "Match" as match{
   *StudentId
   --
-  StaffId 
+  * TimeStamp
 }
 
 'This represents messages between one user and another a DM
@@ -84,12 +86,12 @@ class "Documents" as docs {
 
 
 
-student }o--o{ room
-student }o--o{ docs
+user }|--o{ room
+user }|--o{ docs
 tutor }o--o{ room
-student ||--o{ msg
+user ||--o{ msg
 tutor ||--o{ msg
-student }o--o{ match
+user }|--o{ match
 
 
 @enduml
