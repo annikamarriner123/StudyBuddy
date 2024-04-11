@@ -1,13 +1,13 @@
-package otago.StudybuddyProject;
+package otago.StudyBuddy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StudybuddyProjectApplication {
+public class StudyBuddyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StudybuddyProjectApplication.class, args);
+		SpringApplication.run(StudyBuddyApplication.class, args);
 	}
 
 }

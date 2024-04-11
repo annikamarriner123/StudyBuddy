@@ -1,10 +1,10 @@
-package otago.StudybuddyProject;
+package otago.StudyBuddy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StudybuddyProjectApplicationTests {
+class StudyBuddyApplicationTests {
 
 	@Test
 	void contextLoads() {
