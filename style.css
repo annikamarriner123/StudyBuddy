@@ -1,0 +1,120 @@
+/* #F2F2F2 background colour*/
+/* #2B008B text colours */
+
+/* Reset some basic elements */
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Apply a basic box-sizing rule */
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #F2F2F2;
+    color:#2B008B;
+    padding: 2.5rem; /* Increased padding */
+    position: relative; /* Ensure that absolute positioning is relative to the header */
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    position: absolute; /* Position the navigation absolutely */
+    left: 10rem; /* Adjust this value to move the nav to the right */
+    top: 2rem; /* Align with the padding of the header */
+  }
+
+  nav ul :hover{
+    color: #03DAC5;
+  }
+  
+  nav ul li {
+    margin-right: 5vw;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+  
+  nav ul li a {
+    color: #2B008B;
+    text-decoration: none;
+    font-size: 1.1rem; /* Slightly larger font size */
+  }
+  
+  h1 {
+    font-size: 2.5rem; /* Increased font size */
+    margin-bottom: 0.5rem;
+    position: absolute; /* Position the title absolutely */
+    left: 50%;
+    transform: translateX(-50%); /* Center the title */
+    white-space: nowrap;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center the title vertically */
+  }
+  
+  .hero {
+    background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url(images/photo-1523240795612-9a054b0db644.avif);
+    background-size: cover;
+    background-position: center;
+    height:90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white; 
+    padding-top:10vh;
+    
+
+  }
+
+
+  .hero-content {
+    margin-top: 5vh; /* Adjust spacing as needed */
+    height: 50vh; /* Adjust height as needed */
+  }
+  
+  .hero-text{
+    font-size:5vh;
+    color: white;
+    margin-bottom:3vh;
+    border-radius: 20px;
+    padding:0.3em;
+
+  }
+
+
+  .btn-get-started {
+    background-color: #03DAC5;
+    color: white;
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none;
+    border-radius: 20px; /* Adjust border radius as needed */
+    transition: background-color 0.3s;
+    font-size:3vh;
+  }
+  
+  .btn-get-started:hover {
+    background-color: #2B008B;
+  }
+  
