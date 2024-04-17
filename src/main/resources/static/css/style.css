@@ -128,3 +128,73 @@ body, h1, h2, ul {
     background-color: #2B008B;
   }
   
+
+
+  /* Login Page */
+
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .form {
+    background-color: #F2F2F2;
+    background-image: url('/src/main/resources/static/images/premium_photo-1677171749355-4ad563d86165.avif');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Aligns all children (inputs and button) centrally */
+    width: 100%;
+    height:90vh;
+  }
+  
+  .input-group {
+    width: 100%; /* Full width for better control */
+    margin-bottom: 1rem; /* Space out the inputs */
+    margin:2vh;
+  }
+  
+  .form input, .form button {
+    width: 50vw; /* Set the width to 50% of the viewport width */
+    padding: 1rem; /* Padding for better touch and aesthetics */
+    border-radius: 5px; /* Rounded corners */
+    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
+    display: block; /* Ensure elements are treated as block for better control */
+  }
+  
+  .form input {
+    border: 1px solid #ccc;
+  }
+  
+  .form button {
+    background-color: #03DAC5;
+    color: #F2F2F2;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .form button:hover {
+    background-color: #2B008B;
+  }
+  
+
+
+  .form p {
+    margin-top: 1rem;
+  }
+  
+  .form p a {
+    color: #2B008B;
+  }
+  
+  .form p a:hover {
+    text-decoration: underline;
+  }
+  
