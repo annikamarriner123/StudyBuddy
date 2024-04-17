@@ -139,6 +139,7 @@ body, h1, h2, ul {
     height: 100vh;
   }
 
+  
   .form {
     background-color: #F2F2F2;
     background-image: url('/src/main/resources/static/images/premium_photo-1677171749355-4ad563d86165.avif');
@@ -158,6 +159,7 @@ body, h1, h2, ul {
     width: 100%; /* Full width for better control */
     margin-bottom: 1rem; /* Space out the inputs */
     margin:2vh;
+    margin-top:10vh;
   }
   
   .form input, .form button {
@@ -170,6 +172,7 @@ body, h1, h2, ul {
   
   .form input {
     border: 1px solid #ccc;
+    font-size:2vh;
   }
   
   .form button {
