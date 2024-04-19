@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package otago.StudyBuddy.user;
+package otago.StudyBuddy.domain;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
@@ -27,7 +27,7 @@ public class User<T> {
     private String email;
     private String[] papers;
     private String major;
-    private Collection<T> favourites;
+    //private Collection<T> favourites;
     //TODO: private "something" profilePicture
     private String[] intrests;
     
@@ -41,7 +41,7 @@ public class User<T> {
         this.email = email;
         this.papers = papers;
         this.major = major;
-        this.favourites = favourites;
+//        this.favourites = favourites;
         this.intrests = intrests;
     }
 
@@ -93,13 +93,13 @@ public class User<T> {
         this.major = major;
     }
 
-    public Collection<T> getFavourites() {
-        return favourites;
-    }
-
-    public void setFavourites(Collection<T> favourites) {
-        this.favourites = favourites;
-    }
+//    public Collection<T> getFavourites() {
+//        return favourites;
+//    }
+//
+//    public void setFavourites(Collection<T> favourites) {
+//        this.favourites = favourites;
+//    }
 
     public String[] getIntrests() {
         return intrests;
