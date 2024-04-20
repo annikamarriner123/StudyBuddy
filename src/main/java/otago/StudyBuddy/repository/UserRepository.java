@@ -14,6 +14,7 @@ import otago.StudyBuddy.domain.User;
  * @author glenm
  */
 @Repository
+@Component
 public interface UserRepository extends JpaRepository<User, Integer> {
     
     //Querying user using username and password
