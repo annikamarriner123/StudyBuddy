@@ -4,8 +4,9 @@
  */
 package otago.StudyBuddy.domain;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import java.util.*;
 /**
@@ -13,41 +14,60 @@ import java.util.*;
  * @author willi
  */
 @Entity
-@Table
-public class User<T> {
+@Table(name = "User")
+public class User {
+
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
-    private int userId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer userId;
+    private String firstName;
+    private String surname;
     private String username;
     private String password;
     private String email;
-    private String[] papers;
+    private Collection<String> papers;
     private String major;
     //private Collection<T> favourites;
     //TODO: private "something" profilePicture
-    private String[] intrests;
+    private Collection<String> interests;
     
     //Default Consturctor
     public User(){}
 
-    public User(int userId, String username, String password, String email, String[] papers, String major, Collection<T> favourites, String[] intrests) {
+    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests) {
         this.userId = userId;
+        this.firstName = firstName;
+        this.surname = surname;
         this.username = username;
         this.password = password;
         this.email = email;
         this.papers = papers;
         this.major = major;
 //        this.favourites = favourites;
-        this.intrests = intrests;
+        this.interests = interests;
     }
 
     public int getUserId() {
         return userId;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+    
+    
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -77,11 +97,11 @@ public class User<T> {
         this.email = email;
     }
 
-    public String[] getPapers() {
+    public Collection<String> getPapers() {
         return papers;
     }
 
-    public void setPapers(String[] papers) {
+    public void setPapers(Collection<String> papers) {
         this.papers = papers;
     }
 
@@ -101,12 +121,12 @@ public class User<T> {
 //        this.favourites = favourites;
 //    }
 
-    public String[] getIntrests() {
-        return intrests;
+    public Collection<String> getInterests() {
+        return interests;
     }
 
-    public void setIntrests(String[] intrests) {
-        this.intrests = intrests;
+    public void setInterests(Collection<String> interests) {
+        this.interests = interests;
     }
     
     
