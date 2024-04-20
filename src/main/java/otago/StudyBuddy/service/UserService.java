@@ -37,7 +37,7 @@ public class UserService {
         return null;
     }
     
-    public User loginUser(String username, String password) {
+    public User logInUser(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password).orElse(null);
     }
 }

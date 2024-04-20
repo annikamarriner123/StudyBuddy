@@ -11,7 +11,7 @@
     <div class="header-content">
       <nav>
         <ul>
-          <li><a href="login">LOG IN</a></li>
+          <li><a href="log-in">LOG IN</a></li>
           <li><a href="#">SIGN UP</a></li>
         </ul>
       </nav>
@@ -20,14 +20,14 @@
   </header>
   <main>
       <!-- make a log in form -->
-      <form action="/signup" method="post" class="form">
+      <form action="/sign-up" method="post" class="form" th:object="${signUpRequest}">
         <div class="input-group">
 
         <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
     
-        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        <input type="text" id="surname" name="surname" placeholder="Last Name" required>
           
-        <input type="text" id="email" name="email" placeholder="Email" required>  
+        <input type="email" id="email" name="email" placeholder="Email" required>  
             
         <input type="text" id="username" name="username" placeholder="Username" required>
       
@@ -37,6 +37,7 @@
 
     </div>
     </form>
+  </main>
     
 </body>
 </html>

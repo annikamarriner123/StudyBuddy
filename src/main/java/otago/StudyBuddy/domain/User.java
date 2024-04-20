@@ -14,7 +14,7 @@ import java.util.*;
  * @author willi
  */
 @Entity
-@Table(name = "User")
+@Table(name = "User_Table")
 public class User {
 
     @Id
@@ -127,6 +127,11 @@ public class User {
 
     public void setInterests(Collection<String> interests) {
         this.interests = interests;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", surname=" + surname + ", username=" + username + ", password=" + password + ", email=" + email + ", papers=" + papers + ", major=" + major + ", interests=" + interests + '}';
     }
     
     
