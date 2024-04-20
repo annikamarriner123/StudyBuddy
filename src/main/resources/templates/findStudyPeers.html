@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Study Peers</title>
+<link rel="stylesheet" href="styles.css"> <!-- Link to your CSS stylesheet -->
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #2B008B;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter h2 {
+    margin-bottom: 10px;
+    color: #2B008B;
+}
+
+label {
+    margin-right: 10px;
+    color: #2B008B;
+}
+
+select, button {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.student-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.student-card {
+    width: 200px;
+    background-color: #fff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.student-card h3 {
+    margin-top: 0;
+    color: #2B008B;
+}
+
+.student-card p {
+    color: #666;
+}
+
+.image-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Find Study Peers</h1>
+    <div class="filter">
+        <h2>Filter:</h2>
+        <label for="major">Major:</label>
+        <select id="major">
+            <option value="all">All</option>
+            <option value="computer-science">Computer Science</option>
+            <option value="engineering">Engineering</option>
+            <option value="biology">Biology</option>
+            <!-- Add more options as needed -->
+        </select>
+        
+        <label for="year">Year of Study:</label>
+        <select id="year">
+            <option value="all">All</option>
+            <option value="1">Year 1</option>
+            <option value="2">Year 2</option>
+            <option value="3">Year 3</option>
+            <option value="4">Year 4</option>
+            <option value="5">Year 5</option>
+            <!-- Add more options as needed -->
+        </select>
+        
+        <button id="apply-filter">Apply Filter</button>
+    </div>
+    
+    <div class="student-list">
+        <!-- Student cards will be dynamically added here -->
+    </div>
+    
+    <div class="image-container">
+<img src="/src/main/resources/static/images/Students.avif" alt="Students Studying" class="students-banner">
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
