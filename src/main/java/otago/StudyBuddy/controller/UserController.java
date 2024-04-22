@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import otago.StudyBuddy.domain.User;
 import otago.StudyBuddy.service.UserService;
-
 /**
  *
  * @author glenm
