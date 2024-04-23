@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room - Study Buddy</title>
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            
+                    <div class="banner">
+                        <h2><a href="/src/main/resources/templates/home.html">Study Buddy</a></h2>
+                        <a href="#">Find Tutors</a>
+                        <a href="#">Teams</a>
+                        <div class="dropdown">
+                          <button class="dropbtn">Menu</button>
+                          <div class="dropdown-content">
+                            <a href="Settings.html">Settings</a>
+                            <a href="#">Log Out</a>
+                            <a href="home.html">Home</a>
+                          </div>
+                      </div>
+        
+        </div>
+    </header>
+    <main class="chat-app">
+        <div class="chat-sidebar">
+            <!-- List of chats -->
+            <ul class="chat-list">
+                <li>Chat 1</li>
+                <li>Chat 2</li>
+                <li>Chat 3</li>
+            </ul>
+        </div>
+        <div class="chat-main">
+            <div id="chat-container">
+                <div id="messages"></div>
+                <div id="message-input">
+                    <input type="text" id="messageBox" placeholder="Type your message here...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Existing JavaScript code for handling messages
+    </script>
+</body>
+</html>

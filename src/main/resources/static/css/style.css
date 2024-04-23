@@ -200,13 +200,7 @@ body, h1, h2, ul {
   .form p a:hover {
     text-decoration: underline;
   }
-  /* Add your CSS styles here */
-  body {
-    margin: 0;
-    padding: 70px 0 0; 
-    font-family: Arial, sans-serif;
-  }
-
+ 
   .banner {
     background-color: #f4f4fd; 
     color: #2B008B;
@@ -325,4 +319,113 @@ body, h1, h2, ul {
 .text-box2 p:first-child {
   font-size: 18px; /* Adjust font size for the first paragraph */
   font-weight: bold;
+}
+
+
+
+
+
+
+
+/* chat.html page */
+
+.chat-app {
+  display: flex;
+  height: calc(95vh - 45px); /* Adjust height based on header */
+}
+
+.chat-sidebar {
+  width: 30%;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
+
+.chat-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  padding: 3vh;
+}
+
+.chat-list li:hover {
+  background-color: #e9e9e9;
+}
+
+.chat-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #ddd;
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.message {
+  background-color: #03DAC5;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin-bottom: 2px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.my-message {
+  align-self: flex-end;
+}
+
+.their-message {
+  align-self: flex-start;
+  background-color: #efefef;
+  color: black;
+}
+
+#message-input {
+  display: flex;
+  padding: 10px;
+  background: white;
+  border-top: 1px solid #ccc;
+}
+
+#message-input input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: none;
+}
+
+#message-input button {
+  background-color: #2B008B;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#message-input button:hover {
+  background-color: #03DAC5;
+}
+
+@media (max-width: 600px) {
+  .chat-app {
+      flex-direction: column;
+  }
+
+  .chat-sidebar {
+      width: 100%;
+      height: 150px; /* Fixed height when stacked */
+  }
+
+  .chat-main {
+      height: calc(100vh - 200px); /* Adjust based on total available height */
+  }
 }
