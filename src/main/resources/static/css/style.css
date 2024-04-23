@@ -201,12 +201,6 @@ body, h1, h2, ul {
     text-decoration: underline;
   }
   /* Add your CSS styles here */
-  body {
-    margin: 0;
-    padding: 70px 0 0; 
-    font-family: Arial, sans-serif;
-  }
-
   .banner {
     background-color: #f4f4fd; 
     color: #2B008B;
