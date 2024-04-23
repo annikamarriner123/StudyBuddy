@@ -18,8 +18,7 @@ body, h1, h2, ul {
   
   header {
     background-color: #F2F2F2;
-    color:#2B008B;
-    padding: 2.5rem; /* Increased padding */
+    padding: 2rem; /* Increased padding */
     position: relative; /* Ensure that absolute positioning is relative to the header */
   }
   
@@ -66,11 +65,12 @@ body, h1, h2, ul {
     white-space: nowrap;
     top: 50%;
     transform: translate(-50%, -50%); /* Center the title vertically */
+    color:#2B008B;
   }
   
   .hero {
     position: relative; /* Needed for absolute positioning inside */
-    height: 90vh; /* Adjust based on your preference */
+    height: 95vh; /* Adjust based on your preference */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -331,7 +331,7 @@ body, h1, h2, ul {
 
 .chat-app {
   display: flex;
-  height: calc(95vh - 45px); /* Adjust height based on header */
+  height: calc(98vh - 45px); /* Adjust height based on header */
 }
 
 .chat-sidebar {
@@ -427,5 +427,85 @@ body, h1, h2, ul {
 
   .chat-main {
       height: calc(100vh - 200px); /* Adjust based on total available height */
+  }
+}
+
+
+/* #F2F2F2 background colour*/
+/* #2B008B text colours */
+/* teams page */
+
+
+.team-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5vw;
+  margin-top:5vh;
+  gap: 20px; /* Creates space between cards */
+}
+
+.team-card {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin:2vw;
+}
+
+.team-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures images cover the card area without distorting */
+}
+
+.team-info {
+  padding: 10px;
+}
+
+.team-actions {
+  margin-top: auto; /* Pushes actions to the bottom of the card */
+  background: #f4f4f4;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-join, .btn-remove {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-join {
+  background-color: #2B008B;
+  color: white;
+}
+
+.btn-join:hover {
+  background-color: #03DAC5;
+}
+
+.btn-remove {
+  background-color: #03DAC5;
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #2B008B;
+}
+
+@media (max-width: 600px) {
+  .team-gallery {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .team-card {
+      width: 90%; /* Makes cards responsive to smaller screens */
   }
 }
