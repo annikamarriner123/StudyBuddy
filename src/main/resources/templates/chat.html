@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="chatbox"></div>
+    <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        const chatbox = document.getElementById('chatbox');
+        const messageForm = document.getElementById('messageForm');
+        const messageInput = document.getElementById('messageInput');
+
+        const webSocket = new WebSocket('ws://localhost:8080/chat');
+
+        webSocket.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            chatbox.innerHTML += `<div>${message.sender.username}: ${message.content}</div>`;
+        };
+
+        messageForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const messageContent = messageInput.value;
+            if (messageContent.trim() !== '') {
+                const message = {
+                    content: messageContent
+                };
+                webSocket.send(JSON.stringify(message));
+                messageInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -4,8 +4,9 @@
  */
 package otago.StudyBuddy.service;
 
-import java.sql.Timestamp;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import otago.StudyBuddy.domain.Message;
 import otago.StudyBuddy.repository.MessageRepository;
 
@@ -13,22 +14,17 @@ import otago.StudyBuddy.repository.MessageRepository;
  *
  * @author willi
  */
+@Service
 public class MessageService {
-    
-    @Autowired
-    public MessageRepository messageRepository;
 
-    public MessageService(MessageRepository messageRepository) {
-        this.messageRepository = messageRepository;
+    @Autowired
+    private MessageRepository messageRepository;
+
+    public List<Message> getMessagesForChatRoom(Integer chatId) {
+        return messageRepository.findByChatRoom_ChatIdOrderByTimestamp(chatId);
     }
-    
-    public MessageService(Integer messageId, String content, Timestamp timestamp){
-        if(content != null){
-            Message newMessage = new Message();
-            newMessage.setContent(content);
-        }
+
+    public Message saveMessage(Message message) {
+        return messageRepository.save(message);
     }
-    
-    
-    
 }

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package otago.StudyBuddy.domain;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,7 +20,9 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer userId;
+    
     private String firstName;
     private String surname;
     private String username;
@@ -34,8 +37,7 @@ public class User {
     //Default Consturctor
     public User(){}
 
-    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests) {
-        this.userId = userId;
+    public User( String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests) {
         this.firstName = firstName;
         this.surname = surname;
         this.username = username;

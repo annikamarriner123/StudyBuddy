@@ -4,34 +4,60 @@
  */
 package otago.StudyBuddy.domain;
 
+import jakarta.persistence.*;
 import java.util.Collection;
 
 /**
  *
  * @author willi
  */
+@Entity
+@Table(name = "chat_room")
 public class ChatRoom {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "chat_id")
     private Integer chatId;
+
+    @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL)
     private Collection<Message> messages;
-    private Integer senderId;
+
+    @ManyToOne
+    @JoinColumn(name = "sender_id", referencedColumnName = "user_id")
+    private User sender;
+
+    @ManyToMany
+    @JoinTable(
+            name = "chat_room_users",
+            joinColumns = @JoinColumn(name = "chat_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id")
+    )
     private Collection<User> recipientUsers;
+
+    @Column(name = "chat_name")
     private String chatName;
+    
+    //Defualt
+    public ChatRoom(){}
 
-    //default constructor
-    public ChatRoom() {}
-
-    /**
-     * A chat room will store collections of messages even if there is only 2
-     * people (1 on 1) it will be considered a chatroom.
-     */
-    public ChatRoom(Integer chatId, Collection<Message> messages, Integer senderId, Collection<User> recipientUsers, String chatName) {
-       
-        this.chatId = chatId;
+    public ChatRoom( Collection<Message> messages, User sender, Collection<User> recipientUsers, String chatName) {
         this.messages = messages;
-        this.senderId = senderId;
+        this.sender = sender;
         this.recipientUsers = recipientUsers;
         this.chatName = chatName;
+    }
+    
+    
+    
+    
+    //Getters n setters
+    public Integer getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(Integer chatId) {
+        this.chatId = chatId;
     }
 
     public Collection<Message> getMessages() {
@@ -42,12 +68,12 @@ public class ChatRoom {
         this.messages = messages;
     }
 
-    public Integer getSenderId() {
-        return senderId;
+    public User getSender() {
+        return sender;
     }
 
-    public void setSenderId(Integer senderId) {
-        this.senderId = senderId;
+    public void setSender(User sender) {
+        this.sender = sender;
     }
 
     public Collection<User> getRecipientUsers() {
@@ -66,12 +92,6 @@ public class ChatRoom {
         this.chatName = chatName;
     }
     
-    public Integer getChatId() {
-        return chatId;
-    }
-
-    public void setChatId(Integer chatId) {
-        this.chatId = chatId;
-    }
-
+    
 }
+

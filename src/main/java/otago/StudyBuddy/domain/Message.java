@@ -5,25 +5,46 @@
 package otago.StudyBuddy.domain;
 
 import java.sql.Timestamp;
+import jakarta.persistence.*;
 
 /**
  *
  * @author willi
  */
+@Entity
+@Table(name = "message")
 public class Message {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "message_id")
     private Integer messageId;
+
+    @Column(name = "content")
     private String content;
+
+    @Column(name = "timestamp")
     private Timestamp timestamp;
 
+    @ManyToOne
+    @JoinColumn(name = "chat_id", referencedColumnName = "chat_id")
+    private ChatRoom chatRoom;
+
+    @ManyToOne
+    @JoinColumn(name = "sender_id", referencedColumnName = "user_id")
+    private User sender;
+
+    //Default
+    public Message(){}
     
-    public Message (){}
-    
-    public Message(Integer messageId, String content, Timestamp timestamp){
-        this.messageId = messageId;
+    public Message( String content, Timestamp timestamp, ChatRoom chatRoom, User sender) {
         this.content = content;
         this.timestamp = timestamp;
+        this.chatRoom = chatRoom;
+        this.sender = sender;
     }
-
+    
+    //Getters and setters
     public Integer getMessageId() {
         return messageId;
     }
@@ -48,10 +69,24 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-    @Override
-    public String toString() {
-        return "Message{" + "messageId=" + messageId + ", content=" + content + ", timestamp=" + timestamp + '}';
+    public ChatRoom getChatRoom() {
+        return chatRoom;
+    }
+
+    public void setChatRoom(ChatRoom chatRoom) {
+        this.chatRoom = chatRoom;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
     }
     
     
+    
+    
+
 }

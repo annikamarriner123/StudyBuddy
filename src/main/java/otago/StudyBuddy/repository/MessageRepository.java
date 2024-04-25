@@ -4,12 +4,18 @@
  */
 package otago.StudyBuddy.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import otago.StudyBuddy.domain.Message;
+import java.util.List;
+
 /**
  *
  * @author willi
  */
-public class MessageRepository {
-    //needs to fetch past messages aswell as send more messages
-    
-    
+
+
+@Repository
+public interface MessageRepository extends JpaRepository<Message, Integer> {
+    List<Message> findByChatRoom_ChatIdOrderByTimestamp(Integer chatId);
 }
