@@ -27,6 +27,7 @@ public class User {
     private String email;
     private Collection<String> papers;
     private String major;
+    private Collection<ChatRoom> joinedChatRooms;
     //private Collection<T> favourites;
     //TODO: private "something" profilePicture
     private Collection<String> interests;
@@ -34,9 +35,10 @@ public class User {
     //Default Consturctor
     public User(){}
 
-    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests) {
+    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests, Collection<ChatRoom>joinedChatRooms) {
         this.userId = userId;
         this.firstName = firstName;
+        this.joinedChatRooms = joinedChatRooms;
         this.surname = surname;
         this.username = username;
         this.password = password;
