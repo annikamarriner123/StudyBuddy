@@ -15,12 +15,13 @@
           <li><a href="sign-up.html">SIGN UP</a></li>
         </ul>
       </nav>
-      <h1>Study Buddy</h1>
+      <h2><a href="/src/main/resources/templates/home.html">Study Buddy</a></h2>
     </div>
   </header>
   <main>
       <!-- make a log in form -->
       <form action="/sign-up" method="post" class="form" th:object="${signUpRequest}">
+          
         <div class="input-group">
 
         <input type="text" id="firstName" name="firstName" placeholder="First Name" required>

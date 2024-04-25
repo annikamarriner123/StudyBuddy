@@ -6,6 +6,7 @@ body, h1, h2, ul {
     margin: 0;
     padding: 0;
   }
+
   
   /* Apply a basic box-sizing rule */
   *, *:before, *:after {
@@ -15,12 +16,24 @@ body, h1, h2, ul {
   body {
     font-family: Arial, sans-serif;
   }
-  
+  .filter{
+    padding:8vh;
+  }
+
   header {
-    background-color: #F2F2F2;
-    color:#2B008B;
-    padding: 2.5rem; /* Increased padding */
-    position: relative; /* Ensure that absolute positioning is relative to the header */
+    background-color:#F2F2F2 ;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Aligns items horizontally center */
+    align-items: center; /* Aligns items vertically center */
+}
+
+
+  h2{
+    color: #2B008B;
+    font-size:4vh;
   }
   
   .header-content {
@@ -33,7 +46,7 @@ body, h1, h2, ul {
     list-style: none;
     display: flex;
     padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+    margin: 1.5vh; /* Remove margin */
     position: absolute; /* Position the navigation absolutely */
     left: 10rem; /* Adjust this value to move the nav to the right */
     top: 2rem; /* Align with the padding of the header */
@@ -66,11 +79,12 @@ body, h1, h2, ul {
     white-space: nowrap;
     top: 50%;
     transform: translate(-50%, -50%); /* Center the title vertically */
+    color:#2B008B;
   }
   
   .hero {
     position: relative; /* Needed for absolute positioning inside */
-    height: 90vh; /* Adjust based on your preference */
+    height: 95vh; /* Adjust based on your preference */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -215,6 +229,7 @@ body, h1, h2, ul {
     padding: 0 20px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     z-index: 1000; 
+    margin-bottom:2vh;
   }
 
   .banner h2 {
@@ -331,13 +346,14 @@ body, h1, h2, ul {
 
 .chat-app {
   display: flex;
-  height: calc(95vh - 45px); /* Adjust height based on header */
+  height: calc(98vh - 45px); /* Adjust height based on header */
 }
 
 .chat-sidebar {
   width: 30%;
-  background-color: #f4f4f4;
+  background-color: #f4f4fd;
   overflow-y: auto;
+  padding-top:1vh;
 }
 
 .chat-list li {
@@ -348,7 +364,7 @@ body, h1, h2, ul {
 }
 
 .chat-list li:hover {
-  background-color: #e9e9e9;
+  background-color: #03DAC5;
 }
 
 .chat-main {
@@ -428,4 +444,173 @@ body, h1, h2, ul {
   .chat-main {
       height: calc(100vh - 200px); /* Adjust based on total available height */
   }
+}
+
+
+/* #F2F2F2 background colour*/
+/* #2B008B text colours */
+/* teams page */
+
+.team-header {
+  background-color: white;
+  color: #2B008B;
+  padding: 30px;
+  text-align: center;
+
+}
+.team-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Creates space between cards */
+}
+
+.team-card {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin:2vw;
+}
+
+.team-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures images cover the card area without distorting */
+}
+
+.team-info {
+  padding: 10px;
+}
+
+.team-actions {
+  margin-top: auto; /* Pushes actions to the bottom of the card */
+  background: #f4f4f4;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-join, .btn-remove {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-join {
+  background-color: #2B008B;
+  color: white;
+}
+
+.btn-join:hover {
+  background-color: #03DAC5;
+}
+
+.btn-remove {
+  background-color: #03DAC5;
+  color: white;
+}
+
+.btn-remove:hover {
+  background-color: #2B008B;
+}
+
+@media (max-width: 600px) {
+  .team-gallery {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .team-card {
+      width: 90%; /* Makes cards responsive to smaller screens */
+  }
+}
+
+
+
+
+/* find stufy peers page  */
+
+
+    /* Your other styles */
+.banner {
+    background-color: #f4f4fd; 
+    color: #2B008B;
+    width: 100%; 
+    height: 70px; 
+    position: fixed;
+    top: 0; 
+    left: 0;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+}
+
+.banner h2 {
+    margin: 0; 
+    font-size: 24px; 
+}
+
+.banner a {
+    color: #2B008B; 
+    text-decoration: none;
+    margin-right: 20px; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s;
+}
+
+.banner a:hover {
+    background-color: #eaeaff; 
+}
+
+/* Dropdown Button */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color: #f4f4fd;
+    color: #2B008B;
+    padding: 10px 20px;
+    border-radius: 20px; 
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #eaeaff; 
 }
