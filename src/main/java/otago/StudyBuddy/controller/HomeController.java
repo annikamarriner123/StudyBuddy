@@ -16,4 +16,10 @@ public class HomeController {
     public String getHomePage() {
         return "home";
     }
+    
+ 
+    @GetMapping("/findStudyPeers")
+    public String getFindStudyPeersPage() {
+        return "findStudyPeers";
+    }
 }
