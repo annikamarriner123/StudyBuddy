@@ -22,4 +22,9 @@ public class HomeController {
     public String getFindStudyPeersPage() {
         return "findStudyPeers";
     }
+    
+    @GetMapping("/chat")
+    public String getChatPay(){
+        return "chat";
+    }
 }
