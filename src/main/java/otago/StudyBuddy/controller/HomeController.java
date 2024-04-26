@@ -27,4 +27,10 @@ public class HomeController {
     public String getChatPay(){
         return "chat";
     }
+    
+    
+        @GetMapping("/team")
+    public String getTeam(){
+        return "team";
+    }
 }
