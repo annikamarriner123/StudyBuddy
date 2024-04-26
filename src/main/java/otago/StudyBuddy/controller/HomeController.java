@@ -33,4 +33,10 @@ public class HomeController {
     public String getTeam(){
         return "team";
     }
+    
+    
+        @GetMapping("/settings")
+    public String getSettings(){
+        return "settings";
+    }
 }
