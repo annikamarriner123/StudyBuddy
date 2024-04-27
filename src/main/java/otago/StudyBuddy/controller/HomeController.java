@@ -39,4 +39,9 @@ public class HomeController {
     public String getSettings(){
         return "settings";
     }
+    
+        @GetMapping("/addPaper")
+    public String getAddPapers(){
+        return "addPaper";
+    }
 }
