@@ -1,79 +1,57 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package otago.StudyBuddy.domain;
 
-import jakarta.persistence.Entity;
-import java.util.Collection;
+import jakarta.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
-/**
- *
- * @author willi
- */
 @Entity
+@Table(name = "chat_rooms")
 public class ChatRoom {
 
-    private Integer chatId;
-    private Collection<Message> messages;
-    private Integer senderId;
-    private Collection<User> recipientUsers;
-    private String chatName;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer chatRoomId;
 
-    //default constructor
-    public ChatRoom() {}
+    private String name;
 
-    /**
-     * A chat room will store collections of messages even if there is only 2
-     * people (1 on 1) it will be considered a chatroom.
-     */
-    public ChatRoom(Integer chatId, Collection<Message> messages, Integer senderId, Collection<User> recipientUsers, String chatName) {
-       
-        this.chatId = chatId;
-        this.messages = messages;
-        this.senderId = senderId;
-        this.recipientUsers = recipientUsers;
-        this.chatName = chatName;
+    @OneToMany(mappedBy = "chatroom")
+    private Set<Message> messages = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+            name = "chatroom_user", // Name of the join table
+            joinColumns = @JoinColumn(name = "chatroom_id"), // Column referencing this entity (ChatRoom)
+            inverseJoinColumns = @JoinColumn(name = "user_id") // Column referencing the associated entity (User)
+    )
+    private Set<User> users = new HashSet<>(); // Users in the chatroom
+
+    public ChatRoom() {
     }
 
-    public Collection<Message> getMessages() {
+    public ChatRoom(String name) {
+        this.name = name;
+    }
+
+    public Integer getChatRoomId() {
+        return chatRoomId;
+    }
+
+    public void setChatRoomId(Integer chatRoomId) {
+        this.chatRoomId = chatRoomId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Message> getMessages() {
         return messages;
     }
 
-    public void setMessages(Collection<Message> messages) {
+    public void setMessages(Set<Message> messages) {
         this.messages = messages;
     }
-
-    public Integer getSenderId() {
-        return senderId;
-    }
-
-    public void setSenderId(Integer senderId) {
-        this.senderId = senderId;
-    }
-
-    public Collection<User> getRecipientUsers() {
-        return recipientUsers;
-    }
-
-    public void setRecipientUsers(Collection<User> recipientUsers) {
-        this.recipientUsers = recipientUsers;
-    }
-
-    public String getChatName() {
-        return chatName;
-    }
-
-    public void setChatName(String chatName) {
-        this.chatName = chatName;
-    }
-    
-    public Integer getChatId() {
-        return chatId;
-    }
-
-    public void setChatId(Integer chatId) {
-        this.chatId = chatId;
-    }
-
 }

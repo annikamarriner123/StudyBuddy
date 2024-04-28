@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.*;
 /**
@@ -27,7 +28,9 @@ public class User {
     private String email;
     private Collection<String> papers;
     private String major;
-    private Collection<ChatRoom> joinedChatRooms;
+    
+    @ManyToMany(mappedBy = "users")
+    private Set<ChatRoom> joinedChatRooms;
     //private Collection<T> favourites;
     //TODO: private "something" profilePicture
     private Collection<String> interests;
@@ -35,7 +38,7 @@ public class User {
     //Default Consturctor
     public User(){}
 
-    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests, Collection<ChatRoom>joinedChatRooms) {
+    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests, Set<ChatRoom>joinedChatRooms) {
         this.userId = userId;
         this.firstName = firstName;
         this.joinedChatRooms = joinedChatRooms;

@@ -1,35 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package otago.StudyBuddy.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import java.sql.Timestamp;
 
-/**
- *
- * @author willi
- */
 @Entity
+@Table(name = "messages")
 public class Message {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer messageId;
-    private Integer senderId;
-    private Integer recipientId;
+
+    @ManyToOne
+    @JoinColumn(name = "chatroom_id")
+    private ChatRoom chatroom;
+
     private String content;
     private Timestamp timestamp;
 
-    
-    public Message (){}
-    
-    public Message(Integer messageId, Integer senderId, Integer recipientId, String content, Timestamp timestamp){
-        this.messageId = messageId;
-        this.senderId = senderId;
-        this.recipientId = recipientId;
+    public Message() {}
+
+    public Message(String content, Timestamp timestamp, ChatRoom chatroom) {
         this.content = content;
         this.timestamp = timestamp;
+        this.chatroom = chatroom;
     }
 
+    // Getters and Setters
     public Integer getMessageId() {
         return messageId;
     }
@@ -38,20 +41,12 @@ public class Message {
         this.messageId = messageId;
     }
 
-    public Integer getSenderId() {
-        return senderId;
+    public ChatRoom getChatroom() {
+        return chatroom;
     }
 
-    public void setSenderId(Integer senderId) {
-        this.senderId = senderId;
-    }
-
-    public Integer getRecipientId() {
-        return recipientId;
-    }
-
-    public void setRecipientId(Integer recipientId) {
-        this.recipientId = recipientId;
+    public void setChatroom(ChatRoom chatroom) {
+        this.chatroom = chatroom;
     }
 
     public String getContent() {
@@ -69,11 +64,4 @@ public class Message {
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
-
-    @Override
-    public String toString() {
-        return "Message{" + "messageId=" + messageId + ", senderId=" + senderId + ", recipientId=" + recipientId + ", content=" + content + ", timestamp=" + timestamp + '}';
-    }
-    
-    
 }
