@@ -4,11 +4,17 @@
  */
 package otago.StudyBuddy.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+import otago.StudyBuddy.domain.Message;
 /**
  *
  * @author willi
  */
-public class MessageRepository {
+@Repository
+@Component
+public interface MessageRepository extends JpaRepository<Message, Integer>{
     //needs to fetch past messages aswell as send more messages
     
     
