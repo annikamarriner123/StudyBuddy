@@ -1,37 +1,38 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package otago.StudyBuddy.domain;
 
-import jakarta.persistence.*;
 import java.util.Collection;
 
-@Entity
-@Table(name = "chat_rooms")
+/**
+ *
+ * @author willi
+ */
 public class ChatRoom {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer chatId;
-
-    @OneToMany(mappedBy = "chatRoom", fetch = FetchType.LAZY)
     private Collection<Message> messages;
-
-    private Integer senderId;  // This might need clarification or change
-
-    @ManyToMany(fetch = FetchType.LAZY)
+    private Integer senderId;
     private Collection<User> recipientUsers;
-
-    @Column(length = 100)
     private String chatName;
 
+    //default constructor
     public ChatRoom() {}
 
+    /**
+     * A chat room will store collections of messages even if there is only 2
+     * people (1 on 1) it will be considered a chatroom.
+     */
     public ChatRoom(Integer chatId, Collection<Message> messages, Integer senderId, Collection<User> recipientUsers, String chatName) {
+       
         this.chatId = chatId;
         this.messages = messages;
         this.senderId = senderId;
         this.recipientUsers = recipientUsers;
         this.chatName = chatName;
     }
-
 
     public Collection<Message> getMessages() {
         return messages;

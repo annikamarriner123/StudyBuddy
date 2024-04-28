@@ -4,32 +4,24 @@
  */
 package otago.StudyBuddy.domain;
 
-import jakarta.persistence.*;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 /**
  *
  * @author willi
  */
-@Entity
-@Table(name = "Message")
 public class Message {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer messageId;
     private Integer senderId;
     private Integer recipientId;
     private String content;
-    private LocalDateTime timestamp;
- 
+    private Timestamp timestamp;
 
     
     public Message (){}
     
-    public Message(Integer senderId, Integer recipientId, String content, LocalDateTime timestamp){
+    public Message(Integer messageId, Integer senderId, Integer recipientId, String content, Timestamp timestamp){
+        this.messageId = messageId;
         this.senderId = senderId;
         this.recipientId = recipientId;
         this.content = content;
@@ -68,11 +60,11 @@ public class Message {
         this.content = content;
     }
 
-    public LocalDateTime getTimestamp() {
+    public Timestamp getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
 
