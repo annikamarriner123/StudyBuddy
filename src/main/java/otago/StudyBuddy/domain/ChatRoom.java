@@ -14,7 +14,7 @@ public class ChatRoom {
 
     private String name;
 
-    @OneToMany(mappedBy = "chatroom")
+    @OneToMany(mappedBy = "chatroom", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Message> messages = new HashSet<>();
     @ManyToMany
     @JoinTable(
