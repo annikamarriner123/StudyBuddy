@@ -4,12 +4,14 @@
  */
 package otago.StudyBuddy.domain;
 
+import jakarta.persistence.Entity;
 import java.util.Collection;
 
 /**
  *
  * @author willi
  */
+@Entity
 public class ChatRoom {
 
     private Integer chatId;

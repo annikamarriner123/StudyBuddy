@@ -4,12 +4,14 @@
  */
 package otago.StudyBuddy.domain;
 
+import jakarta.persistence.Entity;
 import java.sql.Timestamp;
 
 /**
  *
  * @author willi
  */
+@Entity
 public class Message {
     private Integer messageId;
     private Integer senderId;
