@@ -1,41 +1,91 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Find Study Peers</title>
-<link rel="stylesheet" href="/css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Find Study Peers</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <style>
 
-</style>
-</head>
-<body>
-<div class="container">
-    <div class="filter">
+            .filter {
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                background-color: white; /* Adjust the background color and opacity as needed */
+                padding: 40px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
 
-            <div class="banner">
-                <h2>Study Buddy</h2>
-                <a href="#">Find Tutors</a>
-                <a href="team">Teams</a>
-                <a href="chat">Inbox</a>
-                <div class="dropdown">
-                  <button class="dropbtn">Menu</button>
-                  <div class="dropdown-content">
-                    <a href="Settings">Settings</a>
+
+
+
+            .filter h2 {
+                margin-bottom: 10px;
+                color: #2B008B;
+                font-size: 30px;
+            }
+
+            .filter label {
+                display: block;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            .filter input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .filter input[type="text"]:focus {
+                outline: none;
+                border-color: #2B008B;
+                box-shadow: 0 0 5px #2B008B;
+            }
+            .filter button[type="submit"] {
+                background-color: #2B008B;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .filter button[type="submit"]:hover {
+                background-color: #4B0082;
+            }
+
+        </style>
+
+    </head>
+    <body>
+    <body>
+        <div class="banner">
+            <h2><a href="/home">Study Buddy</a></h2>
+            <a href="#">Find Tutors</a>
+            <a href="/addPaper">Add Papers</a>
+            <a href="/team">Teams</a>
+            <a href="/chat">Inbox</a>
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="/settings">Settings</a>
                     <a href="#">Log Out</a>
-                    <a href="home">Home</a>
-                  </div>
                 </div>
-              </div>
+            </div>
+        </div>
+        <div class="photo-banner">
+            <img src="/images/international-banner.avif"  alt="International Banner" class="photo-banner">
+        </div>
 
-
-              <div class="container">
-                <div class="filter">
-                    <h2>Filter:</h2>
-                    <label for="major">Major:</label>
-                    <input type="text" id="major" name="major" placeholder="Enter major...">
-                    
-                    <label for="year">Year of Study:</label>
-                    <input type="text" id="year" name="year" placeholder="Enter year of study...">
-                </div>
-            
+        <div class="filter">
+            <h2>Search to find study peers</h2>
+            <input type="text" id="papers" name="papers" placeholder="Enter paper code... e.g. MART310">
+            <button type="submit">Search</button>
+        </div> 

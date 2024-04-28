@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Paper Selection</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
+              <!DOCTYPE html>
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <style>
+        /* CSS styles */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f4f4fd;
+            color: #2B008B;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 90px; /* Adjust as needed */
+        }
+
+        .form {
+            background-color: #F2F2F2;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 45%;
+            height: 80vh; /* Adjust as needed */
+        }
+
+        .papers-container {
+            width: 45%;
+            height: 80vh; /* Adjust as needed */
+            overflow-y: auto; /* Enable scrolling if papers overflow the container */
+        }
+
+        .input-group {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .form input, .form button {
+            width: calc(100% - 20px); /* Adjusting for padding */
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 2vh auto;
+            display: block;
+        }
+
+        .form input {
+            border: 1px solid #ccc;
+            font-size: 2vh;
+        }
+
+        .form button {
+            background-color: #03DAC5;
+            color: #F2F2F2;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .form button:hover {
+            background-color: #2B008B;
+        }
+
+        .papers-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .papers-list li {
+            background-color: #f4f4fd;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <h2><a href="/home">Study Buddy</a></h2>
+            <a href="#">Find Tutors</a>
+            <a href="/findStudyPeers">Find Study Peers</a>
+            <a href="/team">Teams</a>
+                        <a href="/chat">Inbox</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="/settings">Settings</a>
+                    <a href="#">Log Out</a>
+                    <a href="home">Home</a>
+                </div>
+            </div>
+
+        </div>    </header>
+    <div class="form-container">
+        <form action="/add-paper" method="post" class="form">
+            <div class="input-group">
+                <input type="text" id="paperCode" name="paperCode" placeholder="Enter Paper Code (e.g., MART210)" required>
+                <button type="submit">Add Paper</button>
+            </div>
+        </form>
+        <div class="papers-container">
+            <h3>Your Papers</h3>
+            <ul class="papers-list">
+                <!-- List of papers to be populated here -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+

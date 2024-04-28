@@ -156,7 +156,7 @@ body, h1, h2, ul {
   
   .form {
     background-color: #F2F2F2;
-    background-image: url('/src/main/resources/static/images/premium_photo-1677171749355-4ad563d86165.avif');
+    background-image: url('/images/premium_photo-1677171749355-4ad563d86165.avif');
     background-size: cover;
     background-position: center;
     padding: 2rem;
@@ -613,4 +613,45 @@ body, h1, h2, ul {
 
 .dropbtn:hover {
     background-color: #eaeaff; 
+}
+
+
+
+
+/* style for settings page*/
+
+/* style the li to not be underlines and be in a box */
+/* center the li in the page */
+
+/* style the nav to have a margin top of 5vh */
+#nav {
+  list-style-type: none;
+  padding: 0;
+  background-color: #f4f4fd;
+  width: 20%;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+#nav li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+  font-size:2.5vh;
+}
+#nav li a.active, #nav li a:hover {
+  background-color: #ddd;
+}
+.content {
+  margin-left: 22%; /* To ensure the content is not hidden by the fixed nav */
+  padding: 20px;
+  display: none;
+}
+.active {
+  display: block;
+}
+
+ul{
+  margin:1vw;
 }
