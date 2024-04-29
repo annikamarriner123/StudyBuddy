@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 @Entity
 @Table(name = "messages")
 public class Message {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer messageId;
@@ -24,7 +24,14 @@ public class Message {
     private String content;
     private Timestamp timestamp;
 
-    public Message() {}
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User sender;
+
+    private MessageType type;
+
+    public Message() {
+    }
 
     public Message(String content, Timestamp timestamp, ChatRoom chatroom) {
         this.content = content;
@@ -63,5 +70,35 @@ public class Message {
 
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public User getSender() {
+        return sender;
+    }
+
+    public void setSender(User sender) {
+        this.sender = sender;
+    }
+
+    public MessageType getType() {
+        return type;
+    }
+
+    public void setType(MessageType type) {
+        this.type = type;
+    }
+    
+        public Integer getSenderId() {
+        if (sender != null) {
+            return sender.getUserId();
+        }
+        return null; 
+    }
+
+    // Enum for Message Type
+    public enum MessageType {
+        CHAT,
+        LEAVE,
+        JOIN
     }
 }
