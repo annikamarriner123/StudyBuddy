@@ -77,7 +77,7 @@ public class UserController {
         return "redirect:/home";
     }
 
-    @PostMapping("/addPaper")
+    @PostMapping("/updatePapers")
     public String addPaper(@RequestParam Integer userId, @RequestParam Collection<String> paperCodes) {
         
         // Check if user ID and paper codes are not null and if there are papers to add
@@ -100,7 +100,7 @@ public class UserController {
             return "redirect:/error?message=No papers provided";
         }
         // Redirect to the user's profile page or any other page as needed
-        return "redirect:/addPaper"; // Assuming there's a profile page to redirect to
+        return "redirect:/updatePapers"; // Assuming there's a profile page to redirect to
     }
 }
 

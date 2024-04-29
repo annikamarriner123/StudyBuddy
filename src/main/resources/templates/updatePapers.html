@@ -60,11 +60,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <h2>Add your paper</h2>
             <p>Add your paper to our database for faster matching between study buddies!</p>
         </div>
-        <form>
+      <form action="/updatePapers" method="post" th:object="${updatePapersRequest}">
             <div id="classesContainer">
                 <div class="form-group">
                     <label for="class1">Class:</label>
-                    <input type="text" id="class1" name="class1" placeholder="e.g., MART112, ECON201" 
+                    <input type="hidden" id="userId" name="userId" value="1">
+                    <input type="text" id="paperCode" name="paperCode" placeholder="e.g., MART112" 
                            pattern="[A-Za-z]{4}[0-9]{3}" oninput="checkInput(this)">
                 </div>
                 <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
