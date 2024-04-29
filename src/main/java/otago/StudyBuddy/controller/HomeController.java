@@ -50,6 +50,11 @@ public class HomeController {
     public String getPreferences() {
         return "preferences";
     }
+    
+      @GetMapping("/updatePapers")
+    public String getUpdatedPaper() {
+        return "updatePapers";
+    }
 
 
 

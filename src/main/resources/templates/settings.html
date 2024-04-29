@@ -1,71 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Settings Page</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<header>
-  <div class="banner">
-    <h2><a href="/home">Study Buddy</a></h2>
-    <a href="#">Find Tutors</a>
-    <a href="/addPaper">Add Papers</a>
-    <a href="/team">Teams</a>
-    <a href="/chat">Inbox</a>
-    <div class="dropdown">
-        <button class="dropbtn">Menu</button>
-        <div class="dropdown-content">
-            <a href="/settings">Settings</a>
-            <a href="#">Log Out</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Settings Page</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <header>
+        <div class="banner">
+            <h2><a href="/home">Study Buddy</a></h2>
+            <a href="/findStudyPeers">Find Study Peers</a>
+            <a href="#">Find Tutors</a>
+            <a href="/addPaper">Add Papers</a>
+            <a href="/team">Teams</a>
+            <a href="/chat">Inbox</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="/settings">Account Info</a>
+                    <a href="#">Log Out</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</header>
-<body>
-    <ul id="nav">
-        <li><a href="/aboutStudent" onclick="showSection('aboutYou')">About You</a></li>
-        <li><a href="/preferences" onclick="showSection('preferences')">Preferences</a></li>
-        <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>
-        <li><a href="blacklist" onclick="showSection('blacklistedUsers')">Blacklisted Users</a></li>
-        <li><a href="/addPaper" onclick="showSection('addPaper')">Add your paper</a></li>
-    </ul>
+    </header>
+    <body>
+        <ul id="nav">
+            <li><a href="/aboutStudent" onclick="showSection('aboutYou')">About You</a></li>
+            <li><a href="/preferences" onclick="showSection('preferences')">Preferences</a></li>
+            <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>
+            <li><a href="blacklist" onclick="showSection('blacklistedUsers')">Blacklisted Users</a></li>
+            <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
+        </ul>
 
-    <div id="aboutYou" class="content">
-        <h2>About You</h2>
-        <p>Manage your personal information and how others see your profile.</p>
-    </div>
+        <div id="aboutYou" class="content">
+            <h2>About You</h2>
+            <p>Manage your personal information and how others see your profile.</p>
+        </div>
 
-    <div id="preferences" class="content">
-        <h2>Preferences</h2>
-        <p>Customize your preferences for your potential study buddies.</p>
-    </div>
+        <div id="preferences" class="content">
+            <h2>Preferences</h2>
+            <p>Customize your preferences for your potential study buddies.</p>
+        </div>
 
-    <div id="blockedUsers" class="content">
-        <h2>Blocked Users</h2>
-        <p>View and manage users you have blocked from contacting you.</p>
-    </div>
+        <div id="blockedUsers" class="content">
+            <h2>Blocked Users</h2>
+            <p>View and manage users you have blocked from contacting you.</p>
+        </div>
 
-    <div id="blacklistedUsers" class="content">
-        <h2>Blacklisted Users</h2>
-        <p>View and manage users you have blacklisted from seeing your content.</p>
-    </div>
-    
-    <div id="addPaper" class="content">
-      <h2>Add your paper</h2>
-      <p>Add your paper to our database for faster matching between study buddies!</p>
-  </div>
-    <script>
-        function showSection(section) {
-            var sections = document.getElementsByClassName('content');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].style.display = 'none';
+        <div id="blacklistedUsers" class="content">
+            <h2>Blacklisted Users</h2>
+            <p>View and manage users you have blacklisted from seeing your content.</p>
+        </div>
+
+        <div id="updatePapers" class="content">
+            <h2>Add your paper</h2>
+            <p>Add your paper to our database for faster matching between study buddies!</p>
+        </div>
+        <script>
+            function showSection(section) {
+                var sections = document.getElementsByClassName('content');
+                for (var i = 0; i < sections.length; i++) {
+                    sections[i].style.display = 'none';
+                }
+                document.getElementById(section).style.display = 'block';
             }
-            document.getElementById(section).style.display = 'block';
-        }
 
-        // Automatically display the first section
-        showSection('aboutYou');
-    </script>
-</body>
+            // Automatically display the first section
+            showSection('aboutYou');
+        </script>
+    </body>
 </html>
