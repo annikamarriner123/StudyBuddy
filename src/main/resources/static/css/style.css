@@ -655,3 +655,86 @@ body, h1, h2, ul {
 ul{
   margin:1vw;
 }
+
+
+/* styling for preferences.html */
+
+.dropbtn {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #0057b7;
+}
+
+/* Form styling */
+form {
+  background-color: #ffffff;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+label {
+  margin-bottom: 10px;
+  color: #333333;
+  display: block;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #2B008B;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #03DAC5;
+}

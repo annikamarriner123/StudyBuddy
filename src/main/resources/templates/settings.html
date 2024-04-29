@@ -24,10 +24,11 @@
 </header>
 <body>
     <ul id="nav">
-        <li><a href="aboutStudent" onclick="showSection('aboutYou')">About You</a></li>
-        <li><a href="preferences" onclick="showSection('preferences')">Preferences</a></li>
+        <li><a href="/aboutStudent" onclick="showSection('aboutYou')">About You</a></li>
+        <li><a href="/preferences" onclick="showSection('preferences')">Preferences</a></li>
         <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>
         <li><a href="blacklist" onclick="showSection('blacklistedUsers')">Blacklisted Users</a></li>
+        <li><a href="/addPaper" onclick="showSection('addPaper')">Add your paper</a></li>
     </ul>
 
     <div id="aboutYou" class="content">
@@ -49,7 +50,11 @@
         <h2>Blacklisted Users</h2>
         <p>View and manage users you have blacklisted from seeing your content.</p>
     </div>
-
+    
+    <div id="addPaper" class="content">
+      <h2>Add your paper</h2>
+      <p>Add your paper to our database for faster matching between study buddies!</p>
+  </div>
     <script>
         function showSection(section) {
             var sections = document.getElementsByClassName('content');

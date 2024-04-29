@@ -46,4 +46,11 @@ public class HomeController {
         return "aboutStudent";
     }
 
+    @GetMapping("/preferences")
+    public String getPreferences() {
+        return "preferences";
+    }
+
+
+
 }

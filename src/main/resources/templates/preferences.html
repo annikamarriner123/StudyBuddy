@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<header>
+  <div class="banner">
+    <h2><a href="/home">Study Buddy</a></h2>
+    <a href="#">Find Tutors</a>
+    <a href="/addPaper">Add Papers</a>
+    <a href="/team">Teams</a>
+    <a href="/chat">Inbox</a>
+    <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="/settings">Settings</a>
+            <a href="#">Log Out</a>
+        </div>
+    </div>
+</div>
+</header>
+<body>
+
+<form>
+    <label for="age">Age:</label>
+    <select id="age" name="age" required>
+        <option value="">Select</option>
+        <option value="18-25">18-25</option>
+        <option value="26-35">26-35</option>
+        <option value="36-45">36-45</option>
+        <option value="46-55">46-55</option>
+    </select><br><br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+
+    </select><br><br>
+
+    <label for="major">Major:</label>
+    <input type="text" id="major" name="major" required><br><br>
+
+    <label for="minor">Minor:</label>
+    <input type="text" id="minor" name="minor" required><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+
+</html>
