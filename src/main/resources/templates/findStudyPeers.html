@@ -8,6 +8,59 @@
         <link rel="stylesheet" href="/css/style.css">
         <style>
 
+            .filter {
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                background-color: white; /* Adjust the background color and opacity as needed */
+                padding: 40px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+
+
+
+            .filter h2 {
+                margin-bottom: 10px;
+                color: #2B008B;
+                font-size: 30px;
+            }
+
+            .filter label {
+                display: block;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            .filter input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .filter input[type="text"]:focus {
+                outline: none;
+                border-color: #2B008B;
+                box-shadow: 0 0 5px #2B008B;
+            }
+            .filter button[type="submit"] {
+                background-color: #2B008B;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .filter button[type="submit"]:hover {
+                background-color: #4B0082;
+            }
+
         </style>
 
     </head>
@@ -32,7 +85,7 @@
             <img src="/images/international-banner.avif"  alt="International Banner" class="photo-banner">
         </div>
 
-        <div class="filterPapers">
+        <div class="filter">
             <h2>Search to find study peers</h2>
             <input type="text" id="papers" name="papers" placeholder="Enter paper code... e.g. MART310">
             <button type="submit">Search</button>

@@ -34,13 +34,39 @@
             <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
         </ul>
 
+        <div id="aboutYou" class="content">
+            <h2>About You</h2>
+            <p>Manage your personal information and how others see your profile.</p>
+        </div>
+
+        <div id="preferences" class="content">
+            <h2>Preferences</h2>
+            <p>Customize your preferences for your potential study buddies.</p>
+        </div>
+
+        <div id="blockedUsers" class="content">
+            <h2>Blocked Users</h2>
+            <p>View and manage users you have blocked from contacting you.</p>
+        </div>
+
+        <div id="blacklistedUsers" class="content">
+            <h2>Blacklisted Users</h2>
+            <p>View and manage users you have blacklisted from seeing your content.</p>
+        </div>
+
+        <div id="updatePapers" class="content">
+            <h2>Add your paper</h2>
+            <p>Add your paper to our database for faster matching between study buddies!</p>
+        </div>
+
+
         <form id="studentForm">
-            <div class="">
+            <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="e.g., John Smith" required>
             </div>
 
-            <div class="">
+            <div class="form-group">
                 <label for="gender">Gender:</label>
                 <select id="gender" name="gender">
                     <option value="notSelected">Not Selected</option>
