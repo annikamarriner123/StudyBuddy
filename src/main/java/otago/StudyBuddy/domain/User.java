@@ -3,13 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package otago.StudyBuddy.domain;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.*;
+
 /**
  *
  * @author willi
@@ -26,19 +30,33 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Collection<String> papers;
     private String major;
-    
+
+
     @ManyToMany(mappedBy = "users")
     private Set<ChatRoom> joinedChatRooms;
     //private Collection<T> favourites;
     //TODO: private "something" profilePicture
+
+    // A user can have many papers
+ //   @ManyToMany
     private Collection<String> interests;
     
-    //Default Consturctor
-    public User(){}
+    
+    
+    @ManyToMany
+    @JoinTable(
+        name = "user_paper",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "paper_id")
+    )
+    private Set<Paper> papers;
 
-    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests, Set<ChatRoom>joinedChatRooms) {
+    //Default Consturctor
+    public User() {
+    }
+
+    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests, Set<ChatRoom> joinedChatRooms) {
         this.userId = userId;
         this.firstName = firstName;
         this.joinedChatRooms = joinedChatRooms;
@@ -46,8 +64,8 @@ public class User {
         this.username = username;
         this.password = password;
         this.email = email;
-        
-        this.papers = papers;
+
+     
         this.major = major;
 //        this.favourites = favourites;
         this.interests = interests;
@@ -72,8 +90,6 @@ public class User {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    
-    
 
     public void setUserId(int userId) {
         this.userId = userId;
@@ -103,13 +119,6 @@ public class User {
         this.email = email;
     }
 
-    public Collection<String> getPapers() {
-        return papers;
-    }
-
-    public void setPapers(Collection<String> papers) {
-        this.papers = papers;
-    }
 
     public String getMajor() {
         return major;
@@ -126,7 +135,6 @@ public class User {
 //    public void setFavourites(Collection<T> favourites) {
 //        this.favourites = favourites;
 //    }
-
     public Collection<String> getInterests() {
         return interests;
     }
@@ -134,13 +142,21 @@ public class User {
     public void setInterests(Collection<String> interests) {
         this.interests = interests;
     }
+    
+    public Set<Paper> getPapers() {
+        return papers;
+    }
 
+    public void setPapers(Set<Paper> papers) {
+        this.papers = papers;
+    }
+
+    
+    
     @Override
     public String toString() {
-        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", surname=" + surname + ", username=" + username + ", password=" + password + ", email=" + email + ", papers=" + papers + ", major=" + major + ", interests=" + interests + '}';
+        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", surname=" + surname + ", username=" + username + ", password=" + password + ", email=" + email + ", major=" + major + ", joinedChatRooms=" + joinedChatRooms + ", interests=" + interests + ", papers=" + papers + '}';
     }
-    
-    
-    
-    
+  
+
 }
