@@ -4,6 +4,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html lang="en">
+<<<<<<< Updated upstream
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,4 +43,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         });
     </script>
 </body>
+=======
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat Room - Study Buddy</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script src="/js/main.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div class="banner">
+                    <h2><a href="home">Study Buddy</a></h2>
+                    <a href="/findStudyPeers">Find Study Peers</a>
+                    <a href="#">Find Tutors</a>
+                    <a href="/addPaper">Add Papers</a>
+                    <a href="/team">Teams</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Menu</button>
+                        <div class="dropdown-content">
+                            <a href="/settings">Settings</a>
+                            <a href="#">Log Out</a>
+                            <a href="home">Home</a>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <main class="chat-app">
+            <div class="chat-sidebar">
+                <!-- List of chats -->
+                <ul class="chat-list">
+                    <li><button onclick="joinRoom(1)">yeet</button></li>
+<!--                    <li><button onclick="joinRoom(2)">Join Chat Room 2</button></li>
+                    <li><button onclick="joinRoom(3)">Join Chat Room 3</button></li>-->
+                </ul>
+            </div>
+            <div class="chat-main">
+                <div id="chat-container">
+                    <div id="messages"></div>
+                    <form id="message-input" onsubmit="event.preventDefault(); sendMessage();">
+                        <input type="text" id="messageBox" placeholder="Type your message here...">
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+>>>>>>> Stashed changes
 </html>

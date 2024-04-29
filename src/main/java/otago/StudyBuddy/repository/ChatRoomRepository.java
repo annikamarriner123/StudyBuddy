@@ -8,20 +8,18 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import otago.StudyBuddy.domain.ChatRoom;
 import otago.StudyBuddy.domain.User;
 
 /**
  *
- * @author glenm
+ * @author willi
  */
 @Repository
 @Component
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer>{
     
-    //Querying user using username and password
-    Optional<User> findByUsernameAndPassword(String username, String password);
+    Optional<ChatRoom> findByUsersContains(User user);//find a chatroom by a specfici user
     
-    Optional<User> findUserByUserId(Integer userId);    //get a user by there userid
-    
-
 }
+    
