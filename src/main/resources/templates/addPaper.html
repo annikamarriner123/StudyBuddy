@@ -125,21 +125,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
 
         </div>    </header>
-    <div class="form-container">
-        <form action="/add-paper" method="post" class="form">
-            <div class="input-group">
-                <input type="text" id="paperCode" name="paperCode" placeholder="Enter Paper Code (e.g., MART210)" required>
-                <button type="submit">Add Paper</button>
-            </div>
-        </form>
-        <div class="papers-container">
-            <h3>Your Papers</h3>
-            <ul class="papers-list">
-                <!-- List of papers to be populated here -->
-            </ul>
+<div class="form-container">
+    <form action="/addPaper" method="post" class="form" th:object="${addPaperRequest}">
+        <!-- Hidden input field for username -->
+        <input type="hidden" id="userId" name="userId" value="1">
+        <!-- Input field to add paper code -->
+        <div class="input-group">
+            <input type="text" id="papers" name="papers" placeholder="Enter Paper Code (e.g., MART210)" required>
+            <button type="submit">Add Paper</button>
         </div>
+    </form>
+    <!-- Div to display user's papers -->
+    <div class="papers-container">
+        <h3>Your Papers</h3>
+        <ul id="papersList" class="papers-list">
+            <!-- List of papers to be populated here -->
+        </ul>
     </div>
-</body>
-</html>
+</div>
+
+
 
 

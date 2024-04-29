@@ -4,13 +4,16 @@
  */
 package otago.StudyBuddy.controller;
 
+import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import otago.StudyBuddy.domain.User;
+import otago.StudyBuddy.service.PaperService;
 import otago.StudyBuddy.service.UserService;
 
 /**
@@ -22,10 +25,19 @@ public class UserController {
     
     @Autowired
     UserService userService;
+     
+    @Autowired
+    PaperService paperService; 
+    
 
-    public UserController(UserService userService) {
+      @Autowired
+    public UserController(UserService userService, PaperService paperService) {
         this.userService = userService;
+        this.paperService = paperService;
     }
+
+   
+    
     
     @GetMapping("/sign-up")
     public String getSignUpPage(Model model) {
@@ -40,6 +52,7 @@ public class UserController {
         model.addAttribute("logInRequest", new User());
         return "log-in";
     }
+    
     
     @PostMapping("/sign-up")
     public String register(@ModelAttribute User user) {
@@ -65,5 +78,24 @@ public class UserController {
         //located in HomeController
         return "redirect:/home";
     }
+    
+    @PostMapping("/addPaper")
+    public String addPaper(@RequestParam Integer userId,  @RequestParam Collection<String> papers) {
+
+// Check if user ID and paper code are not null
+                if (userId != null && papers != null) {
+            // Call the PaperService to add paper for the user
+        User updatedUser = paperService.addUserPapers(userId, papers);
+            if (updatedUser == null) {
+                // If the operation fails, redirect to an error page or handle accordingly
+                return "redirect:/error";
+            }
+        }
+        // Redirect to the user's profile page or any other page as needed
+        return "redirect:/addPaper";
+    }
+    
+    
+    
 
 }

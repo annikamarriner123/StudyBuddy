@@ -19,12 +19,8 @@ import otago.StudyBuddy.domain.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
     
     //Querying user using username and password
-    Optional<User> findByUsernameAndPassword(String username, String password);
-}
-
-
-// UserRepository.java
-// @Repository
-// public interface UserRepository extends JpaRepository<User, Integer> {
-//    List<User> findByMajor(String major);
-// }
+    Optional<User> findByUsernameAndPassword(String username, String password);   
+    
+    Optional<User> findById(Integer userId);
+  
+    }
