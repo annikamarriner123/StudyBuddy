@@ -4,7 +4,6 @@
  */
 package otago.StudyBuddy.controller;
 
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,16 +53,15 @@ public class UserController {
     }
     
     @PostMapping("/log-in")
-    public String logIn(@ModelAttribute User user,  HttpSession session) {
+    public String logIn(@ModelAttribute User user) {
         System.out.println(user);
         
-        User loggedInUser = userService.logInUser(user.getUsername(), user.getPassword(), session);
+        User loggedInUser = userService.logInUser(user.getUsername(), user.getPassword());
         if(loggedInUser == null) {
             //if null, this means unsuccessful, display error message from html
             return "redirect:/log-in";
         }
         //located in HomeController
-        session.setAttribute("userId", loggedInUser.getUserId()); // Storing user ID in session
         return "redirect:/home";
     }
 }

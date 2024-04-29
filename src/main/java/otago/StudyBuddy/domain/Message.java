@@ -4,17 +4,6 @@
  */
 package otago.StudyBuddy.domain;
 
-<<<<<<< Updated upstream
-=======
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
->>>>>>> Stashed changes
 import java.sql.Timestamp;
 import jakarta.persistence.*;
 
@@ -31,31 +20,15 @@ public class Message {
     @Column(name = "message_id")
     private Integer messageId;
 
-<<<<<<< Updated upstream
     @Column(name = "content")
-=======
-    @ManyToOne
-    @JoinColumn(name = "chatroom_id")
-    private ChatRoom chatroom;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User sender;
-
->>>>>>> Stashed changes
     private String content;
 
     @Column(name = "timestamp")
     private Timestamp timestamp;
 
-<<<<<<< Updated upstream
     @ManyToOne
     @JoinColumn(name = "chat_id", referencedColumnName = "chat_id")
     private ChatRoom chatRoom;
-=======
-    public Message() {
-    }
->>>>>>> Stashed changes
 
     @ManyToOne
     @JoinColumn(name = "sender_id", referencedColumnName = "user_id")
@@ -96,17 +69,12 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-<<<<<<< Updated upstream
     public ChatRoom getChatRoom() {
         return chatRoom;
     }
 
     public void setChatRoom(ChatRoom chatRoom) {
         this.chatRoom = chatRoom;
-=======
-    public String getSenderName() {
-        return sender != null ? sender.getUsername() : "Unknown";
->>>>>>> Stashed changes
     }
 
     public User getSender() {
@@ -118,16 +86,7 @@ public class Message {
     }
     
     
-<<<<<<< Updated upstream
     
     
 
-=======
-
-    public enum MessageType {
-        CHAT,
-        JOIN,
-        LEAVE
-    }
->>>>>>> Stashed changes
 }
