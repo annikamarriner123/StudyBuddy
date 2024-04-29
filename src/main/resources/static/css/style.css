@@ -5,22 +5,22 @@
 body, h1, h2, ul {
     margin: 0;
     padding: 0;
-  }
+}
 
-  
-  /* Apply a basic box-sizing rule */
-  *, *:before, *:after {
+
+/* Apply a basic box-sizing rule */
+*, *:before, *:after {
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  .filter{
-    padding:8vh;
-  }
+}
 
-  header {
+body {
+    font-family: Arial, sans-serif;
+}
+.filter{
+    padding:8vh;
+}
+
+header {
     background-color:#F2F2F2 ;
     color: white;
     padding: 30px;
@@ -31,18 +31,18 @@ body, h1, h2, ul {
 }
 
 
-  h2{
+h2{
     color: #2B008B;
     font-size:4vh;
-  }
-  
-  .header-content {
+}
+
+.header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     list-style: none;
     display: flex;
     padding: 0; /* Remove padding */
@@ -50,27 +50,27 @@ body, h1, h2, ul {
     position: absolute; /* Position the navigation absolutely */
     left: 10rem; /* Adjust this value to move the nav to the right */
     top: 2rem; /* Align with the padding of the header */
-  }
+}
 
-  nav ul :hover{
+nav ul :hover{
     color: #03DAC5;
-  }
-  
-  nav ul li {
+}
+
+nav ul li {
     margin-right: 5vw;
-  }
-  
-  nav ul li:last-child {
+}
+
+nav ul li:last-child {
     margin-right: 0;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     color: #2B008B;
     text-decoration: none;
     font-size: 1.1rem; /* Slightly larger font size */
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 2.5rem; /* Increased font size */
     margin-bottom: 0.5rem;
     position: absolute; /* Position the title absolutely */
@@ -80,9 +80,9 @@ body, h1, h2, ul {
     top: 50%;
     transform: translate(-50%, -50%); /* Center the title vertically */
     color:#2B008B;
-  }
-  
-  .hero {
+}
+
+.hero {
     position: relative; /* Needed for absolute positioning inside */
     height: 95vh; /* Adjust based on your preference */
     flex-direction: column;
@@ -90,9 +90,9 @@ body, h1, h2, ul {
     align-items: center;
     text-align: center;
     color: white;
-  }
-  
-  .hero::before {
+}
+
+.hero::before {
     content: ""; /* Required for pseudo-elements */
     position: absolute;
     top: 0;
@@ -101,9 +101,9 @@ body, h1, h2, ul {
     height: 100%;
     background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
     z-index: 0; /* Layered behind the content but above the image */
-  }
-  
-  .hero-background-image {
+}
+
+.hero-background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -111,24 +111,24 @@ body, h1, h2, ul {
     height: 100%;
     object-fit: cover; /* Ensures the image covers the area without distorting */
     z-index: -1; /* Ensures the image stays in the background */
-  }
-  
-  .hero-content {
+}
+
+.hero-content {
     position: relative; /* Ensures content is above the background image and overlay */
     z-index: 1;
-  }
-  
-  .hero-text{
+}
+
+.hero-text{
     font-size:5vh;
     color: white;
     margin-bottom:6vh;
     border-radius: 20px;
     padding-top:10vh;
 
-  }
+}
 
 
-  .btn-get-started {
+.btn-get-started {
     background-color: #03DAC5;
     color: white;
     padding: 10px 20px; /* Adjust padding as needed */
@@ -136,25 +136,22 @@ body, h1, h2, ul {
     border-radius: 20px; /* Adjust border radius as needed */
     transition: background-color 0.3s;
     font-size:3vh;
-  }
-  
-  .btn-get-started:hover {
+}
+
+.btn-get-started:hover {
     background-color: #2B008B;
-  }
-  
+}
 
 
-  /* Login Page */
 
-  .login-container {
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+}
 
-  
-  .form {
+.logInandSignUpForm {
     background-color: #F2F2F2;
     background-image: url('/images/premium_photo-1677171749355-4ad563d86165.avif');
     background-size: cover;
@@ -166,409 +163,97 @@ body, h1, h2, ul {
     flex-direction: column;
     align-items: center; /* Aligns all children (inputs and button) centrally */
     width: 100%;
-    height:90vh;
-  }
-  
-  .input-group {
-    width: 100%; /* Full width for better control */
-    margin-bottom: 1rem; /* Space out the inputs */
-    margin:2vh;
-    margin-top:10vh;
-  }
-  
-  .form input, .form button {
-    width: 50vw; /* Set the width to 50% of the viewport width */
+    height: 90vh;
+}
+
+.logInandSignUpForm input,
+.form button {
+    width: 70%; /* Set a fixed width percentage that suits your design */
     padding: 1rem; /* Padding for better touch and aesthetics */
     border-radius: 5px; /* Rounded corners */
-    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
+    margin-bottom: 1rem; /* Space out the inputs */
     display: block; /* Ensure elements are treated as block for better control */
-  }
-  
-  .form input {
+    box-sizing: border-box; /* Ensure the padding and border are included in the width */
+}
+
+.logInandSignUpForm input {
     border: 1px solid #ccc;
-    font-size:2vh;
-  }
-  
-  .form button {
+    font-size: 2vh;
+}
+
+.logInandSignUpForm button {
     background-color: #03DAC5;
     color: #F2F2F2;
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
-  }
-  
-  .form button:hover {
+}
+
+.logInandSignUpForm button:hover {
     background-color: #2B008B;
-  }
-  
+}
 
-
-  .form p {
+.logInandSignUpForm p {
     margin-top: 1rem;
-  }
-  
-  .form p a {
+}
+
+.logInandSignUpForm p a {
     color: #2B008B;
-  }
-  
-  .form p a:hover {
+}
+
+.logInandSignUpForm p a:hover {
     text-decoration: underline;
-  }
- 
-  .banner {
-    background-color: #f4f4fd; 
-    color: #2B008B;
-    width: 100%; 
-    height: 70px; 
-    position: fixed;
-    top: 0; 
-    left: 0;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 0 20px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
-    margin-bottom:2vh;
-  }
+}
 
-  .banner h2 {
-    margin: 0; 
-    font-size: 24px; 
-  }
 
-  .banner a {
-    color: #2B008B; 
-    text-decoration: none;
-    margin-right: 20px; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
-    transition: background-color 0.3s;
-  }
 
-  .banner a:hover {
-    background-color: #eaeaff; 
-  }
+.input-group {
+    width: 50%; /* Full width for better control */
+    margin-bottom: 1rem; /* Space out the inputs */
+    margin:2vh;
+    margin-top:10vh;
+}
 
-  /* Dropdown Button */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 0;
-  }
 
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
 
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
 
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
 
-  .dropbtn {
+
+
+.banner {
     background-color: #f4f4fd;
     color: #2B008B;
-    padding: 10px 20px;
-    border-radius: 20px; 
-    border: none;
-    cursor: pointer;
-  }
-
-  .dropbtn:hover {
-    background-color: #eaeaff; 
-  }
-
-  /* Photo Banner Styles */
-  .photo-banner {
-    margin-top: 0px;
-    height: auto;
-    width: 100%; 
-  }
-  .text-box {
-  position: absolute;
-  top: 73%; /* Position it vertically in the middle */
-  right: 20%; /* Align it to the right side */
-  transform: translateY(-50%); /* Center it vertically */
-  width: 40%; /* Adjust width as needed */
-  background-color: #ffffff; /* Light purple background */
-  color: #2B008B; /* Dark purple text */
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  line-height: 2; 
-}
-
-.text-box p:first-child {
-  font-size: 28px; /* Adjust font size for the first paragraph */
-  font-weight: bold;
-}
-.text-box2 {
-  position: absolute;
-  top: 71.5%; /* Position it vertically in the middle */
-  left: 5%; /* Align it to the right side */
-  transform: translateY(-50%); /* Center it vertically */
-  width: 30%; /* Adjust width as needed */
-  background-color: #ded1d13c; /* Light purple background */
-  color: #2B008B; /* Dark purple text */
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  line-height: 2; 
-}
-.text-box2 p:first-child {
-  font-size: 18px; /* Adjust font size for the first paragraph */
-  font-weight: bold;
-}
-
-
-
-
-
-
-
-/* chat.html page */
-
-.chat-app {
-  display: flex;
-  height: calc(98vh - 45px); /* Adjust height based on header */
-}
-
-.chat-sidebar {
-  width: 30%;
-  background-color: #f4f4fd;
-  overflow-y: auto;
-  padding-top:1vh;
-}
-
-.chat-list li {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  padding: 3vh;
-}
-
-.chat-list li:hover {
-  background-color: #03DAC5;
-}
-
-.chat-main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-#chat-container {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid #ddd;
-}
-
-#messages {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 10px;
-}
-
-.message {
-  background-color: #03DAC5;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 20px;
-  margin-bottom: 2px;
-  max-width: 80%;
-  word-wrap: break-word;
-}
-
-.my-message {
-  align-self: flex-end;
-}
-
-.their-message {
-  align-self: flex-start;
-  background-color: #efefef;
-  color: black;
-}
-
-#message-input {
-  display: flex;
-  padding: 10px;
-  background: white;
-  border-top: 1px solid #ccc;
-}
-
-#message-input input[type="text"] {
-  flex-grow: 1;
-  padding: 10px;
-  border: none;
-}
-
-#message-input button {
-  background-color: #2B008B;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-#message-input button:hover {
-  background-color: #03DAC5;
-}
-
-@media (max-width: 600px) {
-  .chat-app {
-      flex-direction: column;
-  }
-
-  .chat-sidebar {
-      width: 100%;
-      height: 150px; /* Fixed height when stacked */
-  }
-
-  .chat-main {
-      height: calc(100vh - 200px); /* Adjust based on total available height */
-  }
-}
-
-
-/* #F2F2F2 background colour*/
-/* #2B008B text colours */
-/* teams page */
-
-.team-header {
-  background-color: white;
-  color: #2B008B;
-  padding: 30px;
-  text-align: center;
-
-}
-.team-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px; /* Creates space between cards */
-}
-
-.team-card {
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  margin:2vw;
-}
-
-.team-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover; /* Ensures images cover the card area without distorting */
-}
-
-.team-info {
-  padding: 10px;
-}
-
-.team-actions {
-  margin-top: auto; /* Pushes actions to the bottom of the card */
-  background: #f4f4f4;
-  padding: 10px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.btn-join, .btn-remove {
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-join {
-  background-color: #2B008B;
-  color: white;
-}
-
-.btn-join:hover {
-  background-color: #03DAC5;
-}
-
-.btn-remove {
-  background-color: #03DAC5;
-  color: white;
-}
-
-.btn-remove:hover {
-  background-color: #2B008B;
-}
-
-@media (max-width: 600px) {
-  .team-gallery {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .team-card {
-      width: 90%; /* Makes cards responsive to smaller screens */
-  }
-}
-
-
-
-
-/* find stufy peers page  */
-
-
-    /* Your other styles */
-.banner {
-    background-color: #f4f4fd; 
-    color: #2B008B;
-    width: 100%; 
-    height: 70px; 
+    width: 100%;
+    height: 70px;
     position: fixed;
-    top: 0; 
+    top: 0;
     left: 0;
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 0 20px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    z-index: 1000; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-bottom:2vh;
 }
 
 .banner h2 {
-    margin: 0; 
-    font-size: 24px; 
+    margin: 0;
+    font-size: 24px;
 }
 
 .banner a {
-    color: #2B008B; 
+    color: #2B008B;
     text-decoration: none;
-    margin-right: 20px; 
-    padding: 10px 20px; 
-    border-radius: 5px; 
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .banner a:hover {
-    background-color: #eaeaff; 
+    background-color: #eaeaff;
 }
 
 /* Dropdown Button */
@@ -606,13 +291,334 @@ body, h1, h2, ul {
     background-color: #f4f4fd;
     color: #2B008B;
     padding: 10px 20px;
-    border-radius: 20px; 
+    border-radius: 20px;
     border: none;
     cursor: pointer;
 }
 
 .dropbtn:hover {
-    background-color: #eaeaff; 
+    background-color: #eaeaff;
+}
+
+/* Photo Banner Styles */
+.photo-banner {
+    margin-top: 0px;
+    height: auto;
+    width: 100%;
+}
+.text-box {
+    position: absolute;
+    top: 73%; /* Position it vertically in the middle */
+    right: 20%; /* Align it to the right side */
+    transform: translateY(-50%); /* Center it vertically */
+    width: 40%; /* Adjust width as needed */
+    background-color: #ffffff; /* Light purple background */
+    color: #2B008B; /* Dark purple text */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+
+.text-box p:first-child {
+    font-size: 28px; /* Adjust font size for the first paragraph */
+    font-weight: bold;
+}
+.text-box2 {
+    position: absolute;
+    top: 71.5%; /* Position it vertically in the middle */
+    left: 5%; /* Align it to the right side */
+    transform: translateY(-50%); /* Center it vertically */
+    width: 30%; /* Adjust width as needed */
+    background-color: #ded1d13c; /* Light purple background */
+    color: #2B008B; /* Dark purple text */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+.text-box2 p:first-child {
+    font-size: 18px; /* Adjust font size for the first paragraph */
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/* chat.html page */
+
+.chat-app {
+    display: flex;
+    height: calc(98vh - 45px); /* Adjust height based on header */
+}
+
+.chat-sidebar {
+    width: 30%;
+    background-color: #f4f4fd;
+    overflow-y: auto;
+    padding-top:1vh;
+}
+
+.chat-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding: 3vh;
+}
+
+.chat-list li:hover {
+    background-color: #03DAC5;
+}
+
+.chat-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #ddd;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    background-color: #03DAC5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-bottom: 2px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.my-message {
+    align-self: flex-end;
+}
+
+.their-message {
+    align-self: flex-start;
+    background-color: #efefef;
+    color: black;
+}
+
+#message-input {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ccc;
+}
+
+#message-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+}
+
+#message-input button {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#message-input button:hover {
+    background-color: #03DAC5;
+}
+
+@media (max-width: 600px) {
+    .chat-app {
+        flex-direction: column;
+    }
+
+    .chat-sidebar {
+        width: 100%;
+        height: 150px; /* Fixed height when stacked */
+    }
+
+    .chat-main {
+        height: calc(100vh - 200px); /* Adjust based on total available height */
+    }
+}
+
+
+/* #F2F2F2 background colour*/
+/* #2B008B text colours */
+/* teams page */
+
+.team-header {
+    background-color: white;
+    color: #2B008B;
+    padding: 30px;
+    text-align: center;
+
+}
+.team-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Creates space between cards */
+}
+
+.team-card {
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin:2vw;
+}
+
+.team-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures images cover the card area without distorting */
+}
+
+.team-info {
+    padding: 10px;
+}
+
+.team-actions {
+    margin-top: auto; /* Pushes actions to the bottom of the card */
+    background: #f4f4f4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-join, .btn-remove {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-join {
+    background-color: #2B008B;
+    color: white;
+}
+
+.btn-join:hover {
+    background-color: #03DAC5;
+}
+
+.btn-remove {
+    background-color: #03DAC5;
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #2B008B;
+}
+
+@media (max-width: 600px) {
+    .team-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 90%; /* Makes cards responsive to smaller screens */
+    }
+}
+
+
+
+
+/* find stufy peers page  */
+
+
+/* Your other styles */
+.banner {
+    background-color: #f4f4fd;
+    color: #2B008B;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.banner h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.banner a {
+    color: #2B008B;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner a:hover {
+    background-color: #eaeaff;
+}
+
+/* Dropdown Button */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color: #f4f4fd;
+    color: #2B008B;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #eaeaff;
 }
 
 
@@ -625,128 +631,177 @@ body, h1, h2, ul {
 
 /* style the nav to have a margin top of 5vh */
 #nav {
-  list-style-type: none;
-  padding: 0;
-  background-color: #f4f4fd;
-  width: 20%;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+    list-style-type: none;
+    padding: 0;
+    background-color: #f4f4fd;
+    width: 20%;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
 }
 #nav li a {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: black;
-  font-size:2.5vh;
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    font-size:2.5vh;
 }
 #nav li a.active, #nav li a:hover {
-  background-color: #ddd;
+    background-color: #ddd;
 }
 .content {
-  margin-left: 22%; /* To ensure the content is not hidden by the fixed nav */
-  padding: 20px;
-  display: none;
+    margin-left: 22%; /* To ensure the content is not hidden by the fixed nav */
+    padding: 20px;
+    display: none;
 }
 .active {
-  display: block;
+    display: block;
 }
 
 ul{
-  margin:1vw;
+    margin:1vw;
 }
 
 
 /* styling for preferences.html */
 
 .dropbtn {
-  background-color: #0066cc;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #0057b7;
+    background-color: #0057b7;
 }
 
-/* Form styling */
-form {
-  background-color: #ffffff;
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
-}
+
 
 label {
-  margin-bottom: 10px;
-  color: #333333;
-  display: block;
+    margin-bottom: 10px;
+    color: #333333;
+    display: block;
 }
 
 input[type="text"],
 select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 input[type="submit"] {
-  width: 100%;
-  background-color: #2B008B;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+    width: 100%;
+    background-color: #2B008B;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 input[type="submit"]:hover {
-  background-color: #03DAC5;
+    background-color: #03DAC5;
 }
 
 
-button{ 
-  width: 100%;
-  background-color: #2B008B;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+button{
+    width: 100%;
+    background-color: #2B008B;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
+
+
+.filterPapers {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: white; /* Adjust the background color and opacity as needed */
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.filterPapers h2 {
+    margin-bottom: 10px;
+    color: #2B008B;
+    font-size: 30px;
+}
+
+.filterPapers label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filterPapers input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.filterPapers input[type="text"]:focus {
+    outline: none;
+    border-color: #2B008B;
+    box-shadow: 0 0 5px #2B008B;
+}
+.filterPapers button[type="submit"] {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filterPapers button[type="submit"]:hover {
+    background-color: #4B0082;
+}
+
+

@@ -35,34 +35,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <li><a href="blacklist" onclick="showSection('blacklistedUsers')">Blacklisted Users</a></li>
             <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
         </ul>
-
-        <div id="aboutYou" class="content">
-            <h2>About You</h2>
-            <p>Manage your personal information and how others see your profile.</p>
-        </div>
-
-        <div id="preferences" class="content">
-            <h2>Preferences</h2>
-            <p>Customize your preferences for your potential study buddies.</p>
-        </div>
-
-        <div id="blockedUsers" class="content">
-            <h2>Blocked Users</h2>
-            <p>View and manage users you have blocked from contacting you.</p>
-        </div>
-
-        <div id="blacklistedUsers" class="content">
-            <h2>Blacklisted Users</h2>
-            <p>View and manage users you have blacklisted from seeing your content.</p>
-        </div>
-
-        <div id="updatePapers" class="content">
-            <h2>Add your paper</h2>
-            <p>Add your paper to our database for faster matching between study buddies!</p>
-        </div>
+        
+        
+       <div class="form-groupForSetting-container">
       <form action="/updatePapers" method="post" th:object="${updatePapersRequest}">
             <div id="classesContainer">
-                <div class="form-group">
+                <div class="form-groupForSetting">
                     <label for="class1">Class:</label>
                     <input type="hidden" id="userId" name="userId" value="1">
                     <input type="text" id="paperCode" name="paperCode" placeholder="e.g., MART112" 
