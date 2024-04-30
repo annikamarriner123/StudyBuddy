@@ -64,5 +64,16 @@ public class UserService {
         User user = userRepository.findByUsername(username).orElse(null);
         return user;
     }
+    
+    //this will update user's details
+    public User updateUserDetails(String firstName, String surname, String major, String email) {
+       User currentUser = getCurrentUser();
+       
+       currentUser.setFirstName(firstName);
+       currentUser.setSurname(surname);
+       currentUser.setMajor(major);
+       currentUser.setEmail(email);
+       return userRepository.saveAndFlush(currentUser);
+    }
 
 }

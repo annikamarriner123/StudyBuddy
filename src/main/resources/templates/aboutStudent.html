@@ -59,7 +59,7 @@
             <p>Add your paper to our database for faster matching between study buddies!</p>
         </div>
 
-        <form id="studentForm" action="/updateUserDetails" method="post" th:object="${updateUserDetailsRequest}">
+        <form id="studentForm" action="update-details" method="post" th:object="${updateUserDetailsRequest}">
             <div class="form-group">
                 <label for="name">First Name:</label>
                 <input type="text" id="firstName" name="firstName" placeholder="e.g., John" required>
@@ -72,10 +72,10 @@
                 <label for="name">Major:</label>
                 <input type="text" id="major" name="major" placeholder="e.g., Computer Science" required>
             </div>
-            <div class="form-group">
+<!--            <div class="form-group">
                 <label for="name">Username:</label>
                 <input type="text" id="username" name="username" placeholder="e.g., goofyahh2344" required>
-            </div>
+            </div>-->
             <div class="form-group">
                 <label for="name">Email:</label>
                 <input type="text" id="email" name="email" placeholder="e.g., joe@example.com" required>

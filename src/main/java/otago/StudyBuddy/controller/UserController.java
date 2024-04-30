@@ -63,6 +63,12 @@ public class UserController {
     public String getHomePage() {
         return "home";
     }
+    
+    @GetMapping("/update-details")
+    public String getUpdateUser(Model model) {
+        model.addAttribute("updateUserDetailsRequest", new User());
+        return "aboutStudent";
+    }
 
     @PostMapping("/sign-up")
     public String register(@ModelAttribute User user) {
@@ -130,6 +136,17 @@ public class UserController {
         }
         // Redirect to the user's profile page or any other page as needed
         return "redirect:/updatePapers"; // Assuming there's a profile page to redirect to
+    }
+    
+    @PostMapping("update-details")
+    public String updateUserDetails(@ModelAttribute User user) {
+        
+        User updatedUser = userService.updateUserDetails(user.getFirstName(), user.getSurname(), user.getMajor(), user.getEmail());
+        if(updatedUser == null) {
+            return "redirect:/error";
+        } 
+        return "redirect:/update-details";
+        
     }
 
 }
