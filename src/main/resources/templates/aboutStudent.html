@@ -62,15 +62,15 @@
         <form id="studentForm" action="update-details" method="post" th:object="${updateUserDetailsRequest}">
             <div class="form-group">
                 <label for="name">First Name:</label>
-                <input type="text" id="firstName" name="firstName" placeholder="e.g., John" required>
+                <input type="text" th:value="${currentUser.firstName}" id="firstName" name="firstName" placeholder="e.g., John" required>
             </div>
             <div class="form-group">
                 <label for="name">Last Name:</label>
-                <input type="text" id="surname" name="surname" placeholder="e.g., Smith" required>
+                <input type="text" th:value="${currentUser.surname}" id="surname" name="surname" placeholder="e.g., Smith" required>
             </div>
             <div class="form-group">
                 <label for="name">Major:</label>
-                <input type="text" id="major" name="major" placeholder="e.g., Computer Science" required>
+                <input type="text" th:value="${currentUser.major}" id="major" name="major" placeholder="e.g., Computer Science" required>
             </div>
 <!--            <div class="form-group">
                 <label for="name">Username:</label>
@@ -78,7 +78,7 @@
             </div>-->
             <div class="form-group">
                 <label for="name">Email:</label>
-                <input type="text" id="email" name="email" placeholder="e.g., joe@example.com" required>
+                <input type="text" th:value="${currentUser.email}" id="email" name="email" placeholder="e.g., joe@example.com" required>
             </div>
 
             <!--            <div class="form-group">

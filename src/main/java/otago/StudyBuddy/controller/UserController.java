@@ -66,6 +66,8 @@ public class UserController {
     
     @GetMapping("/update-details")
     public String getUpdateUser(Model model) {
+        User currentUser = userService.getCurrentUser();
+        model.addAttribute("currentUser", currentUser);
         model.addAttribute("updateUserDetailsRequest", new User());
         return "aboutStudent";
     }
