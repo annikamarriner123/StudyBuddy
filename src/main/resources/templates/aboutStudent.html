@@ -59,23 +59,38 @@
             <p>Add your paper to our database for faster matching between study buddies!</p>
         </div>
 
-
-        <form id="studentForm">
+        <form id="studentForm" action="/updateUserDetails" method="post" th:object="${updateUserDetailsRequest}">
             <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="e.g., John Smith" required>
+                <label for="name">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g., John" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Last Name:</label>
+                <input type="text" id="surname" name="surname" placeholder="e.g., Smith" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Major:</label>
+                <input type="text" id="major" name="major" placeholder="e.g., Computer Science" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Username:</label>
+                <input type="text" id="username" name="username" placeholder="e.g., goofyahh2344" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Email:</label>
+                <input type="text" id="email" name="email" placeholder="e.g., joe@example.com" required>
             </div>
 
-            <div class="form-group">
-                <label for="gender">Gender:</label>
-                <select id="gender" name="gender">
-                    <option value="notSelected">Not Selected</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="other">Other</option>
-                    <option value="prefer not to say">Prefer not to say</option>
-                </select>
-            </div>
+            <!--            <div class="form-group">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender">
+                                <option value="notSelected">Not Selected</option>
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                                <option value="other">Other</option>
+                                <option value="prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>-->
             <button type="submit">Submit</button>
         </form>
 
