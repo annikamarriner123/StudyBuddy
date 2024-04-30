@@ -13,6 +13,7 @@ import java.sql.Timestamp;
 @Table(name = "messages")
 public class Message {
 
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer messageId;
