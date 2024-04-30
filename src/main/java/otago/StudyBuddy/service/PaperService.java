@@ -6,6 +6,7 @@ package otago.StudyBuddy.service;
 
 import jakarta.transaction.Transactional;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,10 @@ public class PaperService {
                 if (!isValidPaperFormat(paper.getPaperCode())) {
                     // If any paper has an invalid format, return null
                     return null;
+                }
+                // Initialize the users set if it's null
+                if (paper.getUsers() == null) {
+                    paper.setUsers(new HashSet<>());
                 }
                 // Set the user for each paper
                 paper.getUsers().add(user);
