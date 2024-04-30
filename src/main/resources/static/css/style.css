@@ -750,3 +750,53 @@ button{
   border-radius: 4px;
   cursor: pointer;
 }
+
+#messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    height: 400px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.chat-message {
+    padding: 10px;
+    margin-bottom: 4px;
+    background-color: #fff;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chat-message.sent {
+    justify-content: flex-end;
+    background-color: #dcf8c6; /* Light green background for sent messages */
+}
+
+.chat-message.received {
+    justify-content: flex-start;
+    background-color: #ffffff; /* White background for received messages */
+}
+
+strong {
+    font-weight: bold;
+    color: #007BFF;
+    margin-right: 10px;
+    background-color: #e1ecf4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+    background-color: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
