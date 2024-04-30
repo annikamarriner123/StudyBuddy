@@ -4,9 +4,6 @@
  */
 package otago.StudyBuddy.controller;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -14,9 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import otago.StudyBuddy.domain.Paper;
 import otago.StudyBuddy.domain.User;
+import otago.StudyBuddy.repository.UserRepository;
 import otago.StudyBuddy.service.PaperService;
 import otago.StudyBuddy.service.UserService;
 
@@ -35,12 +32,17 @@ public class UserController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    
+    @Autowired
+    private UserRepository userRepository;
+
 
     @Autowired
-    public UserController(UserService userService, PaperService paperService, PasswordEncoder passwordEncoder) {
+    public UserController(UserService userService, PaperService paperService, PasswordEncoder passwordEncoder, UserRepository userRepository) {
         this.userService = userService;
         this.paperService = paperService;
         this.passwordEncoder = passwordEncoder;
+        this.userRepository = userRepository;
     }
 
     @GetMapping("/sign-up")
@@ -97,20 +99,27 @@ public class UserController {
         return "redirect:/log-in";
     }
 
+    @GetMapping("/updatePapers")
+    public String getUpdatePapers(Model model) {
+        model.addAttribute("updatePapersRequest", new String());
+        return "updatePapers";
+    }
+    
     @PostMapping("/updatePapers")
-    public String addPaper(@RequestParam Integer userId, @RequestParam Collection<String> paperCodes) {
+    public String addPaper(@ModelAttribute Paper paper) {
+        User currentUser = userService.getCurrentUser();
 
+        Integer userId = currentUser.getUserId();
         // Check if user ID and paper codes are not null and if there are papers to add
-        if (userId != null && paperCodes != null) {
+        if (userId != null && paper != null) {
             // Convert paper codes to Paper objects
-            List<Paper> papers = new ArrayList<>();
-            for (String paperCode : paperCodes) {
-                Paper paper = new Paper();
-                paper.setPaperCode(paperCode);
-                papers.add(paper);
-            }
+            
+//            Paper paper = new Paper();
+//            paper.setPaperCode(paperCode);
+            
+
             // Call the PaperService to add papers for the user
-            User updatedUser = paperService.addUserPapers(userId, papers);
+            User updatedUser = paperService.addUserPapers(userId, paper.getPaperCode());
             if (updatedUser == null) {
                 // If the operation fails, redirect to an error page or handle accordingly
                 return "redirect:/error";
@@ -124,7 +133,6 @@ public class UserController {
     }
 
 }
-
 
 //    @PostMapping("/addPaper")
 //    public String addPaper(@RequestParam Integer userId,  @RequestParam Collection<String> papers) {

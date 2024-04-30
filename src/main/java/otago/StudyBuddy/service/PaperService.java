@@ -5,13 +5,10 @@
 package otago.StudyBuddy.service;
 
 import jakarta.transaction.Transactional;
-import java.util.Collection;
-import java.util.HashSet;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import otago.StudyBuddy.domain.User;
-import otago.StudyBuddy.domain.Paper;
 import otago.StudyBuddy.repository.UserRepository;
 
 /**
@@ -21,31 +18,38 @@ import otago.StudyBuddy.repository.UserRepository;
 @Service
 public class PaperService {
 
-    private final UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
+    
+    @Autowired
+    private UserService userService;
 
     @Autowired
-    public PaperService(UserRepository userRepository) {
+    public PaperService(UserRepository userRepository, UserService userService) {
         this.userRepository = userRepository;
+        this.userService = userService;
     }
 
     @Transactional
-    public User addUserPapers(Integer userId, Collection<Paper> papers) {
-        User user = userRepository.findById(userId).orElse(null);
+    public User addUserPapers(Integer userId, String papers) {
+        User user = userRepository.findByUserId(userId).orElse(null);
         if (user != null && papers != null) {
-            for (Paper paper : papers) {
-                if (!isValidPaperFormat(paper.getPaperCode())) {
-                    // If any paper has an invalid format, return null
-                    return null;
-                }
+//            for (Paper paper : papers) {
+//                if (!isValidPaperFormat(papers.getPaperCode())) {
+//                    // If any paper has an invalid format, return null
+//                    return null;
+//                }
                 // Initialize the users set if it's null
-                if (paper.getUsers() == null) {
-                    paper.setUsers(new HashSet<>());
-                }
+//                if (paper.getUsers() == null) {
+//                    paper.setUsers(new HashSet<>());
+//                }
                 // Set the user for each paper
-                paper.getUsers().add(user);
-            }
+                //paper.getUsers().add(user);
+//            }
             // Add the papers to the user's collection
-            user.getPapers().addAll(papers);
+            
+            //user.getPapers().addAll(papers);
+            user.setPapers(papers);
             // Save the updated user object in the repository
             return userRepository.saveAndFlush(user);
         }

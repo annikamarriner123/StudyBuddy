@@ -42,19 +42,19 @@ public class User {
     //   @ManyToMany
     private Collection<String> interests;
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_paper",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "paper_id")
-    )
-    private Set<Paper> papers;
+//    @ManyToMany
+//    @JoinTable(
+//            name = "user_paper",
+//            joinColumns = @JoinColumn(name = "user_id"),
+//            inverseJoinColumns = @JoinColumn(name = "paper_id")
+//    )
+    private String papers;
 
     //Default Consturctor
     public User() {
     }
 
-    public User(int userId, String firstName, String surname, String username, String password, String email, Collection<String> papers, String major, Collection<String> interests, Set<ChatRoom> joinedChatRooms) {
+    public User(int userId, String firstName, String surname, String username, String password, String email, String papers, String major, Collection<String> interests, Set<ChatRoom> joinedChatRooms) {
         this.userId = userId;
         this.firstName = firstName;
         this.joinedChatRooms = joinedChatRooms;
@@ -140,11 +140,11 @@ public class User {
         this.interests = interests;
     }
 
-    public Set<Paper> getPapers() {
+    public String getPapers() {
         return papers;
     }
 
-    public void setPapers(Set<Paper> papers) {
+    public void setPapers(String papers) {
         this.papers = papers;
     }
 

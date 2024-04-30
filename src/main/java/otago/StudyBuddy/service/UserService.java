@@ -5,6 +5,8 @@
 package otago.StudyBuddy.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import otago.StudyBuddy.domain.User;
 import otago.StudyBuddy.repository.UserRepository;
@@ -41,8 +43,26 @@ public class UserService {
         return userRepository.findByUsernameAndPassword(username, password).orElse(null);
     }
 
+//    public UserDetails getLoggedInUser() {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        if (authentication != null && authentication.isAuthenticated()) {
+//            Object principal = authentication.getPrincipal();
+//            if (principal instanceof User) {
+//                return (User) principal;
+//            }
+//        }
+//        return null;
+//    }
+    public User getCurrentUser() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername();
+        } else {
+            username = principal.toString();
+        }
+        User user = userRepository.findByUsername(username).orElse(null);
+        return user;
+    }
 
 }
-
-
-

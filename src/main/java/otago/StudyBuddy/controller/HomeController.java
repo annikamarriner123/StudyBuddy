@@ -51,10 +51,10 @@ public class HomeController {
         return "preferences";
     }
     
-      @GetMapping("/updatePapers")
-    public String getUpdatedPaper() {
-        return "updatePapers";
-    }
+//      @GetMapping("/updatePapers")
+//    public String getUpdatedPaper() {
+//        return "updatePapers";
+//    }
 
 
 
