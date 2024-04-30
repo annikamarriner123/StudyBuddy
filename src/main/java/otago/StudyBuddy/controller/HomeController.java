@@ -11,10 +11,10 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/home")
-    public String getHomePage() {
-        return "home";
-    }
+//    @GetMapping("/home")
+//    public String getHomePage() {
+//        return "home";
+//    }
 
     @GetMapping("/findStudyPeers")
     public String getFindStudyPeersPage() {

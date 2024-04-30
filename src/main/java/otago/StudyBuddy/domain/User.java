@@ -29,6 +29,7 @@ public class User {
     private String surname;
     private String username;
     private String password;
+    private String role; // possible values, USER, ADMIN or USER,ADMIN for both
     private String email;
     private String major;
 
@@ -69,6 +70,7 @@ public class User {
         this.major = major;
 //        this.favourites = favourites;
         this.interests = interests;
+        
     }
 
     public int getUserId() {
@@ -149,6 +151,14 @@ public class User {
 
     public void setPapers(Set<Paper> papers) {
         this.papers = papers;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     

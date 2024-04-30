@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,9 +34,13 @@ public class UserController {
     PaperService paperService;
 
     @Autowired
-    public UserController(UserService userService, PaperService paperService) {
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public UserController(UserService userService, PaperService paperService, PasswordEncoder passwordEncoder) {
         this.userService = userService;
         this.paperService = paperService;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/sign-up")
@@ -52,10 +57,17 @@ public class UserController {
         return "log-in";
     }
 
+    @GetMapping("/home")
+    public String getHomePage() {
+        return "home";
+    }
+
     @PostMapping("/sign-up")
     public String register(@ModelAttribute User user) {
         System.out.println(user);
 
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
         User registeredUser = userService.registerUser(user.getFirstName(), user.getSurname(), user.getUsername(), user.getPassword(), user.getEmail());
         if (registeredUser == null) {
             //if null, this means the register was unsuccessful, show an error message dispalyed in html
@@ -68,18 +80,21 @@ public class UserController {
     public String logIn(@ModelAttribute User user) {
         System.out.println(user);
 
-        User loggedInUser = userService.logInUser(user.getUsername(), user.getPassword());
-        if (loggedInUser == null) {
+        User storedUser = userService.logInUser(user.getUsername(), user.getPassword());
+        boolean passwordMatches = passwordEncoder.matches(user.getPassword(), storedUser.getPassword());
+        if (storedUser != null && passwordMatches) {
             //if null, this means unsuccessful, display error message from html
-            return "redirect:/log-in";
+            //located in HomeController
+            return "redirect:/home";
         }
-        //located in HomeController
-        return "redirect:/home";
+        //if null, this means unsuccessful, display error message from html
+
+        return "redirect:/log-in";
     }
 
     @PostMapping("/updatePapers")
     public String addPaper(@RequestParam Integer userId, @RequestParam Collection<String> paperCodes) {
-        
+
         // Check if user ID and paper codes are not null and if there are papers to add
         if (userId != null && paperCodes != null) {
             // Convert paper codes to Paper objects
@@ -103,15 +118,6 @@ public class UserController {
         return "redirect:/updatePapers"; // Assuming there's a profile page to redirect to
     }
 }
-
-
-
-
-
-
-
-
-
 
 //    @PostMapping("/addPaper")
 //    public String addPaper(@RequestParam Integer userId,  @RequestParam Collection<String> papers) {
