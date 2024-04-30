@@ -16,6 +16,7 @@ public class ChatRoom {
 
     @OneToMany(mappedBy = "chatroom", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Message> messages = new HashSet<>();
+    
     @ManyToMany
     @JoinTable(
             name = "chatroom_user", // Name of the join table
@@ -54,4 +55,14 @@ public class ChatRoom {
     public void setMessages(Set<Message> messages) {
         this.messages = messages;
     }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+    
+    
 }

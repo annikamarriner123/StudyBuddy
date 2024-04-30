@@ -152,6 +152,7 @@ public class User {
     public void setPapers(Set<Paper> papers) {
         this.papers = papers;
     }
+<<<<<<< Updated upstream
 
     public String getRole() {
         return role;
@@ -162,6 +163,8 @@ public class User {
     }
 
     
+=======
+>>>>>>> Stashed changes
     
     @Override
     public String toString() {

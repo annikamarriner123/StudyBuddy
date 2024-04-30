@@ -8,7 +8,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+<<<<<<< Updated upstream
 import org.springframework.security.crypto.password.PasswordEncoder;
+=======
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
+>>>>>>> Stashed changes
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -77,12 +81,19 @@ public class UserController {
     }
 
     @PostMapping("/log-in")
-    public String logIn(@ModelAttribute User user) {
+    public String logIn(@ModelAttribute User user, SimpMessageHeaderAccessor headerAccessor) {
         System.out.println(user);
+<<<<<<< Updated upstream
 
         User storedUser = userService.logInUser(user.getUsername(), user.getPassword());
         boolean passwordMatches = passwordEncoder.matches(user.getPassword(), storedUser.getPassword());
         if (storedUser != null && passwordMatches) {
+=======
+        headerAccessor.getSessionAttributes().put("userId", user.getUserId());
+        headerAccessor.getSessionAttributes().put("username", user.getUsername());
+        User loggedInUser = userService.logInUser(user.getUsername(), user.getPassword());
+        if (loggedInUser == null) {
+>>>>>>> Stashed changes
             //if null, this means unsuccessful, display error message from html
             //located in HomeController
             return "redirect:/home";
@@ -117,6 +128,9 @@ public class UserController {
         // Redirect to the user's profile page or any other page as needed
         return "redirect:/updatePapers"; // Assuming there's a profile page to redirect to
     }
+
+    
+
 }
 
 //    @PostMapping("/addPaper")
