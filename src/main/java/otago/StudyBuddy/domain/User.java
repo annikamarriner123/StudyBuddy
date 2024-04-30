@@ -33,23 +33,20 @@ public class User {
     private String email;
     private String major;
 
-
     @ManyToMany(mappedBy = "users")
     private Set<ChatRoom> joinedChatRooms;
     //private Collection<T> favourites;
     //TODO: private "something" profilePicture
 
     // A user can have many papers
- //   @ManyToMany
+    //   @ManyToMany
     private Collection<String> interests;
-    
-    
-    
+
     @ManyToMany
     @JoinTable(
-        name = "user_paper",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "paper_id")
+            name = "user_paper",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "paper_id")
     )
     private Set<Paper> papers;
 
@@ -66,11 +63,10 @@ public class User {
         this.password = password;
         this.email = email;
 
-     
         this.major = major;
 //        this.favourites = favourites;
         this.interests = interests;
-        
+
     }
 
     public int getUserId() {
@@ -121,7 +117,6 @@ public class User {
         this.email = email;
     }
 
-
     public String getMajor() {
         return major;
     }
@@ -144,7 +139,7 @@ public class User {
     public void setInterests(Collection<String> interests) {
         this.interests = interests;
     }
-    
+
     public Set<Paper> getPapers() {
         return papers;
     }
@@ -152,7 +147,6 @@ public class User {
     public void setPapers(Set<Paper> papers) {
         this.papers = papers;
     }
-<<<<<<< Updated upstream
 
     public String getRole() {
         return role;
@@ -162,14 +156,9 @@ public class User {
         this.role = role;
     }
 
-    
-=======
->>>>>>> Stashed changes
-    
     @Override
     public String toString() {
         return "User{" + "userId=" + userId + ", firstName=" + firstName + ", surname=" + surname + ", username=" + username + ", password=" + password + ", email=" + email + ", major=" + major + ", joinedChatRooms=" + joinedChatRooms + ", interests=" + interests + ", papers=" + papers + '}';
     }
-  
 
 }
