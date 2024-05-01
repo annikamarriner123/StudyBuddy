@@ -49,7 +49,14 @@ public class SecurityConfig {
                 .formLogin((formLogin) -> formLogin
                        .loginPage("/log-in").permitAll()
                        .successHandler(new AuthenticationSuccessHandler())
+                )
+                .logout((logout) -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/log-in")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID")
                 );
+                
         return http.build();
     }
 
