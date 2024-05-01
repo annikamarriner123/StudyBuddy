@@ -28,12 +28,10 @@
 
     <ul id="nav">
         <li><a href="/update-details">About You</a></li>
-        <li><a href="/preferences" onclick="showSection('preferences')">Preferences</a></li>
         <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>
-        <li><a href="blacklist" onclick="showSection('blacklistedUsers')">Blacklisted Users</a></li>
         <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
     </ul>
-
+    <h2 class="addPaperTitle"> About you </h2>
     <form id="studentForm" action="update-details" method="post" th:object="${updateUserDetailsRequest}" onsubmit="handleSubmit(event)">
         <div class="form-group">
             <label for="firstName">First Name:</label>

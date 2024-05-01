@@ -1012,10 +1012,35 @@ p {
 /* Form styling */
 #studentForm {
     width: 50%; /* Adjusts the width of the form */
-    margin: 5vw;
+    margin-left: 35vw;
+    margin-top:5vh;
     padding: 20px; /* Padding around the form */
     background-color: #fff; /* White background for the form */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    marign-left:35vw;
+}
+
+.addPaperTitle{
+    margin-left:35vw;
+    margin-top:5vh;
+}
+
+/* Styles for form groups */
+.form-group {
+    margin-bottom: 20px; /* Adds space between each form group */
+    flex-direction: column; /* Stacks the label above the input */
+    margin-left:2.5vw;
+}
+
+.form-group label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Makes the label text bold */
+}
+
+.form-group input {
+    width: 90%; /* Sets the width of the input to be longer */
+    padding: 8px; /* Adds padding inside the input for better text visibility */
+    border: 1px solid #ccc; /* A subtle border for the input */
+    border-radius: 4px; /* Rounds the corners of the input field */
+    margin: auto; /* Centers the input within the form group */
 }
