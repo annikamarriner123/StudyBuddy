@@ -902,98 +902,28 @@ p {
     border-radius: 4px;
 }
 
-/* Style for the table */
-#userTable {
-  width: 50%; /* Adjusted width */
-  margin: 7cm auto 0; /* Margin-top to push down, auto left and right to center */
-}
-
-/* Style for table header */
-#userTable th {
-  background-color: #E6E6FA; /* Light purple */
-  text-align: left;
-  padding: 8px;
-}
-
-/* Style for table data */
-#userTable td {
-  border-bottom: 1px solid #ddd;
-  padding: 8px;
-}
-
-/* Alternate row color */
-#userTable tbody tr:nth-child(even) {
-  background-color: #E6E6FA; /* Light purple */
-}
-
-/* Style for no data message */
-#userTable td[colspan="2"] {
-  text-align: center;
-}
-
-
-/* Styling for the updatePaper.html */
-
-/* Specific styles for the updatePaper.html page */
-
-.addPaperTitle {
-    margin: 5vh;
-    text-align: center;
-    width: 100%;
-}
-
-.addPaper-form {
-    width: 50%;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    border-radius: 10px;
-    margin-left: 30vw;
-}
-
-
-/* Additional CSS for better form appearance */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label, .form-group input {
-    display: block;
-    width: 100%;
-}
-
-.form-group input {
-    padding: 8px;
-    margin-top: 5px; /* Adjust the margin as needed */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
-
-
-
-/* Style for the content container */
+/* Style for the table *//* Style for the table container */
 .content-paper-container {
     display: flex;
-    justify-content: space-between; /* Space items evenly */
+    justify-content: center; /* Center the content horizontally */
     align-items: flex-start; /* Align items to the top */
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px; /* Add some margin space */
 }
 
-/* Adjust the styling for the filter search */
+/* Style for the filter search */
 .filter_papers_search {
     width: 25%; /* Adjust the width of the filter */
     padding: 20px;
-    margin-top: 10px; /* Move the filter 10px from the top */
+    margin-right: 20px; /* Add margin to separate from the table */
     background-color: #f2f2f2; /* Grey background color */
     border-radius: 10px; /* Soft edges */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .filter_papers_search h2 {
-    margin-bottom: 10px; /* Adjust as needed */
+    margin-bottom: 10px;
     color: #2B008B;
-    font-size: 24px; /* Adjust as needed */
+    font-size: 24px; /* Reduce font size slightly */
 }
 
 .filter_papers_search label {
@@ -1031,30 +961,33 @@ p {
 
 /* Style for the table */
 #userTable {
-    width: 70%; /* Adjusted width */
+    width: 70%; /* Table takes full width of the container */
     border-collapse: collapse; /* Collapse border spacing */
-    margin-left: 20px; /* Add margin to separate from the filter */
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Soft edges */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 /* Style for table header */
 #userTable th {
     background-color: #E6E6FA; /* Light purple */
     text-align: left;
-    padding: 8px;
+    padding: 12px; /* Increase padding for better spacing */
 }
 
 /* Style for table data */
 #userTable td {
     border-bottom: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px; /* Increase padding for better spacing */
 }
 
 /* Alternate row color */
 #userTable tbody tr:nth-child(even) {
-    background-color: #E6E6FA; /* Light purple */
+    background-color: #f2f2f2; /* Light grey */
 }
 
 /* Style for no data message */
 #userTable td[colspan="2"] {
     text-align: center;
+    padding: 12px; /* Increase padding for better spacing */
 }
