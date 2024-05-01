@@ -12,10 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fetchChatRooms();
 });
 
-var colors = [
-    '#2196F3', '#32c787', '#00BCD4', '#ff5652',
-    '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
-];
 
 function connect() {
     chatPage.classList.remove('hidden');
@@ -38,11 +34,10 @@ function onConnected() {
             );
 }
 
-
-
 function onError(error) {
     console.log("Couldnt connect to websocket");
 }
+
 function sendMessage(event) {
     event.preventDefault(); // Prevent default form submission behavior
     var messageContent = messageInput.value.trim();
@@ -63,6 +58,7 @@ function sendMessage(event) {
         console.log("Failed to send message: Message content is empty or Stomp client is not initialized.");
     }
 }
+
 function appendMessage(message) {
     var messageElement = document.createElement('li');
 
@@ -89,7 +85,6 @@ function appendMessage(message) {
     messageArea.scrollTop = messageArea.scrollHeight;
     
 }
-
 
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
