@@ -968,3 +968,93 @@ p {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+
+
+
+
+/* Style for the content container */
+.content-paper-container {
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+/* Adjust the styling for the filter search */
+.filter_papers_search {
+    width: 25%; /* Adjust the width of the filter */
+    padding: 20px;
+    margin-top: 10px; /* Move the filter 10px from the top */
+    background-color: #f2f2f2; /* Grey background color */
+    border-radius: 10px; /* Soft edges */
+}
+
+.filter_papers_search h2 {
+    margin-bottom: 10px; /* Adjust as needed */
+    color: #2B008B;
+    font-size: 24px; /* Adjust as needed */
+}
+
+.filter_papers_search label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filter_papers_search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.filter_papers_search input[type="text"]:focus {
+    outline: none;
+    border-color: #2B008B;
+    box-shadow: 0 0 5px #2B008B;
+}
+
+.filter_papers_search button[type="submit"] {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter_papers_search button[type="submit"]:hover {
+    background-color: #4B0082;
+}
+
+/* Style for the table */
+#userTable {
+    width: 70%; /* Adjusted width */
+    border-collapse: collapse; /* Collapse border spacing */
+    margin-left: 20px; /* Add margin to separate from the filter */
+}
+
+/* Style for table header */
+#userTable th {
+    background-color: #E6E6FA; /* Light purple */
+    text-align: left;
+    padding: 8px;
+}
+
+/* Style for table data */
+#userTable td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Alternate row color */
+#userTable tbody tr:nth-child(even) {
+    background-color: #E6E6FA; /* Light purple */
+}
+
+/* Style for no data message */
+#userTable td[colspan="2"] {
+    text-align: center;
+}
