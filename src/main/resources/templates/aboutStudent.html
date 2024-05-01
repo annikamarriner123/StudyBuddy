@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Buddy</title>
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-    <header>
-        <div class="banner">
-            <h2><a href="/home">Study Buddy</a></h2>
-            <a href="/findStudyPeers">Find Study Peers</a>
-            <a href="#">Find Tutors</a>
-            <a href="/addPaper">Add Papers</a>
-            <a href="/team">Teams</a>
-            <a href="/chat">Inbox</a>
-            <div class="dropdown">
-                <button class="dropbtn">Menu</button>
-                <div class="dropdown-content">
-                    <a href="/update-details">Account Info</a>
-                    <a href="#">Log Out</a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Buddy</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="banner">
+                <h2><a href="/home">Study Buddy</a></h2>
+                <a href="/findStudyPeers">Find Study Peers</a>
+                <a href="#">Find Tutors</a>
+                <a href="/addPaper">Add Papers</a>
+                <a href="/team">Teams</a>
+                <a href="/chat">Inbox</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Menu</button>
+                    <div class="dropdown-content">
+                        <a href="/update-details">Account Info</a>
+                        <a href="#">Log Out</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <p id="successMessage" style="display:none; background-color: green; color: white; text-align: center; width: 100%; padding: 10px 0; position: fixed; top: 0; left: 0; z-index: 1000;">Form submitted successfully!</p>
+        </header>
+        <p id="successMessage" style="display:none; background-color: green; color: white; text-align: center; width: 100%; padding: 10px 0; position: fixed; top: 0; left: 0; z-index: 1000;">Form submitted successfully!</p>
 
-    <ul id="nav">
-        <li><a href="/update-details">About You</a></li>
-        <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>
-        <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
-    </ul>
-    <h2 class="addPaperTitle"> About you </h2>
-    <form id="studentForm" action="update-details" method="post" th:object="${updateUserDetailsRequest}" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" th:value="${currentUser.firstName}" id="firstName" name="firstName" placeholder="e.g., John" required>
-        </div>
-        <div class="form-group">
-            <label for="surname">Last Name:</label>
-            <input type="text" th:value="${currentUser.surname}" id="surname" name="surname" placeholder="e.g., Smith" required>
-        </div>
-        <div class="form-group">
-            <label for="major">Major:</label>
-            <input type="text" th:value="${currentUser.major}" id="major" name="major" placeholder="e.g., Computer Science" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="text" th:value="${currentUser.email}" id="email" name="email" placeholder="e.g., joe@example.com" required>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+        <ul id="nav">
+            <li><a href="/update-details">About You</a></li>
+            <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>
+            <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
+        </ul>
+        <h2 class="addPaperTitle"> About you </h2>
+        <form id="studentForm" action="update-details" method="post" th:object="${updateUserDetailsRequest}" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" th:value="${currentUser.firstName}" id="firstName" name="firstName" placeholder="e.g., John" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Last Name:</label>
+                <input type="text" th:value="${currentUser.surname}" id="surname" name="surname" placeholder="e.g., Smith" required>
+            </div>
+            <div class="form-group">
+                <label for="major">Major:</label>
+                <input type="text" th:value="${currentUser.major}" id="major" name="major" placeholder="e.g., Computer Science" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" th:value="${currentUser.email}" id="email" name="email" placeholder="e.g., joe@example.com" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
 
-    <script>
-        function handleSubmit(event) {
-            event.preventDefault(); // Prevent form from submitting traditionally
-            document.getElementById('successMessage').style.display = 'block'; // Show success message
-            // Optionally, you can implement AJAX here to submit your form data
-        }
-    </script>
+        <script>
+            function handleSubmit(event) {
+                event.preventDefault(); // Prevent form from submitting traditionally
+                // Show the success message
+                const successMessage = document.getElementById('successMessage');
+                successMessage.style.display = 'block';
 
-</body>
+                // Hide the success message after 3 seconds (3000 milliseconds)
+                setTimeout(function () {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }
+        </script>
+
+    </body>
 </html>
