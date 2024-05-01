@@ -29,10 +29,6 @@ public class Paper {
     @Column(unique = true)
     private String paperCode;
 
-//    @ManyToMany(mappedBy = "papers")
-//    private Set<User> users;
-
-    // Constructor, getters, and setters
 
     public Integer getId() {
         return id;
@@ -50,13 +46,6 @@ public class Paper {
         this.paperCode = paperCode;
     }
 
-//    public Set<User> getUsers() {
-//        return users;
-//    }
-//
-//    public void setUsers(Set<User> users) {
-//        this.users = users;
-//    }
 
     @Override
     public String toString() {

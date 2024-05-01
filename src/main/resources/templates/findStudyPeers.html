@@ -62,31 +62,44 @@
             }
 
         </style>
-
+        <script src="/js/app.js" defer></script> <!-- Link to your JavaScript file with defer attribute -->
     </head>
-    <body>
-    <body>
-        <div class="banner">
-            <h2><a href="/home">Study Buddy</a></h2>
-            
-            <a href="#">Find Tutors</a>
-            <a href="/updatePapers">Add Papers</a>
-            <a href="/team">Teams</a>
-            <a href="/chat">Inbox</a>
-            <div class="dropdown">
-                <button class="dropbtn">Menu</button>
-                <div class="dropdown-content">
-                    <a href="/settings">Account Info</a>
-                    <a href="#">Log Out</a>
-                </div>
+<body>
+    <div class="banner">
+        <h2><a href="/home">Study Buddy</a></h2>
+        <a href="#">Find Tutors</a>
+        <a href="/updatePapers">Add Papers</a>
+        <a href="/team">Teams</a>
+        <a href="/chat">Inbox</a>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="/settings">Account Info</a>
+                <a href="#">Log Out</a>
             </div>
         </div>
-        <div class="photo-banner">
-            <img src="/images/international-banner.avif"  alt="International Banner" class="photo-banner">
-        </div>
+    </div>
+    <div class="photo-banner">
+        <img src="/images/international-banner.avif" alt="International Banner" class="photo-banner">
+    </div>
 
-        <div class="filter">
-            <h2>Search to find study peers</h2>
-            <input type="text" id="papers" name="papers" placeholder="Enter paper code... e.g. MART310">
-            <button type="submit">Search</button>
-        </div> 
+    <div class="filter">
+        <h2>Search to find study peers</h2>
+        <input type="text" id="papers" name="papers" placeholder="Enter paper code... e.g. MART310">
+        <button type="button" id="searchButton">Search</button>
+    </div> 
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>First Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- User data will be dynamically added here -->
+        </tbody>
+    </table>
+</body>
+</html>

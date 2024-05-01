@@ -35,19 +35,10 @@ public class User {
 
     @ManyToMany(mappedBy = "users")
     private Set<ChatRoom> joinedChatRooms;
-    //private Collection<T> favourites;
-    //TODO: private "something" profilePicture
 
-    // A user can have many papers
-    //   @ManyToMany
+    
     private Collection<String> interests;
 
-//    @ManyToMany
-//    @JoinTable(
-//            name = "user_paper",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "paper_id")
-//    )
     private String papers;
 
     //Default Consturctor

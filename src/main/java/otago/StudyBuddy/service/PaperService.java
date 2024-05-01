@@ -34,21 +34,7 @@ public class PaperService {
     public User addUserPapers(Integer userId, String papers) {
         User user = userRepository.findByUserId(userId).orElse(null);
         if (user != null && papers != null) {
-//            for (Paper paper : papers) {
-//                if (!isValidPaperFormat(papers.getPaperCode())) {
-//                    // If any paper has an invalid format, return null
-//                    return null;
-//                }
-                // Initialize the users set if it's null
-//                if (paper.getUsers() == null) {
-//                    paper.setUsers(new HashSet<>());
-//                }
-                // Set the user for each paper
-                //paper.getUsers().add(user);
-//            }
-            // Add the papers to the user's collection
-            
-            //user.getPapers().addAll(papers);
+
             user.setPapers(papers);
             // Save the updated user object in the repository
             return userRepository.saveAndFlush(user);

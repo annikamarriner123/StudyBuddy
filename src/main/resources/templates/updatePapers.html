@@ -36,30 +36,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
         </ul>
 
-        <div id="aboutYou" class="content">
-            <h2>About You</h2>
-            <p>Manage your personal information and how others see your profile.</p>
-        </div>
-
-        <div id="preferences" class="content">
-            <h2>Preferences</h2>
-            <p>Customize your preferences for your potential study buddies.</p>
-        </div>
-
-        <div id="blockedUsers" class="content">
-            <h2>Blocked Users</h2>
-            <p>View and manage users you have blocked from contacting you.</p>
-        </div>
-
-        <div id="blacklistedUsers" class="content">
-            <h2>Blacklisted Users</h2>
-            <p>View and manage users you have blacklisted from seeing your content.</p>
-        </div>
-
-        <div id="updatePapers" class="content">
-            <h2>Add your paper</h2>
-            <p>Add your paper to our database for faster matching between study buddies!</p>
-        </div>
       <form action="/updatePapers" method="post" th:object="${updatePapersRequest}">
             <div id="classesContainer">
                 <div class="form-group">
@@ -71,7 +47,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
             <button type="button" onclick="addClass()">Add Another Class</button>
 
-            <script>
+<!--            <script>
                 function checkInput(input) {
                     const pattern = /^[A-Za-z]{4}[0-9]{3}$/;
                     const errorMessage = document.getElementById('error-message');
@@ -106,7 +82,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     newFormGroup.innerHTML = `<label for="class${newInputCount}">Class:</label><input type="text" id="class${newInputCount}" name="class${newInputCount}" placeholder="e.g., MART112, ECON201" pattern="[A-Za-z]{4}[0-9]{3}" oninput="checkInput(this)">`;
                     container.appendChild(newFormGroup);
                 }
-            </script>
+            </script>-->
             <button type="submit">Submit</button>
         </form>
 
