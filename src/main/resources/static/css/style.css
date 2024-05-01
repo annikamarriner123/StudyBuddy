@@ -801,31 +801,97 @@ p {
     border-radius: 4px;
 }
 
+/* Style for the filter */
+.filter {
+    width: 30%; /* Adjust the width of the filter */
+    padding: 20px;
+}
+/* Style for the table container */
+.content-paper-container {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: flex-start; /* Align items to the top */
+    margin-top: 20px; /* Add some margin space */
+}
+
+/* Style for the filter search */
+.filter_papers_search {
+    width: 25%; /* Adjust the width of the filter */
+    padding: 20px;
+    margin-right: 20px; /* Add margin to separate from the table */
+    background-color: #f2f2f2; /* Grey background color */
+    border-radius: 10px; /* Soft edges */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.filter_papers_search h2 {
+    margin-bottom: 10px;
+    color: #2B008B;
+    font-size: 24px; /* Reduce font size slightly */
+}
+
+.filter_papers_search label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filter_papers_search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.filter_papers_search input[type="text"]:focus {
+    outline: none;
+    border-color: #2B008B;
+    box-shadow: 0 0 5px #2B008B;
+}
+
+.filter_papers_search button[type="submit"] {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter_papers_search button[type="submit"]:hover {
+    background-color: #4B0082;
+}
+
 /* Style for the table */
 #userTable {
-  width: 50%; /* Adjusted width */
-  margin: 7cm auto 0; /* Margin-top to push down, auto left and right to center */
+    width: 70%; /* Table takes full width of the container */
+    border-collapse: collapse; /* Collapse border spacing */
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Soft edges */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 /* Style for table header */
 #userTable th {
-  background-color: #E6E6FA; /* Light purple */
-  text-align: left;
-  padding: 8px;
+    background-color: #E6E6FA; /* Light purple */
+    text-align: left;
+    padding: 12px; /* Increase padding for better spacing */
 }
 
 /* Style for table data */
 #userTable td {
-  border-bottom: 1px solid #ddd;
-  padding: 8px;
+    border-bottom: 1px solid #ddd;
+    padding: 12px; /* Increase padding for better spacing */
 }
 
 /* Alternate row color */
 #userTable tbody tr:nth-child(even) {
-  background-color: #E6E6FA; /* Light purple */
+    background-color: #f2f2f2; /* Light grey */
 }
 
 /* Style for no data message */
 #userTable td[colspan="2"] {
-  text-align: center;
+    text-align: center;
+    padding: 12px; /* Increase padding for better spacing */
 }
