@@ -40,6 +40,7 @@ body, h1, h2, ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-decoration:none;
   }
   
   nav ul {
@@ -145,16 +146,41 @@ body, h1, h2, ul {
 
 
   /* Login Page */
-
+/*
   .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
+  }*/
 
-  
-  .form {
+.username-input, .password-input {
+    width: 50vw; /* Set the width to 50% of the viewport width */
+    padding: 1rem; /* Padding for better touch and aesthetics */
+    border-radius: 5px; /* Rounded corners */
+    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
+    display: block; /* Ensure elements are treated as block for better control */
+    border: 1px solid #ccc; /* Consistent border styling */
+}
+
+/* Additional styles can be added specifically if needed */
+.username-input {
+    background-color: #f8f8f8; /* Light background for username input */
+}
+
+.password-input {
+    background-color: #f0f0f0; /* Slightly different background for contrast */
+}
+
+/* Ensures the login form is centered horizontally and vertically */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Takes up most of the viewport height */
+    margin: auto; /* Centers the form horizontally */
+    width: 100%; /* Full width to maintain responsive design */
     background-color: #F2F2F2;
     background-image: url('/images/premium_photo-1677171749355-4ad563d86165.avif');
     background-size: cover;
@@ -162,56 +188,53 @@ body, h1, h2, ul {
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Aligns all children (inputs and button) centrally */
-    width: 100%;
-    height:90vh;
-  }
-  
-  .input-group {
-    width: 100%; /* Full width for better control */
-    margin-bottom: 1rem; /* Space out the inputs */
-    margin:2vh;
-    margin-top:10vh;
-  }
-  
-  .form input, .form button {
-    width: 50vw; /* Set the width to 50% of the viewport width */
+}
+
+.input-group {
+    width: 100%; /* Full width for the form */
+    display: flex; /* Makes children (inputs) flex items */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers children horizontally */
+    margin-top: 10vh; /* Adds top margin for spacing */
+}
+
+/* Styles for inputs and buttons within the form */
+.login-form input, .login-form button {
+    width: 50vw; /* Relative width to viewport for responsiveness */
     padding: 1rem; /* Padding for better touch and aesthetics */
     border-radius: 5px; /* Rounded corners */
     margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
-    display: block; /* Ensure elements are treated as block for better control */
-  }
-  
-  .form input {
-    border: 1px solid #ccc;
-    font-size:2vh;
-  }
-  
-  .form button {
+    display: block; /* Ensures elements appear in a block format */
+}
+
+.login-form input {
+    border: 1px solid #ccc; /* Border styling */
+}
+
+.login-form button {
     background-color: #03DAC5;
     color: #F2F2F2;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem;
-  }
-  
-  .form button:hover {
-    background-color: #2B008B;
-  }
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+}
+
+.login-form button:hover {
+    background-color: #2B008B; /* Dark purple when hovered */
+}
+
   
 
 
-  .form p {
+    .login-form p {
     margin-top: 1rem;
   }
   
-  .form p a {
+    .login-form p a {
     color: #2B008B;
   }
   
-  .form p a:hover {
+    .login-form p a:hover {
     text-decoration: underline;
   }
  
@@ -293,6 +316,83 @@ body, h1, h2, ul {
   .dropbtn:hover {
     background-color: #eaeaff; 
   }
+
+  
+  
+ /* General styles for input fields in the signup form */
+.signup-form input {
+    width: 50vw; /* Set the width to 50% of the viewport width */
+    padding: 1rem; /* Padding for better touch and aesthetics */
+    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
+    display: block; /* Ensure elements are treated as block for better control */
+    border: 1px solid #ccc; /* Consistent border styling */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Specific background styles for username and password inputs */
+.username-input, .password-input {
+    background-color: #f8f8f8; /* Light background for username input */
+}
+
+.password-input {
+    background-color: #f0f0f0; /* Slightly different background for password input */
+}
+
+/* Ensures the signup form is centered horizontally and vertically */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Takes up most of the viewport height */
+    margin: auto; /* Centers the form horizontally */
+    width: 100%; /* Full width to maintain responsive design */
+    background-color: #F2F2F2;
+    background-image: url('/images/premium_photo-1677171749355-4ad563d86165.avif');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    width: 100%; /* Full width for the form */
+    display: flex; /* Makes children (inputs) flex items */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers children horizontally */
+}
+
+/* Styles for buttons within the form */
+.signup-form button {
+    width: 50vw; /* Relative width to viewport for responsiveness */
+    padding: 1rem; /* Padding for better touch and aesthetics */
+    border-radius: 5px; /* Rounded corners */
+    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
+    display: block; /* Ensures elements appear in a block format */
+    background-color: #03DAC5;
+    color: #F2F2F2;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+}
+
+.signup-form button:hover {
+    background-color: #2B008B; /* Dark purple when hovered */
+}
+
+.signup-form p {
+    margin-top: 1rem;
+}
+
+.signup-form p a {
+    color: #2B008B;
+}
+
+.signup-form p a:hover {
+    text-decoration: underline;
+}
+
 
   /* Photo Banner Styles */
   .photo-banner {
@@ -620,6 +720,7 @@ body, h1, h2, ul {
 
 /* style for settings page*/
 
+
 /* style the li to not be underlines and be in a box */
 /* center the li in the page */
 
@@ -697,7 +798,7 @@ ul{
 }
 
 /* Form styling */
-form {
+login-form {
   background-color: #ffffff;
   max-width: 400px;
   margin: 50px auto;
@@ -712,8 +813,7 @@ label {
   display: block;
 }
 
-input[type="text"],
-select {
+.textbox {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -755,6 +855,7 @@ button{
     list-style: none;
     padding: 0;
     margin: 0;
+    padding:5vw;
     overflow-y: auto;
     height: 400px;
     background-color: #f0f0f0;
@@ -828,4 +929,42 @@ p {
 /* Style for no data message */
 #userTable td[colspan="2"] {
   text-align: center;
+}
+
+
+/* Styling for the updatePaper.html */
+
+/* Specific styles for the updatePaper.html page */
+
+.addPaperTitle {
+    margin: 5vh;
+    text-align: center;
+    width: 100%;
+}
+
+.addPaper-form {
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 30vw;
+}
+
+
+/* Additional CSS for better form appearance */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label, .form-group input {
+    display: block;
+    width: 100%;
+}
+
+.form-group input {
+    padding: 8px;
+    margin-top: 5px; /* Adjust the margin as needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }

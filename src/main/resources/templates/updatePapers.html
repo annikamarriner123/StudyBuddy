@@ -35,8 +35,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <li><a href="blacklist" onclick="showSection('blacklistedUsers')">Blacklisted Users</a></li>
             <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
         </ul>
-
-      <form action="/updatePapers" method="post" th:object="${updatePapersRequest}">
+        <h2 class="addPaperTitle"> Add a paper </h2>
+        
+      <form class="addPaper-form" action="/updatePapers" method="post" th:object="${updatePapersRequest}">
             <div id="classesContainer">
                 <div class="form-group">
                     <label for="class1">Class:</label>
