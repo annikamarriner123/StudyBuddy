@@ -800,3 +800,32 @@ p {
     padding: 4px 8px;
     border-radius: 4px;
 }
+
+/* Style for the table */
+#userTable {
+  width: 50%; /* Adjusted width */
+  margin: 7cm auto 0; /* Margin-top to push down, auto left and right to center */
+}
+
+/* Style for table header */
+#userTable th {
+  background-color: #E6E6FA; /* Light purple */
+  text-align: left;
+  padding: 8px;
+}
+
+/* Style for table data */
+#userTable td {
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* Alternate row color */
+#userTable tbody tr:nth-child(even) {
+  background-color: #E6E6FA; /* Light purple */
+}
+
+/* Style for no data message */
+#userTable td[colspan="2"] {
+  text-align: center;
+}
