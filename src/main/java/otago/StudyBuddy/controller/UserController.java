@@ -4,6 +4,9 @@
  */
 package otago.StudyBuddy.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,4 +67,59 @@ public class UserController {
         //located in HomeController
         return "redirect:/home";
     }
+
+    @GetMapping("/updatePapers")
+    public String getUpdatePapers(Model model) {
+        model.addAttribute("updatePapersRequest", new String());
+        return "updatePapers";
+    }
+
+    @PostMapping("/updatePapers")
+    public String addPaper(@ModelAttribute Paper paper) {
+        User currentUser = userService.getCurrentUser();
+
+        Integer userId = currentUser.getUserId();
+        // Check if user ID and paper codes are not null and if there are papers to add
+        if (userId != null && paper != null) {
+
+            // Call the PaperService to add papers for the user
+            User updatedUser = paperService.addUserPapers(userId, paper.getPaperCode());
+            if (updatedUser == null) {
+                // If the operation fails, redirect to an error page or handle accordingly
+                return "redirect:/error";
+            }
+        } else {
+            // If no papers are provided, redirect to an error page or display a message
+            return "redirect:/error?message=No papers provided";
+        }
+        // Redirect to the user's profile page or any other page as needed
+        return "redirect:/updatePapers"; // Assuming there's a profile page to redirect to
+    }
+
+    @PostMapping("update-details")
+    public String updateUserDetails(@ModelAttribute User user) {
+
+        User updatedUser = userService.updateUserDetails(user.getFirstName(), user.getSurname(), user.getMajor(), user.getEmail());
+        if (updatedUser == null) {
+            return "redirect:/error";
+        }
+        return "redirect:/update-details";
+
+    }
+
+    @GetMapping("/searchUsers")
+    public ResponseEntity<Optional<User>> searchUsersByPaper(@RequestParam String paper) {
+        // Query the database for users with the specified paper attribute
+        Optional<User> users = userRepository.findByPapers(paper);
+
+        // Return the list of users as a response
+        return ResponseEntity.ok(users);
+    }
+    
+    @GetMapping("/api/user/details")
+    public ResponseEntity<User> getUserDetails() {
+        User user = userService.getCurrentUser();// Assuming the user details are stored in the authentication principal
+        return ResponseEntity.ok(user);
+    }
+
 }

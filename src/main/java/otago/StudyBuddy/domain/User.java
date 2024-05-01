@@ -3,11 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package otago.StudyBuddy.domain;
-import jakarta.persistence.Column;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.*;
 /**
@@ -26,6 +28,9 @@ public class User {
     private String firstName;
     private String surname;
     private String username;
+    
+    //This stops teh password from being converted to JSON when being sent to the client 
+    @JsonIgnore
     private String password;
     private String email;
     private Collection<String> papers;

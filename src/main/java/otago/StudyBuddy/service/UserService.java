@@ -40,4 +40,39 @@ public class UserService {
     public User logInUser(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password).orElse(null);
     }
+
+//    public UserDetails getLoggedInUser() {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        if (authentication != null && authentication.isAuthenticated()) {
+//            Object principal = authentication.getPrincipal();
+//            if (principal instanceof User) {
+//                return (User) principal;
+//            }
+//        }
+//        return null;
+//    }
+    
+    public User getCurrentUser() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
+        if (principal instanceof UserDetails) {
+            username = ((UserDetails) principal).getUsername();
+        } else {
+            username = principal.toString();
+        }
+        User user = userRepository.findByUsername(username).orElse(null);
+        return user;
+    }
+    
+    //this will update user's details
+    public User updateUserDetails(String firstName, String surname, String major, String email) {
+       User currentUser = getCurrentUser();
+       
+       currentUser.setFirstName(firstName);
+       currentUser.setSurname(surname);
+       currentUser.setMajor(major);
+       currentUser.setEmail(email);
+       return userRepository.saveAndFlush(currentUser);
+    }
+
 }

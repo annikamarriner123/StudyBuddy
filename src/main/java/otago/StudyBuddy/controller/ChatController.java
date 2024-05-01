@@ -4,11 +4,20 @@
  */
 package otago.StudyBuddy.controller;
 
+import java.sql.Timestamp;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import otago.StudyBuddy.domain.Message;
+import otago.StudyBuddy.domain.MessagePayload;
+import otago.StudyBuddy.domain.User;
+import otago.StudyBuddy.service.ChatRoomService;
+import otago.StudyBuddy.service.MessageService;
+import otago.StudyBuddy.service.UserService;
 
 /**
  *
@@ -17,15 +26,47 @@ import otago.StudyBuddy.domain.Message;
 @Controller
 public class ChatController {
 
-    @MessageMapping("/chat.sendMessage")//used to invoke the send message
-    @SendTo("/topic/public")//Where it will be sent
-    public Message sendMessage(@Payload Message chatMessage) {
+    @Autowired
+    private MessageService messageService;
+
+    @Autowired
+    private ChatRoomService chatRoomService;
+
+    @Autowired
+    private UserService userService;
+
+    @MessageMapping("/chat.sendMessage")
+    @SendTo("/topic/public")
+    public Message sendMessage(MessagePayload payload) {
+        User currentUser = userService.getCurrentUser(); 
+        System.out.println(currentUser.getUserId());
+        Message message = new Message();
+        
+        message.setContent(payload.getContent());
+        message.setTimestamp(new Timestamp(System.currentTimeMillis()));
+        message.setSender(currentUser);
+        message.setType(Message.MessageType.CHAT);  
+
+       // messageService.save(message); //TODO implement a save in message service just save message to db
+        return message;
+    }
+
+    @MessageMapping("/chat.addUser")
+    @SendTo("/topic/public")
+    public Message addUser(@Payload MessagePayload payload, SimpMessageHeaderAccessor headerAccessor) {
+        Message chatMessage = messageService.addUser(payload);
+        // Assuming addUser in your service sets the user and returns the message.
+        // This example also assumes you modify your payload or service to handle user fetching.
+        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender().getFirstName());
         return chatMessage;
     }
-   
-    
-    
-    
+
+    @GetMapping("/chatrooms")
+    public ResponseEntity<List<ChatRoom>> getAllChatRooms() {
+        List<ChatRoom> chatRooms = chatRoomService.findAllChatRooms();
+        return ResponseEntity.ok(chatRooms);
+    }
+
 }
 
 //A room will be at minium two people there will be a room id which seperates them 
