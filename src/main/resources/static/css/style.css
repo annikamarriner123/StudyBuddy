@@ -182,20 +182,21 @@ body, h1, h2, ul {
     margin: auto; /* Centers the form horizontally */
     width: 100%; /* Full width to maintain responsive design */
     background-color: #F2F2F2;
-    background-image: url('/images/premium_photo-1677171749355-4ad563d86165.avif');
+    background-image: url('/images/studygroup2.avif');
     background-size: cover;
     background-position: center;
     padding: 2rem;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-group {
-    width: 100%; /* Full width for the form */
+    width: 60%; /* Full width for the form */
     display: flex; /* Makes children (inputs) flex items */
     flex-direction: column; /* Stacks children vertically */
     align-items: center; /* Centers children horizontally */
     margin-top: 10vh; /* Adds top margin for spacing */
+    background-color:#F2F2F2;
+    border-radius:20px;
 }
 
 /* Styles for inputs and buttons within the form */
@@ -348,19 +349,20 @@ body, h1, h2, ul {
     margin: auto; /* Centers the form horizontally */
     width: 100%; /* Full width to maintain responsive design */
     background-color: #F2F2F2;
-    background-image: url('/images/premium_photo-1677171749355-4ad563d86165.avif');
+    background-image: url('/images/studygroup2.avif');
     background-size: cover;
     background-position: center;
     padding: 2rem;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .input-group {
-    width: 100%; /* Full width for the form */
+    width: 60%; /* Full width for the form */
     display: flex; /* Makes children (inputs) flex items */
     flex-direction: column; /* Stacks children vertically */
     align-items: center; /* Centers children horizontally */
+    margin-top:0;
+    padding:2vw;
 }
 
 /* Styles for buttons within the form */
@@ -813,21 +815,27 @@ body, h1, h2, ul {
 
 /* style the nav to have a margin top of 5vh */
 #nav {
-  list-style-type: none;
-  padding: 0;
-  background-color: #f4f4fd;
-  width: 20%;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+    list-style-type: none;
+    padding: 0;
+    background-color: #E6E6FA;
+    width: 15%;
+    position: absolute;
+    height: 25vh;
+    overflow: auto;
+    margin-top: 12.5vh;
+    border-radius: 20px 0 0 20px;
+    margin-left: 15vw;
 }
+
 #nav li a {
   display: block;
   padding: 8px 16px;
   text-decoration: none;
   color: black;
   font-size:2.5vh;
+  margin:2vh;
 }
+
 #nav li a.active, #nav li a:hover {
   background-color: #ddd;
 }
@@ -1010,11 +1018,11 @@ p {
 /* Form styling */
 #studentForm {
     width: 50%; /* Adjusts the width of the form */
-    margin-left: 35vw;
+    margin-left: 30vw;
     margin-top:5vh;
     padding: 20px; /* Padding around the form */
     background-color: #fff; /* White background for the form */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 0 8px 8px 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
@@ -1023,6 +1031,15 @@ p {
     margin-top:5vh;
 }
 
+.addPaper-form{
+    width: 50%; /* Adjusts the width of the form */
+    margin-left: 30vw;
+    margin-top:5vh;
+    padding: 20px; /* Padding around the form */
+    background-color: #fff; /* White background for the form */
+    border-radius: 0 8px 8px 8px 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
 /* Styles for form groups */
 .form-group {
     margin-bottom: 20px; /* Adds space between each form group */
@@ -1042,3 +1059,15 @@ p {
     border-radius: 4px; /* Rounds the corners of the input field */
     margin: auto; /* Centers the input within the form group */
 }
+
+.backgroundSettings {
+    background-image: url('/images/studygroup2.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
