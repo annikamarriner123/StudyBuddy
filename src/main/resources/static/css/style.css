@@ -28,6 +28,7 @@ body, h1, h2, ul {
     display: flex;
     justify-content: center; /* Aligns items horizontally center */
     align-items: center; /* Aligns items vertically center */
+    height:100%;
 }
 
 
@@ -822,7 +823,7 @@ body, h1, h2, ul {
     position: absolute;
     height: 25vh;
     overflow: auto;
-    margin-top: 12.5vh;
+    margin-top: 20vh;
     border-radius: 20px 0 0 20px;
     margin-left: 15vw;
 }
@@ -1018,7 +1019,7 @@ p {
 #studentForm {
     width: 50%; /* Adjusts the width of the form */
     margin-left: 30vw;
-    margin-top:5vh;
+    margin-top:15vh;
     padding: 20px; /* Padding around the form */
     background-color: #fff; /* White background for the form */
     border-radius: 0 8px 8px 8px;
@@ -1033,7 +1034,7 @@ p {
 .addPaper-form{
     width: 50%; /* Adjusts the width of the form */
     margin-left: 30vw;
-    margin-top:5vh;
+    margin-top:15vh;
     padding: 20px; /* Padding around the form */
     background-color: #fff; /* White background for the form */
     border-radius: 0 8px 8px 8px 8px; /* Rounded corners */
