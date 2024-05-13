@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocked Users</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blocked Users</h1>
+        <table id="blockedUsersTable" style="width: 100%; border-collapse: collapse;">
+            <tr style="background-color: #f2f2f2;">
+                <th style="text-align: left; padding: 8px;">Username</th>
+                <th style="text-align: left; padding: 8px;">Email</th>
+                <th style="text-align: left; padding: 8px;">Unblock</th>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding: 8px;">user1</td>
+                <td style="text-align: left; padding: 8px;">user1@example.com</td>
+                <td style="text-align: left; padding: 8px;"><button onclick="unblockUser('user1')">Unblock</button></td>
+            </tr>
+            <tr>
+                <td style="text-align: left; padding: 8px;">user2</td>
+                <td style="text-align: left; padding: 8px;">user2@example.com</td>
+                <td style="text-align: left; padding: 8px;"><button onclick="unblockUser('user2')">Unblock</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </table>
+    </div>
+
+    <script>
+        function unblockUser(username) {
+            // Placeholder for unblocking logic
+            console.log(username + ' has been unblocked.');
+            // Ideally, this would involve a server request to unblock the user and then updating the UI accordingly
+        }
+    </script>
+</body>
+</html>
