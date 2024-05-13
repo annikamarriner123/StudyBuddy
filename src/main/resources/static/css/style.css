@@ -38,10 +38,14 @@ body, h1, h2, ul {
   }
   
   .header-content {
+   background-color:#F2F2F2 ;
+    color: white;
+    padding: 10px;
+    text-align: center;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration:none;
+    justify-content: center; /* Aligns items horizontally center */
+    align-items: center; /* Aligns items vertically center */
+    height:10vh;
   }
   
   nav ul {
@@ -284,7 +288,6 @@ body, h1, h2, ul {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
@@ -296,6 +299,7 @@ body, h1, h2, ul {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    width:100%;
   }
 
   .dropdown-content a:hover {
@@ -304,19 +308,6 @@ body, h1, h2, ul {
 
   .dropdown:hover .dropdown-content {
     display: block;
-  }
-
-  .dropbtn {
-    background-color: #f4f4fd;
-    color: #2B008B;
-    padding: 10px 20px;
-    border-radius: 20px; 
-    border: none;
-    cursor: pointer;
-  }
-
-  .dropbtn:hover {
-    background-color: #eaeaff; 
   }
 
   
@@ -681,7 +672,7 @@ body, h1, h2, ul {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #03DAC5;
     min-width: 160px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
@@ -703,18 +694,6 @@ body, h1, h2, ul {
     display: block;
 }
 
-.dropbtn {
-    background-color: #f4f4fd;
-    color: #2B008B;
-    padding: 10px 20px;
-    border-radius: 20px; 
-    border: none;
-    cursor: pointer;
-}
-
-.dropbtn:hover {
-    background-color: #eaeaff; 
-}
 
 
 /* Style for the table container */
@@ -812,58 +791,83 @@ body, h1, h2, ul {
 
 
 /* style for settings page*/
-
-
-/* style the nav to have a margin top of 5vh */
 #nav {
     list-style-type: none;
     padding: 0;
     background-color: #E6E6FA;
-    width: 15%;
-    position: absolute;
-    height: 25vh;
-    overflow: auto;
-    margin-top: 20vh;
-    border-radius: 20px 0 0 20px;
-    margin-left: 15vw;
+    width: 100%;  /* Adjust the width to span the full container width */
+    height: 5vh;  /* Adjusted height to be more minimal */
+    overflow: hidden;  /* hide overflow */
+    position: fixed;
+    z-index: 10;  /* Ensure the nav bar is on top */
+    border-radius: 0;  /* Remove border radius */
+    margin-top:6vh;
+    display: flex;  /* Use flexbox to align children */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    
+}
+
+
+#nav li {
+    display: inline;  /* Keep navigation items inline */
 }
 
 #nav li a {
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: black;
-  font-size:2.5vh;
-  margin:2vh;
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 2.5vh;
 }
 
 #nav li a.active, #nav li a:hover {
-  background-color: #ddd;
-}
-.content {
-  margin-left: 22%; /* To ensure the content is not hidden by the fixed nav */
-  padding: 20px;
-  display: none;
-}
-.active {
-  display: block;
+    background-color: #ddd;
 }
 
-ul{
-  margin:1vw;
+#nav-paper {
+    list-style-type: none;
+    padding: 0;
+    background-color: #E6E6FA;
+    width: 100%;  /* Adjust the width to span the full container width */
+    height: 5vh;  /* Adjusted height to be more minimal */
+    overflow: hidden;  /* hide overflow */
+    position: fixed;
+    z-index: 10;  /* Ensure the nav bar is on top */
+    border-radius: 0;  /* Remove border radius */
+    margin-top:8.5vh;
+    display: flex;  /* Use flexbox to align children */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  /* Center vertically */
+    
+}
+
+#nav-paper li {
+    display: inline;  /* Keep navigation items inline */
+}
+
+#nav-paper li a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 2.5vh;
+}
+
+#nav-paper li a.active, #nav li a:hover {
+    background-color: #ddd;
 }
 
 
 
 /* styling for preferences.html */
-
 .dropbtn {
-  background-color: #0066cc;
-  color: white;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+    background-color:#2B008B;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
 }
 
 .dropdown-content {
@@ -891,7 +895,7 @@ ul{
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #0057b7;
+  background-color: #03DAC5;
 }
 
 /* Form styling */
@@ -946,6 +950,10 @@ button{
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+button:hover{
+    background-color:#03DAC5;
 }
 
 #messages {
@@ -1018,26 +1026,22 @@ p {
 /* Form styling */
 #studentForm {
     width: 50%; /* Adjusts the width of the form */
-    margin-left: 30vw;
-    margin-top:15vh;
+    margin-left: 25vw;
+    margin-top:20vh;
     padding: 20px; /* Padding around the form */
     background-color: #fff; /* White background for the form */
-    border-radius: 0 8px 8px 8px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
-.addPaperTitle{
-    margin-left:35vw;
-    margin-top:5vh;
-}
 
 .addPaper-form{
     width: 50%; /* Adjusts the width of the form */
-    margin-left: 30vw;
-    margin-top:15vh;
+    margin-left: 25vw;
+    margin-top:20vh;
     padding: 20px; /* Padding around the form */
     background-color: #fff; /* White background for the form */
-    border-radius: 0 8px 8px 8px 8px; /* Rounded corners */
+    border-radius:8px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 /* Styles for form groups */
