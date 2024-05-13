@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,7 +18,7 @@
                 <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
             </ul>
 
-            <form class="addPaper-form" action="/updatePapers" method="post" th:object="${updatePapersRequest}">
+            <form class="addPaper-form" action="/updatePapers" method="post" th:object="${updatePapersRequest}" onsubmit="handleSubmit(event)">
                 <div id="classesContainer">
                     <div class="form-group">
                         <label for="class1">Class:</label>
@@ -31,9 +30,6 @@
                 <button type="button" onclick="addClass()">Add Another Class</button>
                 <button type="submit">Submit</button>
             </form>
-
-
-
 
             <script>
                 function handleSubmit(event) {
@@ -51,4 +47,3 @@
         </div>
     </body>
 </html>
-
