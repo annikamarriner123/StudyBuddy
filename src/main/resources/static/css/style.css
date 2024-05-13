@@ -19,6 +19,10 @@ body, h1, h2, ul {
   .filter{
     padding:8vh;
   }
+  
+  a{
+      text-decoration: none;
+  }
 
   header {
     background-color:#F2F2F2 ;
@@ -29,6 +33,7 @@ body, h1, h2, ul {
     justify-content: center; /* Aligns items horizontally center */
     align-items: center; /* Aligns items vertically center */
     height:100%;
+    text-decoration: none;
 }
 
 
@@ -46,6 +51,7 @@ body, h1, h2, ul {
     justify-content: center; /* Aligns items horizontally center */
     align-items: center; /* Aligns items vertically center */
     height:10vh;
+    text-decoration: none;
   }
   
   nav ul {
