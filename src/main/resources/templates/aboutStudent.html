@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <script src="/js/header.js"></script>
+    <script src="/js/header.js"></script> <!-- Load the header script at the beginning if it modifies the DOM or at the end if it doesn't -->
     <div class="backgroundSettings">
         <p id="successMessage" style="display:none; background-color: green; color: white; text-align: center; width: 100%; padding: 10px 0; position: fixed; top: 0; left: 0; z-index: 1000;">Form submitted successfully!</p>
 
@@ -43,7 +41,7 @@
 
         <script>
             function handleSubmit(event) {
-                event.preventDefault(); // Prevent form from submitting traditionally
+                event.preventDefault(); // Prevent the default form submission
                 // Show the success message
                 const successMessage = document.getElementById('successMessage');
                 successMessage.style.display = 'block';
@@ -55,6 +53,5 @@
             }
         </script>
     </div>
-    <script src="/js/header.js"></script>
 </body>
 </html>
