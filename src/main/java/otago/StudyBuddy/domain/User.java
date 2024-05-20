@@ -33,8 +33,13 @@ public class User {
     private String email;
     private String major;
 
-    @ManyToMany(mappedBy = "users")
-    private Set<ChatRoom> joinedChatRooms;
+    @ManyToMany
+    @JoinTable(
+            name = "chatroom_user",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "chatroom_id")
+    )
+    private Set<ChatRoom> chatRooms = new HashSet<>();
 
     
     private Collection<String> interests;
@@ -45,10 +50,10 @@ public class User {
     public User() {
     }
 
-    public User(int userId, String firstName, String surname, String username, String password, String email, String papers, String major, Collection<String> interests, Set<ChatRoom> joinedChatRooms) {
+    public User(Integer userId, String firstName, String surname, String username, String password, String email, String papers, String major, Collection<String> interests, Set<ChatRoom> chatRooms) {
         this.userId = userId;
         this.firstName = firstName;
-        this.joinedChatRooms = joinedChatRooms;
+        this.chatRooms = chatRooms;
         this.surname = surname;
         this.username = username;
         this.password = password;
@@ -149,7 +154,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", surname=" + surname + ", username=" + username + ", password=" + password + ", email=" + email + ", major=" + major + ", joinedChatRooms=" + joinedChatRooms + ", interests=" + interests + ", papers=" + papers + '}';
+        return "User{" + "userId=" + userId + ", firstName=" + firstName + ", surname=" + surname + ", username=" + username + ", password=" + password + ", email=" + email + ", major=" + major + ", joinedChatRooms=" + chatRooms + ", interests=" + interests + ", papers=" + papers + '}';
     }
 
 }

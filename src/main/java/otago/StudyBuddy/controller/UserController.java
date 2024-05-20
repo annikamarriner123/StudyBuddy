@@ -4,7 +4,6 @@
  */
 package otago.StudyBuddy.controller;
 
-import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -157,5 +156,15 @@ public class UserController {
         // Return the list of users as a response
         return ResponseEntity.ok(users);
     }
+
+    @GetMapping("/api/user/details")
+    public ResponseEntity<User> getUserDetails() {
+        User user = userService.getCurrentUser();
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } 
+        return null;
+    }
+    
 
 }

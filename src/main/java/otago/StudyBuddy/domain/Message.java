@@ -1,60 +1,52 @@
 package otago.StudyBuddy.domain;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "messages")
 public class Message {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer messageId;
 
-    @ManyToOne
-    @JoinColumn(name = "chatroom_id")
-    private ChatRoom chatroom;
-
     private String content;
+    private Integer userId; //Store a userid rather than the whole user obj
+
+        @Transient
+        private String senderName;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "chatroom_id", nullable = false)
+    private ChatRoom chatRoom;
+    
     private Timestamp timestamp;
+    
+    public Message(){}
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User sender;
-
-    private MessageType type;
-
-    public Message() {
-    }
-
-    public Message(String content, Timestamp timestamp, ChatRoom chatroom) {
+    public Message(Integer messageId, String content, Integer userId, ChatRoom chatRoom, Timestamp timestamp) {
+        this.messageId = messageId;
         this.content = content;
+        this.userId = userId;
+        this.chatRoom = chatRoom;
         this.timestamp = timestamp;
-        this.chatroom = chatroom;
     }
 
-    // Getters and Setters
     public Integer getMessageId() {
         return messageId;
     }
 
     public void setMessageId(Integer messageId) {
         this.messageId = messageId;
-    }
-
-    public ChatRoom getChatroom() {
-        return chatroom;
-    }
-
-    public void setChatroom(ChatRoom chatroom) {
-        this.chatroom = chatroom;
     }
 
     public String getContent() {
@@ -65,6 +57,22 @@ public class Message {
         this.content = content;
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public ChatRoom getChatRoom() {
+        return chatRoom;
+    }
+
+    public void setChatRoom(ChatRoom chatRoom) {
+        this.chatRoom = chatRoom;
+    }
+
     public Timestamp getTimestamp() {
         return timestamp;
     }
@@ -73,33 +81,18 @@ public class Message {
         this.timestamp = timestamp;
     }
 
-    public User getSender() {
-        return sender;
+    public String getSenderName() {
+        return senderName;
     }
 
-    public void setSender(User sender) {
-        this.sender = sender;
-    }
-
-    public MessageType getType() {
-        return type;
-    }
-
-    public void setType(MessageType type) {
-        this.type = type;
+    public void setSenderName(String senderName) {
+        this.senderName = senderName;
     }
     
-        public Integer getSenderId() {
-        if (sender != null) {
-            return sender.getUserId();
-        }
-        return null; 
-    }
 
-    // Enum for Message Type
-    public enum MessageType {
-        CHAT,
-        LEAVE,
-        JOIN
+    @Override
+    public String toString() {
+        return "Message{" + "messageId=" + messageId + ", content=" + content + ", userId=" + userId + ", chatRoom=" + chatRoom + '}';
     }
+    
 }

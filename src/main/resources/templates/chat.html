@@ -10,21 +10,22 @@
         <script src="/js/main.js" defer></script>
     </head>
     <body>
-  
         <header>
-        <script src="/js/header.js"></script>
-    </header>
-        
-        <main class="chat-app">
-            <div class="chat-sidebar">
-
-                <ul id="chat-list"> 
-                    
-                </ul>
-
+            <script src="/js/header.js"></script>
+        </header>
+        <main id="chat-app" class="chat-app">
+            <div id="chat-sidebar" class="chat-sidebar">
+                <ul id="chat-list"></ul>
+                <form id="create-chatroom-form">
+                    <input type="text" id="chatroom-name" placeholder="Enter chatroom name" required />
+                    <button type="submit">Create Chatroom</button>
+                </form>
             </div>
-            <div class="chat-main">
+            <div id="chat-main" class="chat-main">
                 <div id="chat-container">
+                    <select id="chatroom-select">
+                        <!-- Chatroom options will be populated here -->
+                    </select>
                     <ul id="messages"></ul>
                     <div id="message-input">
                         <form id="messageForm">

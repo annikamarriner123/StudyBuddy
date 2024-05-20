@@ -2,18 +2,18 @@ package otago.StudyBuddy.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
-import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import otago.StudyBuddy.domain.ChatRoom;
+import org.springframework.web.bind.annotation.PathVariable;
 import otago.StudyBuddy.domain.Message;
-import otago.StudyBuddy.domain.MessagePayload;
+import otago.StudyBuddy.domain.User;
 import otago.StudyBuddy.service.ChatRoomService;
 import otago.StudyBuddy.service.MessageService;
+import otago.StudyBuddy.service.UserService;
 
 @Controller
 public class ChatController {
@@ -24,28 +24,40 @@ public class ChatController {
     @Autowired
     private ChatRoomService chatRoomService;
 
-    @MessageMapping("/chat.sendMessage")
-    @SendTo("/topic/public")
-    public Message sendMessage(@Payload MessagePayload payload) {
-        return messageService.sendMessage(payload);
+    @Autowired
+    private UserService userService;
+
+    @MessageMapping("/chat.sendMessage/{chatroomId}")
+    @SendTo("/topic/chatroom/{chatroomId}")
+    public Message sendMessage(@Payload Message message, @DestinationVariable String chatroomId) {
+ // Fetch user based on senderId
+        User user = userService.getUserById(message.getUserId());
+        
+        message.setSenderName(user.getUsername());
+        // Set chatRoom in message
+        message.setChatRoom(chatRoomService.getChatRoomById(Integer.valueOf(chatroomId)));
+        
+        // Save message and return
+        Message savedMessage = messageService.sendMessage(message);
+        
+        return savedMessage;
     }
 
-    @MessageMapping("/chat.addUser")
-    @SendTo("/topic/public")
-    public Message addUser(@Payload MessagePayload payload, SimpMessageHeaderAccessor headerAccessor) {
-        Message chatMessage = messageService.addUser(payload);
-        // Assuming addUser in your service sets the user and returns the message.
-        // This example also assumes you modify your payload or service to handle user fetching.
-        headerAccessor.getSessionAttributes().put("username", chatMessage.getSender().getFirstName());
-        return chatMessage;
+    @MessageMapping("/chat.loadMessages/{chatroomId}")
+    @SendTo("/topic/chatroom/{chatroomId}/messages")
+    public List<Message> loadMessages(@DestinationVariable String chatroomId) {
+        return messageService.getMessagesByChatRoomId(Integer.valueOf(chatroomId));
     }
 
-    @GetMapping("/chatrooms")
-    public ResponseEntity<List<ChatRoom>> getAllChatRooms() {
-        List<ChatRoom> chatRooms = chatRoomService.findAllChatRooms();
-        return ResponseEntity.ok(chatRooms);
+    @MessageMapping("/chat.loadUsers/{chatroomId}")
+    @SendTo("/topic/chatroom/{chatroomId}/users")
+    public List<User> loadUsers(@DestinationVariable String chatroomId) {
+        return userService.getUsersByChatRoomId(Integer.valueOf(chatroomId));
     }
-    
-    
+
+    @GetMapping("/{chatroomId}/messages")
+    public List<Message> getMessagesByChatRoomId(@PathVariable Integer chatroomId) {
+        return messageService.getMessagesByChatRoomId(chatroomId);
+    }
 
 }

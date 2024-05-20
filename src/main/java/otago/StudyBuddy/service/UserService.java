@@ -4,6 +4,8 @@
  */
 package otago.StudyBuddy.service;
 
+import jakarta.transaction.Transactional;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -74,6 +76,15 @@ public class UserService {
        currentUser.setMajor(major);
        currentUser.setEmail(email);
        return userRepository.saveAndFlush(currentUser);
+    }
+    
+    public User getUserById(Integer userId){
+        return userRepository.findByUserId(userId).orElse(null);
+    }
+    
+    @Transactional
+    public List<User> getUsersByChatRoomId(Integer chatRoomId) {
+        return userRepository.findUsersByChatRoomId(chatRoomId);
     }
 
 }
