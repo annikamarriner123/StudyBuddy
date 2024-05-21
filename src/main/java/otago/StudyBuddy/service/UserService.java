@@ -22,6 +22,7 @@ public class UserService {
 
     @Autowired
     public UserRepository userRepository;
+    
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -85,6 +86,15 @@ public class UserService {
     @Transactional
     public List<User> getUsersByChatRoomId(Integer chatRoomId) {
         return userRepository.findUsersByChatRoomId(chatRoomId);
+    }
+    
+    public List<User> getUsersByPaper(String paper) {
+        User currUser = getCurrentUser();
+        List<User> users = userRepository.findAll();
+        return users.stream()
+        .filter(user -> user.getUserPapers().contains(paper))
+        .filter(user -> user.getUserId() != currUser.getUserId())
+        .toList();
     }
 
 }

@@ -5,6 +5,7 @@
 package otago.StudyBuddy.controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -151,15 +152,19 @@ public class UserController {
 
     }
 
-    @GetMapping("/searchUsers")
-    public ResponseEntity<Optional<User>> searchUsersByPaper(@RequestParam String paper) {
+    @PostMapping("/findStudyPeers")
+    public String searchUsersByPaper(@RequestParam("paper") String paper, Model model) {
         // Query the database for users with the specified paper attribute
-        Optional<User> users = userRepository.findByPapers(paper);
+        Collection<User> users = userService.getUsersByPaper(paper);
+        model.addAttribute("users", users);
+        
+        //Optional<User> users = userRepository.findByPapers(paper);
 
         // Return the list of users as a response
-        return ResponseEntity.ok(users);
+        return "findStudyPeers";
     }
-
+        
+        
     @GetMapping("/api/user/details")
     public ResponseEntity<User> getUserDetails() {
         User user = userService.getCurrentUser();
