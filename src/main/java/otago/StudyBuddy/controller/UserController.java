@@ -115,6 +115,9 @@ public class UserController {
     public String getUpdatePapers(Model model) {
         model.addAttribute("updatePapersRequest", new String());
         model.addAttribute("updatePapersRequest", new ArrayList<String>());
+        
+        User currentUser = userService.getCurrentUser();
+        model.addAttribute("userPapers", currentUser.getUserPapers());
         return "updatePapers";
     }
 
@@ -125,7 +128,7 @@ public class UserController {
         Integer userId = currentUser.getUserId();
         // Check if user ID and paper codes are not null and if there are papers to add
         if (userId != null && papers != null) {
-            
+
             // Call the PaperService to add papers for the user
             User updatedUser = paperService.addUserPapers(userId, papers.get(0)); //this just adds to the temporary paper variable to database
             updatedUser = paperService.addUserPapers(userId, papers);
@@ -152,27 +155,29 @@ public class UserController {
 
     }
 
+    @GetMapping("/findStudyPeers")
+    public String getFindStudyPeersPage() {
+        return "findStudyPeers";
+    }
+
     @PostMapping("/findStudyPeers")
     public String searchUsersByPaper(@RequestParam("paper") String paper, Model model) {
         // Query the database for users with the specified paper attribute
         Collection<User> users = userService.getUsersByPaper(paper);
         model.addAttribute("users", users);
-        
-        //Optional<User> users = userRepository.findByPapers(paper);
 
+        //Optional<User> users = userRepository.findByPapers(paper);
         // Return the list of users as a response
         return "findStudyPeers";
     }
-        
-        
+
     @GetMapping("/api/user/details")
     public ResponseEntity<User> getUserDetails() {
         User user = userService.getCurrentUser();
         if (user != null) {
             return ResponseEntity.ok(user);
-        } 
+        }
         return null;
     }
-    
 
 }

@@ -21,10 +21,10 @@ public class MatchController {
         return "match";
     }
 
-    @GetMapping("/findStudyPeers")
-    public String getFindStudyPeersPage() {
-        return "findStudyPeers";
-    }
+//    @GetMapping("/findStudyPeers")
+//    public String getFindStudyPeersPage() {
+//        return "findStudyPeers";
+//    }
     
 //    @PostMapping("/findStudyPeers")
 //    public String findStudyPeers(@RequestParam String paper) {
