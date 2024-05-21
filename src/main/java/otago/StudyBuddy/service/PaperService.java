@@ -5,6 +5,7 @@
 package otago.StudyBuddy.service;
 
 import jakarta.transaction.Transactional;
+import java.util.List;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class PaperService {
 
     @Autowired
     private UserRepository userRepository;
-    
+
     @Autowired
     private UserService userService;
 
@@ -36,6 +37,18 @@ public class PaperService {
         if (user != null && papers != null) {
 
             user.setPapers(papers);
+            // Save the updated user object in the repository
+            return userRepository.saveAndFlush(user);
+        }
+        return null;
+    }
+
+    @Transactional
+    public User addUserPapers(Integer userId, List<String> papers) {
+        User user = userRepository.findByUserId(userId).orElse(null);
+        if (user != null && papers != null) {
+
+            user.setUserPapers(papers);
             // Save the updated user object in the repository
             return userRepository.saveAndFlush(user);
         }

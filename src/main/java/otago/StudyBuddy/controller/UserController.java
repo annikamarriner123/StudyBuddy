@@ -4,6 +4,8 @@
  */
 package otago.StudyBuddy.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import otago.StudyBuddy.domain.Paper;
 import otago.StudyBuddy.domain.User;
 import otago.StudyBuddy.repository.UserRepository;
 import otago.StudyBuddy.service.PaperService;
@@ -112,19 +113,20 @@ public class UserController {
     @GetMapping("/updatePapers")
     public String getUpdatePapers(Model model) {
         model.addAttribute("updatePapersRequest", new String());
+        model.addAttribute("updatePapersRequest", new ArrayList<String>());
         return "updatePapers";
     }
 
     @PostMapping("/updatePapers")
-    public String addPaper(@ModelAttribute Paper paper) {
+    public String addPaper(@RequestParam("paperCodes") List<String> papers) {
         User currentUser = userService.getCurrentUser();
 
         Integer userId = currentUser.getUserId();
         // Check if user ID and paper codes are not null and if there are papers to add
-        if (userId != null && paper != null) {
+        if (userId != null && papers != null) {
 
             // Call the PaperService to add papers for the user
-            User updatedUser = paperService.addUserPapers(userId, paper.getPaperCode());
+            User updatedUser = paperService.addUserPapers(userId, papers);
             if (updatedUser == null) {
                 // If the operation fails, redirect to an error page or handle accordingly
                 return "redirect:/error";
