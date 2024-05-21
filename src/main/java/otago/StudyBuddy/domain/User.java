@@ -47,7 +47,7 @@ public class User {
 
     private String papers;
     
-    private List<String> userPapers;
+    private List<String> userPapers = new ArrayList<>();
 
     //Default Consturctor
     public User() {

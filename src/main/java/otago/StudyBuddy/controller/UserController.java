@@ -117,7 +117,13 @@ public class UserController {
         model.addAttribute("updatePapersRequest", new ArrayList<String>());
         
         User currentUser = userService.getCurrentUser();
-        model.addAttribute("userPapers", currentUser.getUserPapers());
+        List<String> userPapers = currentUser.getUserPapers();
+        if(userPapers == null) {
+            userPapers = new ArrayList<>();
+            for(int i = 0; i < 8; i++) userPapers.add("");
+        }
+        model.addAttribute("userPapers", userPapers);
+        
         return "updatePapers";
     }
 

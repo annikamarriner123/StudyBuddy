@@ -92,6 +92,7 @@ public class UserService {
         User currUser = getCurrentUser();
         List<User> users = userRepository.findAll();
         return users.stream()
+        .filter(user -> user.getUserPapers() != null)
         .filter(user -> user.getUserPapers().contains(paper))
         .filter(user -> user.getUserId() != currUser.getUserId())
         .toList();
