@@ -45,6 +45,8 @@ public class User {
     private Collection<String> interests;
 
     private String papers;
+    
+    private List<String> userPapers;
 
     //Default Consturctor
     public User() {
@@ -63,6 +65,14 @@ public class User {
 //        this.favourites = favourites;
         this.interests = interests;
 
+    }
+
+    public List<String> getUserPapers() {
+        return userPapers;
+    }
+
+    public void setUserPapers(List<String> userPapers) {
+        this.userPapers = userPapers;
     }
 
     public int getUserId() {
