@@ -124,9 +124,10 @@ public class UserController {
         Integer userId = currentUser.getUserId();
         // Check if user ID and paper codes are not null and if there are papers to add
         if (userId != null && papers != null) {
-
+            
             // Call the PaperService to add papers for the user
-            User updatedUser = paperService.addUserPapers(userId, papers);
+            User updatedUser = paperService.addUserPapers(userId, papers.get(0)); //this just adds to the temporary paper variable to database
+            updatedUser = paperService.addUserPapers(userId, papers);
             if (updatedUser == null) {
                 // If the operation fails, redirect to an error page or handle accordingly
                 return "redirect:/error";
