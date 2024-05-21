@@ -45,6 +45,7 @@
                 // Show the success message
                 const successMessage = document.getElementById('successMessage');
                 successMessage.style.display = 'block';
+                event.target.submit();
 
                 // Hide the success message after 3 seconds (3000 milliseconds)
                 setTimeout(function () {
