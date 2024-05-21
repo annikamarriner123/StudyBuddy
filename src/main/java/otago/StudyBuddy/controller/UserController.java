@@ -118,10 +118,6 @@ public class UserController {
         
         User currentUser = userService.getCurrentUser();
         List<String> userPapers = currentUser.getUserPapers();
-        if(userPapers == null) {
-            userPapers = new ArrayList<>();
-            for(int i = 0; i < 8; i++) userPapers.add("");
-        }
         model.addAttribute("userPapers", userPapers);
         
         return "updatePapers";

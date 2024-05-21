@@ -22,56 +22,56 @@
                 <div id="classesContainer">
                     <div class="form-group">
                         <label for="class1">Class:</label>
-                        <input type="text" th:value="${userPapers.get(0)}" id="paperCode1" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 0 ? userPapers.get(0) : ''}" id="paperCode1" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(1)}" id="paperCode2" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 1 ? userPapers.get(1) : ''}" id="paperCode2" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(2)}" id="paperCode3" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 2 ? userPapers.get(2) : ''}" id="paperCode3" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(3)}" id="paperCode4" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 3 ? userPapers.get(3) : ''}" id="paperCode4" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(4)}" id="paperCode5" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 4 ? userPapers.get(4) : ''}" id="paperCode5" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(5)}" id="paperCode6" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 5 ? userPapers.get(5) : ''}" id="paperCode6" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(6)}" id="paperCode7" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 6 ? userPapers.get(6) : ''}" id="paperCode7" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
                 <div id="classesContainer">
                     <div class="form-group">
-                        <input type="text" th:value="${userPapers.get(7)}" id="paperCode8" name="paperCodes" placeholder="e.g., MART112" 
+                        <input type="text" th:value="${userPapers.size() > 7 ? userPapers.get(7) : ''}" id="paperCode8" name="paperCodes" placeholder="e.g., MART112" 
                                pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
                         <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>

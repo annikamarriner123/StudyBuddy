@@ -5,6 +5,7 @@
 package otago.StudyBuddy.service;
 
 import jakarta.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -36,6 +37,9 @@ public class UserService {
             newUser.setUsername(username);
             newUser.setPassword(password);
             newUser.setEmail(email);
+            List<String> userPapers = new ArrayList<>();
+            for(int i = 0; i < 8; i++) userPapers.add("");
+            newUser.setUserPapers(userPapers);
             return userRepository.save(newUser);
 
         }
