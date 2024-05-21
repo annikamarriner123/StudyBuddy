@@ -4,6 +4,9 @@
  */
 package otago.StudyBuddy.controller;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +17,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import otago.StudyBuddy.domain.Paper;
 import otago.StudyBuddy.domain.User;
 import otago.StudyBuddy.repository.UserRepository;
 import otago.StudyBuddy.service.PaperService;
@@ -112,19 +114,26 @@ public class UserController {
     @GetMapping("/updatePapers")
     public String getUpdatePapers(Model model) {
         model.addAttribute("updatePapersRequest", new String());
+        model.addAttribute("updatePapersRequest", new ArrayList<String>());
+        
+        User currentUser = userService.getCurrentUser();
+        List<String> userPapers = currentUser.getUserPapers();
+        model.addAttribute("userPapers", userPapers);
+        
         return "updatePapers";
     }
 
     @PostMapping("/updatePapers")
-    public String addPaper(@ModelAttribute Paper paper) {
+    public String addPaper(@RequestParam("paperCodes") List<String> papers) {
         User currentUser = userService.getCurrentUser();
 
         Integer userId = currentUser.getUserId();
         // Check if user ID and paper codes are not null and if there are papers to add
-        if (userId != null && paper != null) {
+        if (userId != null && papers != null) {
 
             // Call the PaperService to add papers for the user
-            User updatedUser = paperService.addUserPapers(userId, paper.getPaperCode());
+            User updatedUser = paperService.addUserPapers(userId, papers.get(0)); //this just adds to the temporary paper variable to database
+            updatedUser = paperService.addUserPapers(userId, papers);
             if (updatedUser == null) {
                 // If the operation fails, redirect to an error page or handle accordingly
                 return "redirect:/error";
@@ -148,13 +157,20 @@ public class UserController {
 
     }
 
-    @GetMapping("/searchUsers")
-    public ResponseEntity<Optional<User>> searchUsersByPaper(@RequestParam String paper) {
-        // Query the database for users with the specified paper attribute
-        Optional<User> users = userRepository.findByPapers(paper);
+    @GetMapping("/findStudyPeers")
+    public String getFindStudyPeersPage() {
+        return "findStudyPeers";
+    }
 
+    @PostMapping("/findStudyPeers")
+    public String searchUsersByPaper(@RequestParam("paper") String paper, Model model) {
+        // Query the database for users with the specified paper attribute
+        Collection<User> users = userService.getUsersByPaper(paper);
+        model.addAttribute("users", users);
+
+        //Optional<User> users = userRepository.findByPapers(paper);
         // Return the list of users as a response
-        return ResponseEntity.ok(users);
+        return "findStudyPeers";
     }
 
     @GetMapping("/api/user/details")
@@ -162,9 +178,8 @@ public class UserController {
         User user = userService.getCurrentUser();
         if (user != null) {
             return ResponseEntity.ok(user);
-        } 
+        }
         return null;
     }
-    
 
 }

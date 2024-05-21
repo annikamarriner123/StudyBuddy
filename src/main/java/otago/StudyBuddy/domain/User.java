@@ -4,6 +4,7 @@
  */
 package otago.StudyBuddy.domain;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -45,6 +46,8 @@ public class User {
     private Collection<String> interests;
 
     private String papers;
+    
+    private List<String> userPapers = new ArrayList<>();
 
     //Default Consturctor
     public User() {
@@ -63,6 +66,14 @@ public class User {
 //        this.favourites = favourites;
         this.interests = interests;
 
+    }
+
+    public List<String> getUserPapers() {
+        return userPapers;
+    }
+
+    public void setUserPapers(List<String> userPapers) {
+        this.userPapers = userPapers;
     }
 
     public int getUserId() {

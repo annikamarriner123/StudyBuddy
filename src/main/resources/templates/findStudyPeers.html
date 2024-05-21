@@ -11,33 +11,42 @@
         <script src="/js/app.js" defer></script> <!-- Link to your JavaScript file with defer attribute -->
     </head>
     <body>
-        
-       <header>
-        <script src="/js/header.js"></script>
-    </header>
-        
+
+        <header>
+            <script src="/js/header.js"></script>
+        </header>
+
         <div class="photo-banner">
             <img src="/images/international-banner.avif" alt="International Banner" class="photo-banner">
         </div>
 
-         <div class="content-paper-container">
-        <div class="filter_papers_search">
-            <h2>Search to find study peers</h2>
-            <input type="text" id="papers" name="papers" placeholder="Enter paper code... e.g. MART310">
-            <button type="button" id="searchButton">Search</button>
-        </div> 
+        <div class="content-paper-container">
+            <div class="filter_papers_search">
+                <h2>Search to find study peers</h2>
+                <form action="/findStudyPeers" method="post">
+                    <input type="text" id="paper" name="paper" placeholder="Enter paper code... e.g. MART310" pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                    <button type="submit">Search</button>
+                </form>
+            </div> 
 
-        <table id="userTable">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Surname</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- User data will be dynamically added here -->
-            </tbody>
-        </table>
-         </div>
+            <!-- Table for displaying users -->
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Surname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iterate over the list of users and dynamically generate rows -->
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.firstName}">First Name</td>
+                        <td th:text="${user.surname}">Surname</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
     </body>
 </html>

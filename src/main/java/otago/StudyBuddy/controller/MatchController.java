@@ -6,6 +6,8 @@ package otago.StudyBuddy.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -13,11 +15,21 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class MatchController {
-    
+
     @GetMapping("/match")
     public String getMatchingPage() {
         return "match";
     }
+
+//    @GetMapping("/findStudyPeers")
+//    public String getFindStudyPeersPage() {
+//        return "findStudyPeers";
+//    }
     
-    
+//    @PostMapping("/findStudyPeers")
+//    public String findStudyPeers(@RequestParam String paper) {
+//        
+//        return null;
+//    }
+
 }
