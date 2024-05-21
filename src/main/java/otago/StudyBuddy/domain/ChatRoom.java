@@ -1,8 +1,10 @@
 package otago.StudyBuddy.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -14,12 +16,17 @@ public class ChatRoom {
     private Integer chatRoomId;
 
     private String name;
-    
+
     @JsonIgnore
     @ManyToMany(mappedBy = "chatRooms")
     private Set<User> users = new HashSet<>();
 
-    public ChatRoom() {}
+    @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Message> messages;
+
+    public ChatRoom() {
+    }
 
     public ChatRoom(Integer chatRoomId, String name) {
         this.chatRoomId = chatRoomId;
@@ -53,4 +60,16 @@ public class ChatRoom {
     public void setUsers(Set<User> users) {
         this.users = users;
     }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
+    
+    
+    
 }

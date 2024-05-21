@@ -1,5 +1,6 @@
 package otago.StudyBuddy.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -22,16 +23,17 @@ public class Message {
     private String content;
     private Integer userId; //Store a userid rather than the whole user obj
 
-        @Transient
-        private String senderName;
-    
+    private String senderName;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "chatroom_id", nullable = false)
+    @JsonBackReference
     private ChatRoom chatRoom;
-    
+
     private Timestamp timestamp;
-    
-    public Message(){}
+
+    public Message() {
+    }
 
     public Message(Integer messageId, String content, Integer userId, ChatRoom chatRoom, Timestamp timestamp) {
         this.messageId = messageId;
@@ -88,11 +90,10 @@ public class Message {
     public void setSenderName(String senderName) {
         this.senderName = senderName;
     }
-    
 
     @Override
     public String toString() {
         return "Message{" + "messageId=" + messageId + ", content=" + content + ", userId=" + userId + ", chatRoom=" + chatRoom + '}';
     }
-    
+
 }

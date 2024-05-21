@@ -17,4 +17,6 @@ import otago.StudyBuddy.domain.ChatRoom;
 @Component
 public interface ChatRoomRepository extends JpaRepository<ChatRoom, Integer>{ 
     ChatRoom findByChatRoomId(Integer ChatRoomId);
+    
+    void deleteById(Integer ChatRoomId);
 }
