@@ -8,7 +8,7 @@ public class StudyBuddyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StudyBuddyApplication.class, args);
-                System.out.println("Running on: http://localhost:8080/\n\n");
+                System.out.println("Running on: http://localhost:8081/\n\n");
                 
 	}
 
