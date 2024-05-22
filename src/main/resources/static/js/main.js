@@ -66,29 +66,7 @@ function fetchChatRooms() {
             if (Array.isArray(data)) {
                 data.forEach(room => {
                     if (room.name && room.chatRoomId) {
-                        var roomElement = document.createElement('option');
-                        roomElement.textContent = room.name;
-                        roomElement.value = room.chatRoomId;
-                        chatroomSelect.appendChild(roomElement);
-
-                        // Also add the room to the chat list
-                        var listItem = document.createElement('li');
-                        listItem.textContent = room.name;
-
-                        // Create a delete button for the chatroom
-                        var deleteButton = document.createElement('button');
-                        deleteButton.textContent = 'x';
-                        deleteButton.addEventListener('click', function() {
-                            deleteChatRoom(room.chatRoomId);
-                        });
-
-                        listItem.dataset.chatroomId = room.chatRoomId;
-                        listItem.addEventListener('click', function() {
-                            chatroomSelect.value = room.chatRoomId;
-                            changeChatRoomSubscription(room.chatRoomId);
-                        });
-                        listItem.appendChild(deleteButton);
-                        chatList.appendChild(listItem);
+                        addChatRoomToUI(room);
                     } else {
                         console.error('Invalid chatroom data:', room);
                     }
@@ -104,6 +82,34 @@ function fetchChatRooms() {
         .catch(error => console.error('Error fetching chat rooms:', error));
 }
 
+function addChatRoomToUI(room) {
+    var roomElement = document.createElement('option');
+    roomElement.textContent = room.name;
+    roomElement.value = room.chatRoomId;
+    chatroomSelect.appendChild(roomElement);
+
+    var listItem = document.createElement('li');
+    listItem.textContent = room.name;
+    listItem.dataset.chatroomId = room.chatRoomId;
+
+    var deleteButton = document.createElement('button');
+    deleteButton.textContent = 'x';
+    deleteButton.addEventListener('click', function (event) {
+        event.stopPropagation();
+        if (confirm('Are you sure you want to delete this chatroom?')) {
+            deleteChatRoom(room.chatRoomId);
+        }
+    });
+
+    listItem.addEventListener('click', function () {
+        chatroomSelect.value = room.chatRoomId;
+        changeChatRoomSubscription(room.chatRoomId);
+    });
+
+    listItem.appendChild(deleteButton);
+    chatList.appendChild(listItem);
+}
+
 function deleteChatRoom(chatRoomId) {
     fetch(`/api/chatrooms/${chatRoomId}`, {
         method: 'DELETE',
@@ -113,7 +119,6 @@ function deleteChatRoom(chatRoomId) {
     })
     .then(response => {
         if (response.ok) {
-            // Remove the chatroom from the UI
             var chatRoomElement = document.querySelector(`li[data-chatroom-id="${chatRoomId}"]`);
             if (chatRoomElement) {
                 chatRoomElement.remove();
@@ -122,10 +127,10 @@ function deleteChatRoom(chatRoomId) {
             if (chatRoomOption) {
                 chatRoomOption.remove();
             }
-            // Optionally, you might want to handle the case where the current chatroom is deleted
             if (chatroomSelect.value === chatRoomId.toString()) {
                 chatroomSelect.value = ''; // Reset the select input
                 messageArea.innerHTML = ''; // Clear messages
+                
             }
         } else {
             console.error('Failed to delete chatroom');
@@ -142,7 +147,6 @@ function connect() {
 }
 
 function onConnected() {
-    // Initially subscribe to the first chatroom or a default chatroom
     var initialChatroomId = chatroomSelect.value;
     subscribeToChatRoom(initialChatroomId);
 }
@@ -150,11 +154,11 @@ function onConnected() {
 function subscribeToChatRoom(chatroomId) {
     if (stompClient) {
         if (currentSubscription) {
-            currentSubscription.unsubscribe(); // Unsubscribe from the previous chatroom
+            currentSubscription.unsubscribe();
         }
         currentSubscription = stompClient.subscribe('/topic/chatroom/' + chatroomId, onMessageReceived);
         stompClient.subscribe('/topic/chatroom/' + chatroomId + '/users', onUsersReceived);
-        loadMessages(chatroomId); // Ensure messages are loaded when switching chatrooms
+        loadMessages(chatroomId);
         loadUsers(chatroomId);
     }
 }
@@ -171,8 +175,8 @@ function loadMessages(chatroomId) {
             if (!Array.isArray(messages)) {
                 throw new TypeError('Expected an array of messages');
             }
-            messageArea.innerHTML = ''; // Clear current messages
-            messages.forEach(appendMessage); // Add fetched messages
+            messageArea.innerHTML = '';
+            messages.forEach(appendMessage);
         })
         .catch(error => console.error('Error loading messages:', error));
 }
@@ -200,7 +204,8 @@ function sendMessage(event) {
             userId: userId,
             chatroomId: selectedChatRoomId,
             content: messageContent,
-            type: 'CHAT'
+            type: 'CHAT',
+            timestamp: new Date().toISOString() 
         };
         stompClient.send("/app/chat.sendMessage/" + selectedChatRoomId, {}, JSON.stringify(chatMessage));
         messageInput.value = '';
@@ -211,16 +216,23 @@ function appendMessage(message) {
     var messageElement = document.createElement('li');
     messageElement.classList.add('chat-message');
     if (message.userId === userId) {
-        messageElement.classList.add('sent-message'); // Add a class for sent messages
+        messageElement.classList.add('sent-message');
     } else {
-        messageElement.classList.add('received-message'); // Add a class for received messages
+        messageElement.classList.add('received-message');
     }
     var usernameElement = document.createElement('strong');
     usernameElement.appendChild(document.createTextNode(message.senderName + ': '));
+    
     var textElement = document.createElement('p');
     textElement.appendChild(document.createTextNode(message.content));
+    
+    var timestampElement = document.createElement('small');
+    var timestamp = new Date(message.timestamp);
+    timestampElement.textContent = timestamp.toLocaleString(); // Format the timestamp
+    
     messageElement.appendChild(usernameElement);
     messageElement.appendChild(textElement);
+    messageElement.appendChild(timestampElement);
     messageArea.appendChild(messageElement);
     messageArea.scrollTop = messageArea.scrollHeight;
 }
@@ -228,9 +240,9 @@ function appendMessage(message) {
 function onMessageReceived(payload) {
     try {
         var message = JSON.parse(payload.body);
-        appendMessage(message); // Indicate this is a received message
+        appendMessage(message);
     } catch (e) {
-        console.error("Error parsing JSON:", e, "Payload:", payload.body); // Log the error and payload
+        console.error("Error parsing JSON:", e, "Payload:", payload.body);
     }
 }
 
@@ -243,24 +255,11 @@ function createChatRoom(event) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({name: chatroomName}) // Send chatroomName as a JSON object
+            body: JSON.stringify({name: chatroomName})
         })
         .then(response => response.json())
         .then(data => {
-            // Add the new chatroom to the select and list
-            var roomElement = document.createElement('option');
-            roomElement.textContent = data.name;
-            roomElement.value = data.chatRoomId;
-            chatroomSelect.appendChild(roomElement);
-            var listItem = document.createElement('li');
-            listItem.textContent = data.name;
-            listItem.dataset.chatroomId = data.chatRoomId;
-            listItem.addEventListener('click', function () {
-                chatroomSelect.value = data.chatRoomId;
-                changeChatRoomSubscription(data.chatRoomId);
-            });
-            chatList.appendChild(listItem);
-            // Select the new chatroom
+            addChatRoomToUI(data);
             chatroomSelect.value = data.chatRoomId;
             changeChatRoomSubscription(data.chatRoomId);
         })
@@ -272,14 +271,10 @@ function createChatRoom(event) {
 
 function changeChatRoomSubscription(chatroomId) {
     if (stompClient) {
-        // Unsubscribe from the current chatroom
         if (currentSubscription) {
             currentSubscription.unsubscribe();
         }
-
-        // Subscribe to the new chatroom
         subscribeToChatRoom(chatroomId);
-        // Clear the message area
         messageArea.innerHTML = '';
     }
 }
