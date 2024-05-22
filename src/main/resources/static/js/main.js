@@ -95,7 +95,7 @@ function addChatRoomToUI(room) {
     listItem.dataset.chatroomId = room.chatRoomId;
 
     var deleteButton = document.createElement('button');
-    deleteButton.textContent = 'x';
+    deleteButton.textContent = 'Delete Chat';
     deleteButton.addEventListener('click', function (event) {
         event.stopPropagation();
         if (confirm('Are you sure you want to delete this chatroom?')) {

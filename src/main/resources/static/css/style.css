@@ -1,14 +1,9 @@
-/* #F2F2F2 background colour*/
-/* #2B008B text colours */
-
-/* Reset some basic elements */
+/*
 body, h1, h2, ul {
     margin: 0;
     padding: 0;
   }
 
-  
-  /* Apply a basic box-sizing rule */
   *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -30,8 +25,8 @@ body, h1, h2, ul {
     padding: 10px;
     text-align: center;
     display: flex;
-    justify-content: center; /* Aligns items horizontally center */
-    align-items: center; /* Aligns items vertically center */
+    justify-content: center;  Aligns items horizontally center 
+    align-items: center;  Aligns items vertically center 
     height:100%;
     text-decoration: none;
 }
@@ -48,8 +43,8 @@ body, h1, h2, ul {
     padding: 10px;
     text-align: center;
     display: flex;
-    justify-content: center; /* Aligns items horizontally center */
-    align-items: center; /* Aligns items vertically center */
+    justify-content: center;  Aligns items horizontally center 
+    align-items: center;  Aligns items vertically center 
     height:10vh;
     text-decoration: none;
   }
@@ -57,11 +52,11 @@ body, h1, h2, ul {
   nav ul {
     list-style: none;
     display: flex;
-    padding: 0; /* Remove padding */
-    margin: 1.5vh; /* Remove margin */
-    position: absolute; /* Position the navigation absolutely */
-    left: 10rem; /* Adjust this value to move the nav to the right */
-    top: 2rem; /* Align with the padding of the header */
+    padding: 0;  Remove padding 
+    margin: 1.5vh;  Remove margin 
+    position: absolute;  Position the navigation absolutely 
+    left: 10rem;  Adjust this value to move the nav to the right 
+    top: 2rem;  Align with the padding of the header 
   }
 
   nav ul :hover{
@@ -79,24 +74,24 @@ body, h1, h2, ul {
   nav ul li a {
     color: #2B008B;
     text-decoration: none;
-    font-size: 1.1rem; /* Slightly larger font size */
+    font-size: 1.1rem;  Slightly larger font size 
   }
   
   h1 {
-    font-size: 2.5rem; /* Increased font size */
+    font-size: 2.5rem;  Increased font size 
     margin-bottom: 0.5rem;
-    position: absolute; /* Position the title absolutely */
+    position: absolute;  Position the title absolutely 
     left: 50%;
-    transform: translateX(-50%); /* Center the title */
+    transform: translateX(-50%);  Center the title 
     white-space: nowrap;
     top: 50%;
-    transform: translate(-50%, -50%); /* Center the title vertically */
+    transform: translate(-50%, -50%);  Center the title vertically 
     color:#2B008B;
   }
   
   .hero {
-    position: relative; /* Needed for absolute positioning inside */
-    height: 95vh; /* Adjust based on your preference */
+    position: relative;  Needed for absolute positioning inside 
+    height: 95vh;  Adjust based on your preference 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -105,14 +100,14 @@ body, h1, h2, ul {
   }
   
   .hero::before {
-    content: ""; /* Required for pseudo-elements */
+    content: "";  Required for pseudo-elements 
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-    z-index: 0; /* Layered behind the content but above the image */
+    background: rgba(0, 0, 0, 0.5);  Black with 50% opacity 
+    z-index: 0;  Layered behind the content but above the image 
   }
   
   .hero-background-image {
@@ -121,12 +116,12 @@ body, h1, h2, ul {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the area without distorting */
-    z-index: -1; /* Ensures the image stays in the background */
+    object-fit: cover;  Ensures the image covers the area without distorting 
+    z-index: -1;  Ensures the image stays in the background 
   }
   
   .hero-content {
-    position: relative; /* Ensures content is above the background image and overlay */
+    position: relative;  Ensures content is above the background image and overlay 
     z-index: 1;
   }
   
@@ -143,9 +138,9 @@ body, h1, h2, ul {
   .btn-get-started {
     background-color: #03DAC5;
     color: white;
-    padding: 10px 20px; /* Adjust padding as needed */
+    padding: 10px 20px;  Adjust padding as needed 
     text-decoration: none;
-    border-radius: 20px; /* Adjust border radius as needed */
+    border-radius: 20px;  Adjust border radius as needed 
     transition: background-color 0.3s;
     font-size:3vh;
   }
@@ -156,42 +151,42 @@ body, h1, h2, ul {
   
 
 
-  /* Login Page */
-/*
+   Login Page 
+
   .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }*/
+  }
 
 .username-input, .password-input {
-    width: 50vw; /* Set the width to 50% of the viewport width */
-    padding: 1rem; /* Padding for better touch and aesthetics */
-    border-radius: 5px; /* Rounded corners */
-    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
-    display: block; /* Ensure elements are treated as block for better control */
-    border: 1px solid #ccc; /* Consistent border styling */
+    width: 50vw;  Set the width to 50% of the viewport width 
+    padding: 1rem;  Padding for better touch and aesthetics 
+    border-radius: 5px;  Rounded corners 
+    margin: 2vh auto;  Vertical margin and horizontal auto for centering 
+    display: block;  Ensure elements are treated as block for better control 
+    border: 1px solid #ccc;  Consistent border styling 
 }
 
-/* Additional styles can be added specifically if needed */
+ Additional styles can be added specifically if needed 
 .username-input {
-    background-color: #f8f8f8; /* Light background for username input */
+    background-color: #f8f8f8;  Light background for username input 
 }
 
 .password-input {
-    background-color: #f0f0f0; /* Slightly different background for contrast */
+    background-color: #f0f0f0;  Slightly different background for contrast 
 }
 
-/* Ensures the login form is centered horizontally and vertically */
+ Ensures the login form is centered horizontally and vertically 
 .login-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh; /* Takes up most of the viewport height */
-    margin: auto; /* Centers the form horizontally */
-    width: 100%; /* Full width to maintain responsive design */
+    height: 90vh;  Takes up most of the viewport height 
+    margin: auto;  Centers the form horizontally 
+    width: 100%;  Full width to maintain responsive design 
     background-color: #F2F2F2;
     background-image: url('/images/studygroup2.avif');
     background-size: cover;
@@ -201,26 +196,26 @@ body, h1, h2, ul {
 }
 
 .input-group {
-    width: 60%; /* Full width for the form */
-    display: flex; /* Makes children (inputs) flex items */
-    flex-direction: column; /* Stacks children vertically */
-    align-items: center; /* Centers children horizontally */
-    margin-top: 10vh; /* Adds top margin for spacing */
+    width: 60%;  Full width for the form 
+    display: flex;  Makes children (inputs) flex items 
+    flex-direction: column;  Stacks children vertically 
+    align-items: center;  Centers children horizontally 
+    margin-top: 10vh;  Adds top margin for spacing 
     background-color:#F2F2F2;
     border-radius:20px;
 }
 
-/* Styles for inputs and buttons within the form */
+ Styles for inputs and buttons within the form 
 .login-form input, .login-form button {
-    width: 50vw; /* Relative width to viewport for responsiveness */
-    padding: 1rem; /* Padding for better touch and aesthetics */
-    border-radius: 5px; /* Rounded corners */
-    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
-    display: block; /* Ensures elements appear in a block format */
+    width: 50vw;  Relative width to viewport for responsiveness 
+    padding: 1rem;  Padding for better touch and aesthetics 
+    border-radius: 5px;  Rounded corners 
+    margin: 2vh auto;  Vertical margin and horizontal auto for centering 
+    display: block;  Ensures elements appear in a block format 
 }
 
 .login-form input {
-    border: 1px solid #ccc; /* Border styling */
+    border: 1px solid #ccc;  Border styling 
 }
 
 .login-form button {
@@ -228,11 +223,11 @@ body, h1, h2, ul {
     color: #F2F2F2;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem; /* Slightly larger font size for readability */
+    font-size: 1.2rem;  Slightly larger font size for readability 
 }
 
 .login-form button:hover {
-    background-color: #2B008B; /* Dark purple when hovered */
+    background-color: #2B008B;  Dark purple when hovered 
 }
 
   
@@ -285,7 +280,7 @@ body, h1, h2, ul {
     background-color: #eaeaff; 
   }
 
-  /* Dropdown Button */
+   Dropdown Button 
   .dropdown {
     position: relative;
     display: inline-block;
@@ -318,34 +313,34 @@ body, h1, h2, ul {
 
   
   
- /* General styles for input fields in the signup form */
+  General styles for input fields in the signup form 
 .signup-form input {
-    width: 50vw; /* Set the width to 50% of the viewport width */
-    padding: 1rem; /* Padding for better touch and aesthetics */
-    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
-    display: block; /* Ensure elements are treated as block for better control */
-    border: 1px solid #ccc; /* Consistent border styling */
-    border-radius: 5px; /* Rounded corners */
+    width: 50vw;  Set the width to 50% of the viewport width 
+    padding: 1rem;  Padding for better touch and aesthetics 
+    margin: 2vh auto;  Vertical margin and horizontal auto for centering 
+    display: block;  Ensure elements are treated as block for better control 
+    border: 1px solid #ccc;  Consistent border styling 
+    border-radius: 5px;  Rounded corners 
 }
 
-/* Specific background styles for username and password inputs */
+ Specific background styles for username and password inputs 
 .username-input, .password-input {
-    background-color: #f8f8f8; /* Light background for username input */
+    background-color: #f8f8f8;  Light background for username input 
 }
 
 .password-input {
-    background-color: #f0f0f0; /* Slightly different background for password input */
+    background-color: #f0f0f0;  Slightly different background for password input 
 }
 
-/* Ensures the signup form is centered horizontally and vertically */
+ Ensures the signup form is centered horizontally and vertically 
 .signup-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh; /* Takes up most of the viewport height */
-    margin: auto; /* Centers the form horizontally */
-    width: 100%; /* Full width to maintain responsive design */
+    height: 90vh;  Takes up most of the viewport height 
+    margin: auto;  Centers the form horizontally 
+    width: 100%;  Full width to maintain responsive design 
     background-color: #F2F2F2;
     background-image: url('/images/studygroup2.avif');
     background-size: cover;
@@ -355,30 +350,30 @@ body, h1, h2, ul {
 }
 
 .input-group {
-    width: 60%; /* Full width for the form */
-    display: flex; /* Makes children (inputs) flex items */
-    flex-direction: column; /* Stacks children vertically */
-    align-items: center; /* Centers children horizontally */
+    width: 60%;  Full width for the form 
+    display: flex;  Makes children (inputs) flex items 
+    flex-direction: column;  Stacks children vertically 
+    align-items: center;  Centers children horizontally 
     margin-top:0;
     padding:2vw;
 }
 
-/* Styles for buttons within the form */
+ Styles for buttons within the form 
 .signup-form button {
-    width: 50vw; /* Relative width to viewport for responsiveness */
-    padding: 1rem; /* Padding for better touch and aesthetics */
-    border-radius: 5px; /* Rounded corners */
-    margin: 2vh auto; /* Vertical margin and horizontal auto for centering */
-    display: block; /* Ensures elements appear in a block format */
+    width: 50vw;  Relative width to viewport for responsiveness 
+    padding: 1rem;  Padding for better touch and aesthetics 
+    border-radius: 5px;  Rounded corners 
+    margin: 2vh auto;  Vertical margin and horizontal auto for centering 
+    display: block;  Ensures elements appear in a block format 
     background-color: #03DAC5;
     color: #F2F2F2;
     border: none;
     cursor: pointer;
-    font-size: 1.2rem; /* Slightly larger font size for readability */
+    font-size: 1.2rem;  Slightly larger font size for readability 
 }
 
 .signup-form button:hover {
-    background-color: #2B008B; /* Dark purple when hovered */
+    background-color: #2B008B;  Dark purple when hovered 
 }
 
 .signup-form p {
@@ -394,7 +389,7 @@ body, h1, h2, ul {
 }
 
 
-  /* Photo Banner Styles */
+   Photo Banner Styles 
   .photo-banner {
     margin-top: 0px;
     height: auto;
@@ -402,12 +397,12 @@ body, h1, h2, ul {
   }
   .text-box {
   position: absolute;
-  top: 73%; /* Position it vertically in the middle */
-  right: 20%; /* Align it to the right side */
-  transform: translateY(-50%); /* Center it vertically */
-  width: 40%; /* Adjust width as needed */
-  background-color: #ffffff; /* Light purple background */
-  color: #2B008B; /* Dark purple text */
+  top: 73%;  Position it vertically in the middle 
+  right: 20%;  Align it to the right side 
+  transform: translateY(-50%);  Center it vertically 
+  width: 40%;  Adjust width as needed 
+  background-color: #ffffff;  Light purple background 
+  color: #2B008B;  Dark purple text 
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -415,24 +410,24 @@ body, h1, h2, ul {
 }
 
 .text-box p:first-child {
-  font-size: 28px; /* Adjust font size for the first paragraph */
+  font-size: 28px;  Adjust font size for the first paragraph 
   font-weight: bold;
 }
 .text-box2 {
   position: absolute;
-  top: 71.5%; /* Position it vertically in the middle */
-  left: 5%; /* Align it to the right side */
-  transform: translateY(-50%); /* Center it vertically */
-  width: 30%; /* Adjust width as needed */
-  background-color: #ded1d13c; /* Light purple background */
-  color: #2B008B; /* Dark purple text */
+  top: 71.5%;  Position it vertically in the middle 
+  left: 5%;  Align it to the right side 
+  transform: translateY(-50%);  Center it vertically 
+  width: 30%;  Adjust width as needed 
+  background-color: #ded1d13c;  Light purple background 
+  color: #2B008B;  Dark purple text 
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   line-height: 2; 
 }
 .text-box2 p:first-child {
-  font-size: 18px; /* Adjust font size for the first paragraph */
+  font-size: 18px;  Adjust font size for the first paragraph 
   font-weight: bold;
 }
 
@@ -442,11 +437,11 @@ body, h1, h2, ul {
 
 
 
-/* chat.html page */
+ chat.html page 
 
 .chat-app {
   display: flex;
-  height: calc(98vh - 45px); /* Adjust height based on header */
+  height: calc(98vh - 45px);  Adjust height based on header 
 }
 
 .chat-sidebar {
@@ -538,18 +533,18 @@ body, h1, h2, ul {
 
   .chat-sidebar {
       width: 100%;
-      height: 150px; /* Fixed height when stacked */
+      height: 150px;  Fixed height when stacked 
   }
 
   .chat-main {
-      height: calc(100vh - 200px); /* Adjust based on total available height */
+      height: calc(100vh - 200px);  Adjust based on total available height 
   }
 }
 
 
-/* #F2F2F2 background colour*/
-/* #2B008B text colours */
-/* teams page */
+ #F2F2F2 background colour
+ #2B008B text colours 
+ teams page 
 
 .team-header {
   background-color: white;
@@ -562,7 +557,7 @@ body, h1, h2, ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Creates space between cards */
+  gap: 20px;  Creates space between cards 
 }
 
 .team-card {
@@ -579,7 +574,7 @@ body, h1, h2, ul {
 .team-image {
   width: 100%;
   height: 200px;
-  object-fit: cover; /* Ensures images cover the card area without distorting */
+  object-fit: cover;  Ensures images cover the card area without distorting 
 }
 
 .team-info {
@@ -587,7 +582,7 @@ body, h1, h2, ul {
 }
 
 .team-actions {
-  margin-top: auto; /* Pushes actions to the bottom of the card */
+  margin-top: auto;  Pushes actions to the bottom of the card 
   background: #f4f4f4;
   padding: 10px;
   display: flex;
@@ -626,14 +621,14 @@ body, h1, h2, ul {
   }
 
   .team-card {
-      width: 90%; /* Makes cards responsive to smaller screens */
+      width: 90%;  Makes cards responsive to smaller screens 
   }
 }
 
 
 
 
-/* find study peers page  */
+ find study peers page  
 
 .banner {
     background-color: #f4f4fd; 
@@ -669,7 +664,7 @@ body, h1, h2, ul {
     background-color: #eaeaff; 
 }
 
-/* Dropdown Button */
+ Dropdown Button 
 .dropdown {
     position: relative;
     display: inline-block;
@@ -702,30 +697,30 @@ body, h1, h2, ul {
 
 
 
-/* Style for the table container */
+ Style for the table container 
 .content-paper-container {
     display: flex;
-    flex-direction: column; /* Change to column to stack children vertically */
-    align-items: center; /* Centers children horizontally */
-    width: 100%; /* Ensure it takes full width if needed */
+    flex-direction: column;  Change to column to stack children vertically 
+    align-items: center;  Centers children horizontally 
+    width: 100%;  Ensure it takes full width if needed 
     padding: 20px;
 }
 
 
-/* Style for the filter search */
+ Style for the filter search 
 .filter_papers_search {
-    width: 25%; /* Adjust the width of the filter */
+    width: 25%;  Adjust the width of the filter 
     padding: 20px;
-    margin-right: 20px; /* Add margin to separate from the table */
-    background-color: #f2f2f2; /* Grey background color */
-    border-radius: 10px; /* Soft edges */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    margin-right: 20px;  Add margin to separate from the table 
+    background-color: #f2f2f2;  Grey background color 
+    border-radius: 10px;  Soft edges 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  Soft shadow 
 }
 
 .filter_papers_search h2 {
     margin-bottom: 10px;
     color: #2B008B;
-    font-size: 24px; /* Reduce font size slightly */
+    font-size: 24px;  Reduce font size slightly 
 }
 
 .filter_papers_search label {
@@ -761,62 +756,62 @@ body, h1, h2, ul {
     background-color: #4B0082;
 }
 
-/* Style for the table */
+ Style for the table 
 #userTable {
-    width: 70%; /* Table takes full width of the container */
-    border-collapse: collapse; /* Collapse border spacing */
-    background-color: #fff; /* White background */
-    border-radius: 10px; /* Soft edges */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 70%;  Table takes full width of the container 
+    border-collapse: collapse;  Collapse border spacing 
+    background-color: #fff;  White background 
+    border-radius: 10px;  Soft edges 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  Soft shadow 
     margin-top:3vh;
 }
 
-/* Style for table header */
+ Style for table header 
 #userTable th {
-    background-color: #E6E6FA; /* Light purple */
+    background-color: #E6E6FA;  Light purple 
     text-align: left;
-    padding: 12px; /* Increase padding for better spacing */
+    padding: 12px;  Increase padding for better spacing 
 }
 
-/* Style for table data */
+ Style for table data 
 #userTable td {
     border-bottom: 1px solid #ddd;
-    padding: 12px; /* Increase padding for better spacing */
+    padding: 12px;  Increase padding for better spacing 
 }
 
-/* Alternate row color */
+ Alternate row color 
 #userTable tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Light grey */
+    background-color: #f2f2f2;  Light grey 
 }
 
-/* Style for no data message */
+ Style for no data message 
 #userTable td[colspan="2"] {
     text-align: center;
-    padding: 12px; /* Increase padding for better spacing */
+    padding: 12px;  Increase padding for better spacing 
 }
 
 
-/* style for settings page*/
+ style for settings page
 #nav {
     list-style-type: none;
     padding: 0;
     background-color: #E6E6FA;
-    width: 100%;  /* Adjust the width to span the full container width */
-    height: 5vh;  /* Adjusted height to be more minimal */
-    overflow: hidden;  /* hide overflow */
+    width: 100%;   Adjust the width to span the full container width 
+    height: 5vh;   Adjusted height to be more minimal 
+    overflow: hidden;   hide overflow 
     position: fixed;
-    z-index: 10;  /* Ensure the nav bar is on top */
-    border-radius: 0;  /* Remove border radius */
+    z-index: 10;   Ensure the nav bar is on top 
+    border-radius: 0;   Remove border radius 
     margin-top:6vh;
-    display: flex;  /* Use flexbox to align children */
-    justify-content: center;  /* Center horizontally */
-    align-items: center;  /* Center vertically */
+    display: flex;   Use flexbox to align children 
+    justify-content: center;   Center horizontally 
+    align-items: center;   Center vertically 
     
 }
 
 
 #nav li {
-    display: inline;  /* Keep navigation items inline */
+    display: inline;   Keep navigation items inline 
 }
 
 #nav li a {
@@ -835,21 +830,21 @@ body, h1, h2, ul {
     list-style-type: none;
     padding: 0;
     background-color: #E6E6FA;
-    width: 100%;  /* Adjust the width to span the full container width */
-    height: 5vh;  /* Adjusted height to be more minimal */
-    overflow: hidden;  /* hide overflow */
+    width: 100%;   Adjust the width to span the full container width 
+    height: 5vh;   Adjusted height to be more minimal 
+    overflow: hidden;   hide overflow 
     position: fixed;
-    z-index: 10;  /* Ensure the nav bar is on top */
-    border-radius: 0;  /* Remove border radius */
+    z-index: 10;   Ensure the nav bar is on top 
+    border-radius: 0;   Remove border radius 
     margin-top:8.5vh;
-    display: flex;  /* Use flexbox to align children */
-    justify-content: center;  /* Center horizontally */
-    align-items: center;  /* Center vertically */
+    display: flex;   Use flexbox to align children 
+    justify-content: center;   Center horizontally 
+    align-items: center;   Center vertically 
     
 }
 
 #nav-paper li {
-    display: inline;  /* Keep navigation items inline */
+    display: inline;   Keep navigation items inline 
 }
 
 #nav-paper li a {
@@ -866,7 +861,7 @@ body, h1, h2, ul {
 
 
 
-/* styling for preferences.html */
+ styling for preferences.html 
 .dropbtn {
     background-color:#2B008B;
     color: white;
@@ -904,7 +899,7 @@ body, h1, h2, ul {
   background-color: #03DAC5;
 }
 
-/* Form styling */
+ Form styling 
 login-form {
   background-color: #ffffff;
   max-width: 400px;
@@ -986,12 +981,12 @@ button:hover{
 
 .chat-message.sent {
     justify-content: flex-end;
-    background-color: #dcf8c6; /* Light green background for sent messages */
+    background-color: #dcf8c6;  Light green background for sent messages 
 }
 
 .chat-message.received {
     justify-content: flex-start;
-    background-color: #ffffff; /* White background for received messages */
+    background-color: #ffffff;  White background for received messages 
 }
 
 strong {
@@ -1013,61 +1008,61 @@ p {
 }
 
 
-/*styling for update-details page*/
-/* Success message banner */
+styling for update-details page
+ Success message banner 
 #successMessage {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed at the top */
+    display: none;  Hidden by default 
+    position: fixed;  Fixed at the top 
     top: 0;
     left: 0;
-    width: 100%; /* Full width */
-    background-color: green; /* Green background */
-    color: white; /* White text */
-    text-align: center; /* Centered text */
-    padding: 10px 0; /* Padding for spacing */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); /* Shadow for depth */
-    z-index: 1000; /* Ensures it stays on top of other content */
+    width: 100%;  Full width 
+    background-color: green;  Green background 
+    color: white;  White text 
+    text-align: center;  Centered text 
+    padding: 10px 0;  Padding for spacing 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);  Shadow for depth 
+    z-index: 1000;  Ensures it stays on top of other content 
 }
 
-/* Form styling */
+ Form styling 
 #studentForm {
-    width: 50%; /* Adjusts the width of the form */
+    width: 50%;  Adjusts the width of the form 
     margin-left: 25vw;
     margin-top:20vh;
-    padding: 20px; /* Padding around the form */
-    background-color: #fff; /* White background for the form */
+    padding: 20px;  Padding around the form 
+    background-color: #fff;  White background for the form 
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  Shadow for depth 
 }
 
 
 .addPaper-form{
-    width: 50%; /* Adjusts the width of the form */
+    width: 50%;  Adjusts the width of the form 
     margin-left: 25vw;
     margin-top:20vh;
-    padding: 20px; /* Padding around the form */
-    background-color: #fff; /* White background for the form */
-    border-radius:8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px;  Padding around the form 
+    background-color: #fff;  White background for the form 
+    border-radius:8px;  Rounded corners 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  Shadow for depth 
 }
-/* Styles for form groups */
+ Styles for form groups 
 .form-group {
-    margin-bottom: 20px; /* Adds space between each form group */
-    flex-direction: column; /* Stacks the label above the input */
+    margin-bottom: 20px;  Adds space between each form group 
+    flex-direction: column;  Stacks the label above the input 
     margin-left:2.5vw;
 }
 
 .form-group label {
-    margin-bottom: 5px; /* Space between label and input */
-    font-weight: bold; /* Makes the label text bold */
+    margin-bottom: 5px;  Space between label and input 
+    font-weight: bold;  Makes the label text bold 
 }
 
 .form-group input {
-    width: 90%; /* Sets the width of the input to be longer */
-    padding: 8px; /* Adds padding inside the input for better text visibility */
-    border: 1px solid #ccc; /* A subtle border for the input */
-    border-radius: 4px; /* Rounds the corners of the input field */
-    margin: auto; /* Centers the input within the form group */
+    width: 90%;  Sets the width of the input to be longer 
+    padding: 8px;  Adds padding inside the input for better text visibility 
+    border: 1px solid #ccc;  A subtle border for the input 
+    border-radius: 4px;  Rounds the corners of the input field 
+    margin: auto;  Centers the input within the form group 
 }
 
 .backgroundSettings {
@@ -1076,37 +1071,37 @@ p {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;  Full viewport height 
     display: flex;
     flex-direction: column;
 }
 
 .create-chatroom-form{
-    width: 50%; /* Adjusts the width of the form */
+    width: 50%;  Adjusts the width of the form 
     margin-left: 25vw;
     margin-top:20vh;
-    padding: 20px; /* Padding around the form */
-    background-color: #fff; /* White background for the form */
-    border-radius:8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px;  Padding around the form 
+    background-color: #fff;  White background for the form 
+    border-radius:8px;  Rounded corners 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  Shadow for depth 
     
 }
 
-/* Chat Application Styles */
+ Chat Application Styles 
 #chat-app {
     display: flex;
-    height: calc(100vh - 50px); /* Adjust height based on header */
+    height: calc(100vh - 50px);  Adjust height based on header 
     background-color: #F2F2F2;
-    margin-top: 50px; /* Push the content below the fixed header */
+    margin-top: 50px;  Push the content below the fixed header 
 }
 
-/* Sidebar Styles */
+ Sidebar Styles 
 #chat-sidebar {
     width: 30%;
-    background-color: #E6E6FA; /* Light purple background */
+    background-color: #E6E6FA;  Light purple background 
     overflow-y: auto;
     padding-top: 1vh;
-    border-right: 1px solid #ddd; /* Add border to separate sidebar */
+    border-right: 1px solid #ddd;  Add border to separate sidebar 
 }
 
 #chat-list {
@@ -1119,7 +1114,7 @@ p {
     padding: 15px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
-    color: #2B008B; /* Text color */
+    color: #2B008B;  Text color 
     font-size: 1.2rem;
 }
 
@@ -1128,12 +1123,12 @@ p {
     color: white;
 }
 
-/* Main Chat Area Styles */
+ Main Chat Area Styles 
 #chat-main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF; /* White background */
+    background-color: #FFFFFF;  White background 
 }
 
 #chat-container {
@@ -1141,7 +1136,7 @@ p {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border-left: 1px solid #ddd; /* Add border to separate main area */
+    border-left: 1px solid #ddd;  Add border to separate main area 
 }
 
 #chatroom-select {
@@ -1150,8 +1145,8 @@ p {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f8f8f8; /* Light grey background */
-    color: #2B008B; /* Text color */
+    background-color: #f8f8f8;  Light grey background 
+    color: #2B008B;  Text color 
     font-size: 1.2rem;
 }
 
@@ -1172,21 +1167,21 @@ p {
     flex-direction: column;
     max-width: 60%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    word-wrap: break-word; /* Ensure text wraps within the message box */
+    word-wrap: break-word;  Ensure text wraps within the message box 
 }
 
 .sent-message {
-    background-color: #dcf8c6; /* Light green for sent messages */
-    align-self: flex-end; /* Align to the right */
+    background-color: #dcf8c6;  Light green for sent messages 
+    align-self: flex-end;  Align to the right 
     text-align: right;
-    margin-left: auto; /* Ensure it moves to the right */
+    margin-left: auto;  Ensure it moves to the right 
 }
 
 .received-message {
-    background-color: #f1f0f0; /* Light gray for received messages */
-    align-self: flex-start; /* Align to the left */
+    background-color: #f1f0f0;  Light gray for received messages 
+    align-self: flex-start;  Align to the left 
     text-align: left;
-    margin-right: auto; /* Ensure it moves to the left */
+    margin-right: auto;  Ensure it moves to the left 
 }
 
 #messages strong {
@@ -1197,7 +1192,7 @@ p {
     padding: 2px 8px;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    display: inline-block; /* Ensure it aligns correctly within the message */
+    display: inline-block;  Ensure it aligns correctly within the message 
 }
 
 #messages p {
@@ -1206,10 +1201,10 @@ p {
     line-height: 1.4;
     padding: 4px 8px;
     border-radius: 4px;
-    background-color: transparent; /* Ensure no background color for text */
+    background-color: transparent;  Ensure no background color for text 
 }
 
-/* Input Area Styles */
+ Input Area Styles 
 #message-input {
     display: flex;
     padding: 10px;
@@ -1245,10 +1240,1212 @@ p {
 
     #chat-sidebar {
         width: 100%;
-        height: 150px; /* Fixed height when stacked */
+        height: 150px;  Fixed height when stacked 
     }
 
     #chat-main {
-        height: calc(100vh - 200px); /* Adjust based on total available height */
+        height: calc(100vh - 200px);  Adjust based on total available height 
+    }
+}*/
+
+
+body, h1, h2, ul {
+    margin: 0;
+    padding: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.filter {
+    padding: 8vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #F2F2F2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+h2 {
+    color: #2B008B;
+    font-size: 4vh;
+}
+
+.header-content {
+    background-color: #F2F2F2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 1.5vh;
+    position: absolute;
+    left: 10rem;
+    top: 2rem;
+}
+
+nav ul:hover {
+    color: #03DAC5;
+}
+
+nav ul li {
+    margin-right: 5vw;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #2B008B;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    top: 50%;
+    color: #2B008B;
+}
+
+.hero {
+    position: relative;
+    height: 95vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-text {
+    font-size: 5vh;
+    color: white;
+    margin-bottom: 6vh;
+    border-radius: 20px;
+    padding-top: 10vh;
+}
+
+.btn-get-started {
+    background-color: #03DAC5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    font-size: 3vh;
+}
+
+.btn-get-started:hover {
+    background-color: #2B008B;
+}
+
+.username-input, .password-input {
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2vh auto;
+    display: block;
+    border: 1px solid #ccc;
+}
+
+.username-input {
+    background-color: #f8f8f8;
+}
+
+.password-input {
+    background-color: #f0f0f0;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: auto;
+    width: 100%;
+    background-color: #F2F2F2;
+    background-image: url('/images/studygroup2.avif');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10vh;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+}
+
+.login-form input, .login-form button {
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2vh auto;
+    display: block;
+}
+
+.login-form input {
+    border: 1px solid #ccc;
+}
+
+.login-form button {
+    background-color: #03DAC5;
+    color: #F2F2F2;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.login-form button:hover {
+    background-color: #2B008B;
+}
+
+.login-form p {
+    margin-top: 1rem;
+}
+
+.login-form p a {
+    color: #2B008B;
+}
+
+.login-form p a:hover {
+    text-decoration: underline;
+}
+
+.banner {
+    background-color: #f4f4fd;
+    color: #2B008B;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-bottom: 2vh;
+}
+
+.banner h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.banner a {
+    color: #2B008B;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner a:hover {
+    background-color: #eaeaff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.signup-form input {
+    width: 50vw;
+    padding: 1rem;
+    margin: 2vh auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    margin: auto;
+    width: 100%;
+    background-color: #F2F2F2;
+    background-image: url('/images/studygroup2.avif');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    padding: 2vw;
+}
+
+.signup-form button {
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2vh auto;
+    display: block;
+    background-color: #03DAC5;
+    color: #F2F2F2;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.signup-form button:hover {
+    background-color: #2B008B;
+}
+
+.signup-form p {
+    margin-top: 1rem;
+}
+
+.signup-form p a {
+    color: #2B008B;
+}
+
+.signup-form p a:hover {
+    text-decoration: underline;
+}
+
+.photo-banner {
+    margin-top: 0px;
+    height: auto;
+    width: 100%;
+}
+
+.text-box {
+    position: absolute;
+    top: 73%;
+    right: 20%;
+    transform: translateY(-50%);
+    width: 40%;
+    background-color: #ffffff;
+    color: #2B008B;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+
+.text-box p:first-child {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.text-box2 {
+    position: absolute;
+    top: 71.5%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 30%;
+    background-color: #ded1d13c;
+    color: #2B008B;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2
+
+px 4px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+
+.text-box2 p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chat-app {
+    display: flex;
+    height: calc(98vh - 45px);
+}
+
+.chat-sidebar {
+    width: 30%;
+    background-color: #f4f4fd;
+    overflow-y: auto;
+    padding-top: 1vh;
+}
+
+.chat-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    padding: 3vh;
+}
+
+.chat-list li:hover {
+    background-color: #03DAC5;
+}
+
+.chat-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #ddd;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.message {
+    background-color: #03DAC5;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-bottom: 2px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.my-message {
+    align-self: flex-end;
+}
+
+.their-message {
+    align-self: flex-start;
+    background-color: #efefef;
+    color: black;
+}
+
+#message-input {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ccc;
+}
+
+#message-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+}
+
+#message-input button {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#message-input button:hover {
+    background-color: #03DAC5;
+}
+
+@media (max-width: 600px) {
+    .chat-app {
+        flex-direction: column;
+    }
+
+    .chat-sidebar {
+        width: 100%;
+        height: 150px;
+    }
+
+    .chat-main {
+        height: calc(100vh - 200px);
+    }
+}
+
+.team-header {
+    background-color: white;
+    color: #2B008B;
+    padding: 30px;
+    text-align: center;
+}
+
+.team-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-card {
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    margin: 2vw;
+}
+
+.team-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 10px;
+}
+
+.team-actions {
+    margin-top: auto;
+    background: #f4f4f4;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-join, .btn-remove {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-join {
+    background-color: #2B008B;
+    color: white;
+}
+
+.btn-join:hover {
+    background-color: #03DAC5;
+}
+
+.btn-remove {
+    background-color: #03DAC5;
+    color: white;
+}
+
+.btn-remove:hover {
+    background-color: #2B008B;
+}
+
+@media (max-width: 600px) {
+    .team-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        width: 90%;
+    }
+}
+
+.banner {
+    background-color: #f4f4fd;
+    color: #2B008B;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.banner h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.banner a {
+    color: #2B008B;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.banner a:hover {
+    background-color: #eaeaff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #03DAC5;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content-paper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.filter_papers_search {
+    width: 25%;
+    padding: 20px;
+    margin-right: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter_papers_search h2 {
+    margin-bottom: 10px;
+    color: #2B008B;
+    font-size: 24px;
+}
+
+.filter_papers_search label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.filter_papers_search input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.filter_papers_search input[type="text"]:focus {
+    outline: none;
+    border-color: #2B008B;
+    box-shadow: 0 0 5px #2B008B;
+}
+
+.filter_papers_search button[type="submit"] {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter_papers_search button[type="submit"]:hover {
+    background-color: #4B0082;
+}
+
+#userTable {
+    width: 70%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3vh;
+}
+
+#userTable th {
+    background-color: #E6E6FA;
+    text-align: left;
+    padding: 12px;
+}
+
+#userTable td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+}
+
+#userTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#userTable td[colspan="2"] {
+    text-align: center;
+    padding: 12px;
+}
+
+#nav {
+    list-style-type: none;
+    padding: 0;
+    background-color: #E6E6FA;
+    width: 100%;
+    height: 5vh;
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    border-radius: 0;
+    margin-top: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav li {
+    display: inline;
+}
+
+#nav li a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 2.5vh;
+}
+
+#nav li a.active, #nav li a:hover {
+    background-color: #ddd;
+}
+
+#nav-paper {
+    list-style-type: none;
+    padding: 0;
+    background-color: #E6E6FA;
+    width: 100%;
+    height: 5vh;
+    overflow: hidden;
+    position: fixed;
+    z-index: 10;
+    border-radius: 0;
+    margin-top: 8.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-paper li {
+    display: inline;
+}
+
+#nav-paper li a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    font-size: 2.5vh;
+}
+
+#nav-paper li a.active, #nav li a:hover {
+    background-color: #ddd;
+
+
+}
+
+.dropbtn {
+    background-color: #2B008B;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #03DAC5;
+}
+
+login-form {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+label {
+    margin-bottom: 10px;
+    color: #333333;
+    display: block;
+}
+
+.textbox {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #2B008B;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #03DAC5;
+}
+
+button {
+    width: 100%;
+    background-color: #2B008B;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #03DAC5;
+}
+
+#messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 5vw;
+    overflow-y: auto;
+    height: 400px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.chat-message {
+    padding: 10px;
+    margin-bottom: 4px;
+    background-color: #fff;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chat-message.sent {
+    justify-content: flex-end;
+    background-color: #dcf8c6;
+}
+
+.chat-message.received {
+    justify-content: flex-start;
+    background-color: #ffffff;
+}
+
+strong {
+    font-weight: bold;
+    color: #007BFF;
+    margin-right: 10px;
+    background-color: #e1ecf4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#successMessage {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+#studentForm {
+    width: 50%;
+    margin-left: 25vw;
+    margin-top: 20vh;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addPaper-form {
+    width: 50%;
+    margin-left: 25vw;
+    margin-top: 20vh;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    flex-direction: column;
+    margin-left: 2.5vw;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 90%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: auto;
+}
+
+.backgroundSettings {
+    background-image: url('/images/studygroup2.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-chatroom-form {
+    width: 50%;
+    margin-left: 25vw;
+    margin-top: 20vh;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#chat-app {
+    display: flex;
+    height: calc(100vh - 50px);
+    background-color: #F2F2F2;
+    margin-top: 50px;
+}
+
+#chat-sidebar {
+    width: 30%;
+    background-color: #E6E6FA;
+    overflow-y: auto;
+    padding-top: 1vh;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#chat-list li {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    color: #2B008B;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#create-chatroom-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#create-chatroom-form input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+#create-chatroom-form button {
+    background-color: #2B008B;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#create-chatroom-form button:hover {
+    background-color: #03DAC5;
+}
+
+#chat-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+
+#chat-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-left: 1px solid #ddd;
+}
+
+#chatroom-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    color: #2B008B;
+    font-size: 1.2rem;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#messages .chat-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+}
+
+.sent-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    text-align: right;
+    margin-left: auto;
+}
+
+.received-message {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+#messages strong {
+    font-weight: bold;
+    color: #007BFF;
+    margin-right: 10px;
+    background-color: #e1ecf4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+#messages p {
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#message-input {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ccc;
+}
+
+#message-input input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#message-input button {
+    background-color: #2B008B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#message-input button:hover {
+    background-color: #03DAC5;
+}
+
+@media (max-width: 600px) {
+    #chat-app {
+        flex-direction: column;
+    }
+
+    #chat-sidebar {
+        width: 100%;
+        height: 150px;
+    }
+
+    #chat-main {
+        height: calc(100vh - 200px);
     }
 }
