@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Buddy</title>
-<link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Buddy</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script th:inline="javascript">
+            var authenticatedUser = /*[[${authenticatedUser}]]*/ 'Guest';
+        </script>
+    </head>
+    <body>
         <script src="/js/accountsHeader.js"></script>
 
-  <main>
-      <!-- make a log in form -->
-      <form action="/sign-up" method="post" class="signup-form" th:object="${signUpRequest}">
-          
-        <div class="input-group">
+        <main>
+            <!-- make a log in form -->
+            <form action="/sign-up" method="post" class="signup-form" th:object="${signUpRequest}">
 
-        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-    
-        <input type="text" id="surname" name="surname" placeholder="Last Name" required>
-          
-        <input type="email" id="email" name="email" placeholder="Email" required>  
-            
-        <input type="text" id="username" name="username" placeholder="Username" required>
-      
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        
-        <button type="submit">Sign Up</button>
+                <div class="input-group">
 
-    </div>
-    </form>
-  </main>
-    
-</body>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+
+                    <input type="text" id="surname" name="surname" placeholder="Last Name" required>
+
+                    <input type="email" id="email" name="email" placeholder="Email" required>  
+
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+
+                    <button type="submit">Sign Up</button>
+
+                </div>
+            </form>
+        </main>
+
+    </body>
 </html>
 

@@ -8,6 +8,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js" defer></script>
         <script src="/js/main.js" defer></script>
+        <script th:inline="javascript">
+            var authenticatedUser = /*[[${authenticatedUser}]]*/ 'Guest';
+        </script>
     </head>
     <body>
         <header>

@@ -9,6 +9,9 @@
         <style>
         </style>
         <script src="/js/app.js" defer></script> <!-- Link to your JavaScript file with defer attribute -->
+        <script th:inline="javascript">
+            var authenticatedUser = /*[[${authenticatedUser}]]*/ 'Guest';
+        </script>
     </head>
     <body>
 

@@ -13,6 +13,7 @@ document.write(`
             <a href="/team">Teams</a>
             <a href="/chat">Inbox</a>
             <a href="/updatePapers">Add Papers</a>
+            <a>Welcome ${authenticatedUser}</a>
             <div class="dropdown">
                 <button class="dropbtn">Menu</button>
                 <div class="dropdown-content">

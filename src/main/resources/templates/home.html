@@ -5,8 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Study Buddy</title>
         <link rel="stylesheet" href="/css/style.css">
-        <style>
-        </style>
+    <script th:inline="javascript">
+        var authenticatedUser = /*[[${authenticatedUser}]]*/ 'Guest';
+    </script>
     </head>
     <header>
         <script src="/js/header.js"></script>
