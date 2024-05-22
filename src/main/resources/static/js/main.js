@@ -1,4 +1,5 @@
 'use strict';
+
 // DOM elements
 var chatPage = document.querySelector('.chat-app');
 var messageForm = document.querySelector('#messageForm');
@@ -8,6 +9,7 @@ var createChatroomForm = document.querySelector('#create-chatroom-form');
 var chatroomNameInput = document.querySelector('#chatroom-name');
 var chatroomSelect = document.querySelector('#chatroom-select');
 var chatList = document.querySelector('#chat-list');
+
 // Websocket and user details
 var stompClient = null;
 var username = "Anonymous";
