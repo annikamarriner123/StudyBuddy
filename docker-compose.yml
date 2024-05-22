@@ -1,0 +1,29 @@
+version: '3.8'
+
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: studybuddy
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: admin
+        ports:
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydatabase
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: admin
+
+volumes:
+  pgdata:
