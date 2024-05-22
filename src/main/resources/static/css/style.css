@@ -1163,7 +1163,6 @@ p {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-
 #messages .chat-message {
     padding: 10px;
     margin-bottom: 10px;
@@ -1173,18 +1172,21 @@ p {
     flex-direction: column;
     max-width: 60%;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    word-wrap: break-word; /* Ensure text wraps within the message box */
 }
 
 .sent-message {
     background-color: #dcf8c6; /* Light green for sent messages */
     align-self: flex-end; /* Align to the right */
     text-align: right;
+    margin-left: auto; /* Ensure it moves to the right */
 }
 
 .received-message {
     background-color: #f1f0f0; /* Light gray for received messages */
     align-self: flex-start; /* Align to the left */
     text-align: left;
+    margin-right: auto; /* Ensure it moves to the left */
 }
 
 #messages strong {
@@ -1195,6 +1197,7 @@ p {
     padding: 2px 8px;
     border-radius: 4px;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    display: inline-block; /* Ensure it aligns correctly within the message */
 }
 
 #messages p {
@@ -1203,6 +1206,7 @@ p {
     line-height: 1.4;
     padding: 4px 8px;
     border-radius: 4px;
+    background-color: transparent; /* Ensure no background color for text */
 }
 
 /* Input Area Styles */
