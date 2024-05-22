@@ -11,74 +11,17 @@
         <script src="/js/header.js"></script>
         <div class="backgroundSettings">
             <p id="successMessage" style="display:none; background-color: green; color: white; text-align: center; width: 100%; padding: 10px 0; position: fixed; top: 0; left: 0; z-index: 1000;">Form submitted successfully!</p>
-
-            <ul id="nav">
-                <li><a href="/update-details" onclick="showSection('aboutYou')">About You</a></li>
-<!--                <li><a href="blocked" onclick="showSection('blockedUsers')">Blocked Users</a></li>-->
-                <li><a href="/updatePapers" onclick="showSection('updatePapers')">Add your paper</a></li>
-            </ul>
-
+           
+            
             <form class="addPaper-form" action="/updatePapers" method="post" th:object="${updatePapersRequest}" onsubmit="handleSubmit(event)">
                 <div id="classesContainer">
                     <div class="form-group">
                         <label for="class1">Class:</label>
-                        <input type="text" th:value="${userPapers.size() > 0 ? userPapers.get(0) : ''}" id="paperCode1" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                        <input type="text" th:value="${userPapers.size() > 0 ? userPapers.get(0) : ''}" id="paperCode1" name="paperCodes" placeholder="e.g., MART112" pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                        <p class="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
                     </div>
                 </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 1 ? userPapers.get(1) : ''}" id="paperCode2" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 2 ? userPapers.get(2) : ''}" id="paperCode3" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 3 ? userPapers.get(3) : ''}" id="paperCode4" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 4 ? userPapers.get(4) : ''}" id="paperCode5" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 5 ? userPapers.get(5) : ''}" id="paperCode6" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 6 ? userPapers.get(6) : ''}" id="paperCode7" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <div id="classesContainer">
-                    <div class="form-group">
-                        <input type="text" th:value="${userPapers.size() > 7 ? userPapers.get(7) : ''}" id="paperCode8" name="paperCodes" placeholder="e.g., MART112" 
-                               pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
-                        <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
-                    </div>
-                </div>
-                <!-- 
-                <button type="button" onclick="addClass()">Add Another Class</button> 
-                -->
+                <button type="button" onclick="addClass()">Add Another Class</button>
                 <button type="submit">Submit</button>
             </form>
 
@@ -95,7 +38,65 @@
                         successMessage.style.display = 'none';
                     }, 3000);
                 }
+
+               let classCount = 1;
+
+            function addClass() {
+                classCount++;
+                const classesContainer = document.getElementById('classesContainer');
+                const newClassDiv = document.createElement('div');
+                newClassDiv.className = 'form-group';
+                newClassDiv.innerHTML = `
+                    <input type="text" id="paperCode${classCount}" name="paperCodes" placeholder="e.g., MART112" pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                    <p class="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                `;
+                classesContainer.appendChild(newClassDiv);
+            }
             </script>
         </div>
     </body>
 </html>
+
+
+
+
+
+            <!--                </div>
+                            <div id="classesContainer">
+                                <div class="form-group">
+                                    <input type="text" th:value="${userPapers.size() > 3 ? userPapers.get(3) : ''}" id="paperCode4" name="paperCodes" placeholder="e.g., MART112" 
+                                           pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                                    <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                                </div>
+                            </div>
+                            <div id="classesContainer">
+                                <div class="form-group">
+                                    <input type="text" th:value="${userPapers.size() > 4 ? userPapers.get(4) : ''}" id="paperCode5" name="paperCodes" placeholder="e.g., MART112" 
+                                           pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                                    <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                                </div>
+                            </div>
+                            <div id="classesContainer">
+                                <div class="form-group">
+                                    <input type="text" th:value="${userPapers.size() > 5 ? userPapers.get(5) : ''}" id="paperCode6" name="paperCodes" placeholder="e.g., MART112" 
+                                           pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                                    <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                                </div>
+                            </div>
+                            <div id="classesContainer">
+                                <div class="form-group">
+                                    <input type="text" th:value="${userPapers.size() > 6 ? userPapers.get(6) : ''}" id="paperCode7" name="paperCodes" placeholder="e.g., MART112" 
+                                           pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                                    <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                                </div>
+                            </div>
+                            <div id="classesContainer">
+                                <div class="form-group">
+                                    <input type="text" th:value="${userPapers.size() > 7 ? userPapers.get(7) : ''}" id="paperCode8" name="paperCodes" placeholder="e.g., MART112" 
+                                           pattern="[A-Z]{4}[0-9]{3}" oninput="checkInput(this)">
+                                    <p id="error-message" style="color: red; display: none;">Class code must be 4 letters followed by 3 numbers.</p>
+                                </div>
+                            </div>-->
+            <!-- 
+            <button type="button" onclick="addClass()">Add Another Class</button> 
+            -->
