@@ -1,5 +1,6 @@
 package otago.StudyBuddy.controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
@@ -32,9 +33,9 @@ public class ChatController {
     public Message sendMessage(@Payload Message message, @DestinationVariable String chatroomId) {
  // Fetch user based on senderId
         User user = userService.getUserById(message.getUserId());
-        
+        message.setTimestamp(new Timestamp(System.currentTimeMillis()));
         message.setSenderName(user.getUsername());
-        // Set chatRoom in message
+        // Set chatRoom in message + timestamp
         message.setChatRoom(chatRoomService.getChatRoomById(Integer.valueOf(chatroomId)));
         
         // Save message and return
