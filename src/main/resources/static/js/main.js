@@ -206,7 +206,8 @@ function sendMessage(event) {
             userId: userId,
             chatroomId: selectedChatRoomId,
             content: messageContent,
-            type: 'CHAT'
+            type: 'CHAT',
+            timestamp: new Date().toISOString() 
         };
         stompClient.send("/app/chat.sendMessage/" + selectedChatRoomId, {}, JSON.stringify(chatMessage));
         messageInput.value = '';
@@ -223,10 +224,17 @@ function appendMessage(message) {
     }
     var usernameElement = document.createElement('strong');
     usernameElement.appendChild(document.createTextNode(message.senderName + ': '));
+    
     var textElement = document.createElement('p');
     textElement.appendChild(document.createTextNode(message.content));
+    
+    var timestampElement = document.createElement('small');
+    var timestamp = new Date(message.timestamp);
+    timestampElement.textContent = timestamp.toLocaleString(); // Format the timestamp
+    
     messageElement.appendChild(usernameElement);
     messageElement.appendChild(textElement);
+    messageElement.appendChild(timestampElement);
     messageArea.appendChild(messageElement);
     messageArea.scrollTop = messageArea.scrollHeight;
 }
