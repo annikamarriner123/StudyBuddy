@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Buddy</title>
-<link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Study Buddy</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script th:inline="javascript">
+            var authenticatedUser = /*[[${authenticatedUser}]]*/ 'Guest';
+        </script>
+    </head>
+    <body>
         <script src="/js/accountsHeader.js"></script>
 
-<main>
-    <!-- Login form -->
-    <form action="/log-in" method="post" class="login-form" th:object="${logInRequest}">
-        <div class="input-group">
-            <input type="text" id="username" name="username" placeholder="Username" required class="username-input">
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button type="submit">Log In</button>
-        </div>
-    </form>
-</main>
-</body>
+        <main>
+            <!-- Login form -->
+            <form action="/log-in" method="post" class="login-form" th:object="${logInRequest}">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Username" required class="username-input">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit">Log In</button>
+                </div>
+            </form>
+        </main>
+    </body>
 </html>

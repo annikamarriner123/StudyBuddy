@@ -5,12 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Preferences</title>
         <link rel="stylesheet" href="/css/style.css">
+        <script th:inline="javascript">
+            var authenticatedUser = /*[[${authenticatedUser}]]*/ 'Guest';
+        </script>
     </head>
-    
-<header>
+
+    <header>
         <script src="/js/header.js"></script>
     </header>
-    
+
     <body>
 
         <form div class="preference-form">
