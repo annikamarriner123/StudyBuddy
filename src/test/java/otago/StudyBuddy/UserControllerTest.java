@@ -54,7 +54,6 @@ public class UserControllerTest {
 
     @Test
     public void testSignUp() throws Exception {
-        // Mock UserService behavior
         Mockito.when(userService.registerUser(Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any(), Mockito.any()))
                 .thenReturn(new User());
 
@@ -78,7 +77,6 @@ public class UserControllerTest {
     @Test
     @WithMockUser(username = "John", roles = {"User"})
     public void testLogInPost() throws Exception {
-        // Prepare test data
         User user = new User();
         user.setUsername("john.doe");
         user.setPassword("password");
@@ -86,14 +84,9 @@ public class UserControllerTest {
         User storedUser = new User();
         storedUser.setUsername("john.doe");
         storedUser.setPassword("encodedPassword");
-
-        // Mock UserService to return the stored user
         Mockito.when(userService.logInUser(Mockito.any(), Mockito.any())).thenReturn(storedUser);
-
-        // Mock password encoder to return true for password match
         Mockito.when(passwordEncoder.matches(Mockito.any(), Mockito.any())).thenReturn(true);
 
-        // Perform login
         mockMvc.perform(post("/log-in")
                 .param("username", "John")
                 .param("password", "password"))
