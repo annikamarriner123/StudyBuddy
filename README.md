@@ -1,4 +1,5 @@
 ## Study Buddy 
+Hosted on: https://studybuddy-hxnc.onrender.com
 
 Group members: Annika, Glen, Jasmine and Will
 
@@ -10,8 +11,9 @@ The aim of our project is to create a web application that will allow students t
 
 1. Create an account: Once you have created an account, fill out the form on the "Sign up" tab. You will then be redirected to the log in page and need to fill in your username and password. 
 2. Add Papers: Go to the "Add Papers" tab and add the papers you are studying, there is format checking. For example "BSNS114" or "INFO303".
-3. Next redirect yourself to the "Find Study Peers" page and search the paper that you are wanting to use to find other study peers in. 
-4. A list will be populated with other students that are doing the same paper. 
+3. Redirect yourself to the dropdown menu, and "Account Info" to add/update your major.
+4. Next redirect yourself to the "Find Study Peers" page and search the paper that you are wanting to use to find other study peers in.
+5. A list will be populated with other students that are doing the same paper. 
 
 ### Entering a chat room 
 
