@@ -13,6 +13,7 @@ class StudyBuddyApplicationTests {
     private UserService userService;
 
     
+        //This one is the one that came with
 	@Test
 	void contextLoads() {
 		assertThat(userService).isNotNull();
