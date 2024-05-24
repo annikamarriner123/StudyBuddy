@@ -98,7 +98,7 @@ public class UserController {
         boolean passwordMatches = passwordEncoder.matches(user.getPassword(), storedUser.getPassword());
         if (storedUser != null && passwordMatches) {
             User loggedInUser = userService.logInUser(user.getUsername(), user.getPassword());
-            if (loggedInUser == null) {
+            if (loggedInUser != null) {
                 //if null, this means unsuccessful, display error message from html
                 //located in HomeController
                 return "redirect:/home";
@@ -139,10 +139,10 @@ public class UserController {
                 return "redirect:/error";
             }
         } else {
-            // If no papers are provided, redirect to an error page or display a message
+            
             return "redirect:/error?message=No papers provided";
         }
-        // Redirect to the user's profile page or any other page as needed
+        
         return "redirect:/updatePapers"; // Assuming there's a profile page to redirect to
     }
 
