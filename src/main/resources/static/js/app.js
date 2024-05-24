@@ -25,11 +25,12 @@ function searchUsers() {
             .then(data => {
                 var userDetailsTable = document.getElementById("userTable").getElementsByTagName('tbody')[0];
                 userDetailsTable.innerHTML = ""; // Clear existing table rows
-                if (data && data.firstName && data.surname) {
+                if (data && data.firstName && data.surname && data.email) {
                     var row = userDetailsTable.insertRow();
                     row.innerHTML = `
                         <td>${data.firstName}</td>
                         <td>${data.surname}</td>
+                             <td>${data.email}</td>
                     `; // Insert the firstName and surname into the table
                 } else {
                     userDetailsTable.innerHTML = `<tr><td colspan="2">No user found with the specified paper.</td></tr>`;
